@@ -16,13 +16,10 @@
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
-      background: linear-gradient(
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.6)
-      ),
-      url('images/IMG-20260111-WA0001.jpg') center/cover no-repeat;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('images/IMG-20260111-WA0001.jpg') center/cover no-repeat;
       color: #fff;
       padding: 100px 20px;
       text-align: center;
@@ -34,7 +31,7 @@
     }
 
     header p {
-      max-width: 750px;
+      max-width: 760px;
       margin: auto;
       font-size: 1.15rem;
       opacity: 0.95;
@@ -51,7 +48,6 @@
       border-radius: 6px;
     }
 
-    /* SECTIONS */
     section {
       padding: 60px 20px;
       max-width: 1100px;
@@ -67,7 +63,6 @@
       font-size: 2rem;
     }
 
-    /* CARDS */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -81,20 +76,20 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* GALLERY */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
 
     .gallery img {
       width: 100%;
-      border-radius: 8px;
+      height: 220px;
       object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    /* FOOTER */
     footer {
       background: #111827;
       color: #d1d5db;
@@ -103,7 +98,6 @@
       font-size: 0.9rem;
     }
 
-    /* WHATSAPP FLOAT */
     .whatsapp {
       position: fixed;
       bottom: 20px;
@@ -121,18 +115,15 @@
 
 <body>
 
-<!-- HERO -->
 <header>
   <h1>Adventure With Juma</h1>
   <p>
     Discover Kenya’s breathtaking landscapes, hidden gems, and unforgettable
-    experiences with a trusted local guide who understands nature, culture,
-    and adventure.
+    experiences guided by a passionate local expert.
   </p>
   <a href="#tours" class="btn">Explore Adventures</a>
 </header>
 
-<!-- ABOUT -->
 <section>
   <div class="section-title">
     <h2>About Juma Adventures</h2>
@@ -140,19 +131,15 @@
 
   <p>
     Juma Adventures is a Kenya-based tour and adventure company dedicated to
-    helping travelers explore the beauty of nature in a safe, authentic, and
-    memorable way. We specialize in guided tours, nature walks, hiking,
-    sightseeing, and customized adventure experiences.
+    helping travelers explore nature in a safe, authentic, and memorable way.
   </p>
 
   <p>
-    Whether you are a local explorer or an international visitor, our goal is
-    to give you a genuine experience guided by passion, knowledge, and love
-    for nature.
+    From scenic tours and hikes to personalized outdoor experiences, we focus
+    on quality, safety, and genuine adventure.
   </p>
 </section>
 
-<!-- WHY CHOOSE US -->
 <section>
   <div class="section-title">
     <h2>Why Choose Juma Adventures</h2>
@@ -161,30 +148,21 @@
   <div class="grid">
     <div class="card">
       <h3>Local Expertise</h3>
-      <p>
-        Guided by experienced locals who understand Kenya’s landscapes,
-        culture, and hidden destinations.
-      </p>
+      <p>Led by experienced local guides who know Kenya inside out.</p>
     </div>
 
     <div class="card">
       <h3>Safe & Reliable</h3>
-      <p>
-        Safety is our priority. Every tour is carefully planned and guided
-        responsibly.
-      </p>
+      <p>Well-planned trips that prioritize safety and comfort.</p>
     </div>
 
     <div class="card">
       <h3>Affordable Packages</h3>
-      <p>
-        Enjoy quality adventure experiences at friendly and flexible prices.
-      </p>
+      <p>Flexible pricing designed to suit different budgets.</p>
     </div>
   </div>
 </section>
 
-<!-- TOURS -->
 <section id="tours">
   <div class="section-title">
     <h2>Our Experiences</h2>
@@ -193,59 +171,60 @@
   <div class="grid">
     <div class="card">
       <h3>Nature & Scenic Tours</h3>
-      <p>Explore beautiful landscapes, hills, forests, and natural attractions.</p>
+      <p>Explore Kenya’s beautiful landscapes and hidden gems.</p>
     </div>
 
     <div class="card">
-      <h3>Adventure & Hiking</h3>
-      <p>Guided hikes and outdoor challenges designed for all experience levels.</p>
+      <h3>Hiking & Adventure</h3>
+      <p>Guided hikes and outdoor adventures for all levels.</p>
     </div>
 
     <div class="card">
-      <h3>Custom Travel Plans</h3>
-      <p>Personalized trips based on your interests, time, and budget.</p>
+      <h3>Custom Trips</h3>
+      <p>Personalized tours tailored to your interests and schedule.</p>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
 <section>
   <div class="section-title">
-    <h2>Gallery</h2>
-    <p>Moments captured during our adventures</p>
+    <h2>Adventure Gallery</h2>
   </div>
 
   <div class="gallery">
-    <img src="images/IMG-20260111-WA0001.jpg" alt="Juma Adventure Tour">
+    <img src="images/IMG-20260111-WA0001.jpg" alt="Adventure with Juma">
+    <img src="images/IMG-20260111-WA0003.jpg" alt="Nature Tour">
+    <img src="images/IMG-20260111-WA0004.jpg" alt="Scenic View">
+    <img src="images/IMG-20260111-WA0005.jpg" alt="Hiking Experience">
+    <img src="images/IMG-20260111-WA0006.jpg" alt="Outdoor Adventure">
+    <img src="images/IMG-20260111-WA0007.jpg" alt="Kenya Nature">
   </div>
 </section>
 
-<!-- CONTACT -->
 <section>
   <div class="section-title">
     <h2>Get in Touch</h2>
   </div>
 
   <p style="text-align:center;">
-    Ready to explore Kenya? Contact us today and let’s plan your next adventure.
+    Ready to explore Kenya? Let’s plan your next adventure.
   </p>
 
   <p style="text-align:center; font-weight:bold;">
-    📞 Call / WhatsApp: 0705283274
+    📞 Call / WhatsApp: +254 746 011 254
+  </p>
+
+  <p style="text-align:center;">
+    📧 Email: <a href="mailto:jumaadventuresandsafaris@gmail.com">
+    jumaadventuresandsafaris@gmail.com</a>
   </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>
-    © 2026 Juma Adventures. All Rights Reserved.
-  </p>
+  <p>© 2026 Juma Adventures. All Rights Reserved.</p>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp"
-   href="https://wa.me/254705283274"
-   target="_blank">
+<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">
   💬 Chat on WhatsApp
 </a>
 
