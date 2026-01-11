@@ -1,238 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Juma Adventures & Safaris | Explore Kenya’s Wild</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juma Adventures & Safaris | Explore Kenya</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    body {
-      color: #222;
-      background: #fff;
-      line-height: 1.6;
-    }
+body {
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
 
-    /* ===== HERO / REO SECTION ===== */
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: url("images/leopard-hero.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-    }
+/* ===== HERO / REO ===== */
+.hero {
+  height: 100vh;
+  background: url("images/hero.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.8)
-      );
-    }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
 
-    .hero-content {
-      position: relative;
-      max-width: 900px;
-      padding: 20px;
-      z-index: 1;
-    }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 20px;
+  color: #fff;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-    }
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      color: #f1f1f1;
-    }
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #eee;
+}
 
-    .hero a {
-      display: inline-block;
-      background: #d62828;
-      color: #fff;
-      text-decoration: none;
-      padding: 15px 35px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 30px;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
+.hero a {
+  background: #d62828;
+  color: #fff;
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
 
-    .hero a:hover {
-      background: #b71c1c;
-      transform: translateY(-2px);
-    }
+.hero a:hover {
+  background: #b71c1c;
+}
 
-    /* ===== SECTION STYLES ===== */
-    section {
-      padding: 70px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+/* ===== SECTION ===== */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
-    .section-title h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
+.section-title h2 {
+  font-size: 2.3rem;
+}
 
-    .section-title p {
-      color: #555;
-      max-width: 700px;
-      margin: auto;
-    }
+.section-title p {
+  color: #555;
+  max-width: 700px;
+  margin: auto;
+}
 
-    /* ===== WHY JUMA ===== */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
+/* ===== WHY JUMA ===== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
 
-    .feature {
-      background: #f8f8f8;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-    }
+.feature {
+  background: #f7f7f7;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
 
-    .feature h3 {
-      margin-bottom: 10px;
-    }
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
 
-    /* ===== CONTACT ===== */
-    .contact {
-      background: #111;
-      color: #fff;
-      text-align: center;
-    }
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-    .contact p {
-      margin: 10px 0;
-    }
+/* ===== CONTACT ===== */
+.contact {
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #000;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
+.contact p {
+  margin: 10px 0;
+}
 
-    footer a {
-      color: #aaa;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+/* ===== FOOTER ===== */
+footer {
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}
 
-    /* ===== WHATSAPP FLOAT ===== */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+footer a {
+  color: #aaa;
+  text-decoration: none;
+  margin: 0 10px;
+}
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
+/* ===== WHATSAPP ===== */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 15px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
 
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO / REO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Explore Kenya’s Wild</h1>
-      <p>
-        Authentic safari and adventure experiences guided by locals who
-        understand the land, the wildlife, and the soul of Kenya.
-      </p>
-      <a href="#about">Let’s Explore</a>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-title">
-      <h2>Why Juma Adventures?</h2>
-      <p>
-        We don’t sell trips — we create unforgettable journeys into Kenya’s
-        most breathtaking landscapes.
-      </p>
-    </div>
-
-    <div class="features">
-      <div class="feature">
-        <h3>Local Expertise</h3>
-        <p>Guided by experienced locals who know Kenya beyond the maps.</p>
-      </div>
-      <div class="feature">
-        <h3>Authentic Safaris</h3>
-        <p>Wildlife, nature, and culture — raw, real, unforgettable.</p>
-      </div>
-      <div class="feature">
-        <h3>Safe & Personalized</h3>
-        <p>Your comfort and safety come first on every adventure.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>📞 +254 746 011 254</p>
-    <p>✉️ jumaadventuresandsafaris@gmail.com</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Explore Kenya Like Never Before</h1>
     <p>
-      © 2026 Juma Adventures & Safaris |
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms & Conditions</a>
+      Authentic safaris, breathtaking landscapes, and unforgettable adventures
+      guided by locals who know Kenya by heart.
     </p>
-  </footer>
+    <a href="#about">Let’s Explore</a>
+  </div>
+</section>
 
-  <!-- WHATSAPP -->
-  <a class="whatsapp" href="https://wa.me/254746011254" target="_blank">
-    WhatsApp
-  </a>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">
+    <h2>Why Juma Adventures</h2>
+    <p>
+      We don’t offer ordinary trips. We craft real safari experiences that connect
+      you with Kenya’s wildlife, nature, and culture.
+    </p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <h3>Local Expertise</h3>
+      <p>Led by experienced local guides with deep knowledge of the wild.</p>
+    </div>
+    <div class="feature">
+      <h3>Authentic Safaris</h3>
+      <p>From big cats to hidden landscapes, every journey is unforgettable.</p>
+    </div>
+    <div class="feature">
+      <h3>Safe & Personal</h3>
+      <p>Your comfort, safety, and experience always come first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="section-title">
+    <h2>Adventure Gallery</h2>
+    <p>A glimpse into the wild moments you’ll experience with us.</p>
+  </div>
+
+  <div class="gallery">
+    <img src="images/IMG-20260111-WA0039.jpg">
+    <img src="images/IMG-20260111-WA0035.jpg">
+    <img src="images/IMG-20260111-WA0033.jpg">
+    <img src="images/IMG-20260111-WA0025.jpg">
+    <img src="images/IMG-20260111-WA0021.jpg">
+    <img src="images/IMG-20260111-WA0020.jpg">
+    <img src="images/IMG-20260111-WA0019.jpg">
+    <img src="images/IMG-20260111-WA0018.jpg">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Contact Juma Adventures</h2>
+  <p>📞 +254 746 011 254</p>
+  <p>✉️ jumaadventuresandsafaris@gmail.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Juma Adventures & Safaris |
+  <a href="#">Privacy Policy</a> |
+  <a href="#">Terms & Conditions</a>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">
+  WhatsApp
+</a>
 
 </body>
 </html>
