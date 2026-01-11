@@ -1,237 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Juma Adventures | Explore Kenya with a Local Guide</title>
-
-  <meta name="description" content="Juma Adventures is a Kenya-based tour and adventure company offering unforgettable nature experiences, safaris, hikes, and guided tours with a trusted local guide." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Juma Adventures & Safaris | Adventure with Juma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juma Adventures & Safaris – Explore Kenya’s breathtaking nature with trusted local guides. Authentic, unforgettable adventure experiences.">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #222;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0e0e0e;
+      color: #f5f5f5;
       line-height: 1.6;
     }
 
-    header {
-      background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('images/IMG-20260111-WA0026.jpg') center/cover no-repeat;
-      color: #fff;
-      padding: 110px 20px;
+    a {
+      color: #f4c430;
+      text-decoration: none;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 90vh;
+      background: url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    header h1 {
-      font-size: 2.6rem;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
       margin-bottom: 15px;
     }
 
-    header p {
-      max-width: 760px;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
       margin: auto;
-      font-size: 1.15rem;
-      opacity: 0.95;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 30px;
-      background: #e11d48;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
+    .hero span {
+      color: #f4c430;
     }
 
+    /* SECTION */
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 70px 8%;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .section-title h2 {
-      font-size: 2rem;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+    .section-title p {
+      color: #ccc;
+      max-width: 700px;
+      margin: auto;
     }
 
-    .card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
+    /* GALLERY – MASONRY STYLE */
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      column-count: 3;
+      column-gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        column-count: 1;
+      }
     }
 
     .gallery img {
       width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+      transition: transform 0.4s ease;
     }
 
-    footer {
-      background: #111827;
-      color: #d1d5db;
+    .gallery img:hover {
+      transform: scale(1.04);
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 900px;
+      margin: auto;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
+      font-size: 1.05rem;
     }
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: #fff;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #070707;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Adventure With Juma</h1>
-  <p>
-    Explore Kenya’s breathtaking landscapes, hidden gems, and unforgettable
-    outdoor experiences guided by a trusted local expert.
-  </p>
-  <a href="#tours" class="btn">Explore Adventures</a>
-</header>
-
-<section>
-  <div class="section-title">
-    <h2>About Juma Adventures</h2>
-  </div>
-
-  <p>
-    Juma Adventures is a Kenya-based tour and adventure company dedicated to
-    delivering authentic, safe, and memorable nature experiences.
-  </p>
-
-  <p>
-    From scenic tours and hikes to custom outdoor adventures, we focus on
-    real experiences guided by passion and local knowledge.
-  </p>
-</section>
-
-<section>
-  <div class="section-title">
-    <h2>Why Choose Juma Adventures</h2>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Local Expertise</h3>
-      <p>Guided by an experienced local who understands Kenya’s terrain and culture.</p>
-    </div>
-
-    <div class="card">
-      <h3>Safe & Reliable</h3>
-      <p>Every trip is planned with safety, comfort, and enjoyment in mind.</p>
-    </div>
-
-    <div class="card">
-      <h3>Affordable Packages</h3>
-      <p>Flexible and fair pricing for individuals, groups, and families.</p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Adventure with <span>Juma</span></h1>
+      <p>
+        Juma Adventures & Safaris is Kenya’s trusted adventure platform, offering unforgettable journeys
+        into nature’s most beautiful and untouched destinations — guided by passion, experience, and local expertise.
+      </p>
     </div>
   </div>
-</section>
 
-<section id="tours">
-  <div class="section-title">
-    <h2>Our Experiences</h2>
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Nature & Scenic Tours</h3>
-      <p>Enjoy beautiful landscapes, forests, hills, and natural attractions.</p>
+  <!-- ABOUT -->
+  <section>
+    <div class="section-title">
+      <h2>Why Travel With Us</h2>
+      <p>Not just a tour — a story you will remember for life</p>
     </div>
 
-    <div class="card">
-      <h3>Hiking & Adventure</h3>
-      <p>Guided hikes and outdoor challenges for all experience levels.</p>
+    <div class="about">
+      <p>
+        At Juma Adventures & Safaris, we believe adventure should feel real, personal, and meaningful.
+        From mountains and waterfalls to hidden trails and cultural encounters, we guide you beyond the ordinary.
+        Every journey is carefully crafted and led by experienced local guides who understand the land,
+        the people, and the spirit of adventure.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="section-title">
+      <h2>Moments from Our Adventures</h2>
+      <p>Real experiences. Real people. Real nature.</p>
     </div>
 
-    <div class="card">
-      <h3>Custom Trips</h3>
-      <p>Personalized adventures tailored to your schedule and interests.</p>
+    <div class="gallery">
+      <img src="images/IMG-20260111-WA0039.jpg">
+      <img src="images/IMG-20260111-WA0035.jpg">
+      <img src="images/IMG-20260111-WA0033.jpg">
+      <img src="images/IMG-20260111-WA0025.jpg">
+      <img src="images/IMG-20260111-WA0021.jpg">
+      <img src="images/IMG-20260111-WA0020.jpg">
+      <img src="images/IMG-20260111-WA0019.jpg">
+      <img src="images/IMG-20260111-WA0018.jpg">
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="section-title">
-    <h2>Adventure Gallery</h2>
-    <p>Real moments from our journeys</p>
-  </div>
+  <!-- CONTACT -->
+  <section>
+    <div class="section-title">
+      <h2>Plan Your Adventure</h2>
+      <p>Let’s explore Kenya together</p>
+    </div>
 
-  <div class="gallery">
-    <img src="images/IMG-20260111-WA0039.jpg" alt="Juma Adventure">
-    <img src="images/IMG-20260111-WA0035.jpg" alt="Kenya Nature Tour">
-    <img src="images/IMG-20260111-WA0033.jpg" alt="Outdoor Experience">
-    <img src="images/IMG-20260111-WA0025.jpg" alt="Scenic Landscape">
-    <img src="images/IMG-20260111-WA0021.jpg" alt="Hiking Trail">
-    <img src="images/IMG-20260111-WA0020.jpg" alt="Nature Walk">
-    <img src="images/IMG-20260111-WA0019.jpg" alt="Adventure Moment">
-    <img src="images/IMG-20260111-WA0018.jpg" alt="Exploring Kenya">
-  </div>
-</section>
+    <div class="contact">
+      <p>📞 Phone: <a href="tel:+254746011254">+254 746 011 254</a></p>
+      <p>📧 Email: <a href="mailto:jumaadventuresandsafaris@gmail.com">jumaadventuresandsafaris@gmail.com</a></p>
+    </div>
+  </section>
 
-<section>
-  <div class="section-title">
-    <h2>Get in Touch</h2>
-  </div>
-
-  <p style="text-align:center;">
-    Ready to explore Kenya? Let’s plan your next adventure.
-  </p>
-
-  <p style="text-align:center; font-weight:bold;">
-    📞 Call / WhatsApp: +254 746 011 254
-  </p>
-
-  <p style="text-align:center;">
-    📧 Email:
-    <a href="mailto:jumaadventuresandsafaris@gmail.com">
-      jumaadventuresandsafaris@gmail.com
-    </a>
-  </p>
-</section>
-
-<footer>
-  <p>© 2026 Juma Adventures. All Rights Reserved.</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">
-  💬 Chat on WhatsApp
-</a>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Juma Adventures & Safaris • #AdventureWithJuma
+  </footer>
 
 </body>
 </html>
