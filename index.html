@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Juma Adventures & Safaris | Adventure with Juma</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Juma Adventures & Safaris – Explore Kenya’s breathtaking nature with trusted local guides. Authentic, unforgettable adventure experiences.">
+  <meta name="description" content="Juma Adventures & Safaris – Explore Kenya’s breathtaking nature with trusted local guides.">
 
   <style>
     body {
@@ -15,27 +15,62 @@
       line-height: 1.6;
     }
 
-    a {
-      color: #f4c430;
-      text-decoration: none;
+    a { color: #f4c430; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      z-index: 1000;
     }
 
-    /* HERO SECTION */
+    .menu-btn {
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: #111;
+      padding: 30px;
+      box-shadow: -5px 0 20px rgba(0,0,0,0.4);
+    }
+
+    .menu h3 {
+      margin-top: 0;
+      color: #f4c430;
+    }
+
+    .menu a {
+      display: block;
+      margin: 15px 0;
+      color: #fff;
+    }
+
+    /* HERO */
     .hero {
-      position: relative;
       height: 90vh;
       background: url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.6);
     }
 
     .hero-content {
@@ -44,87 +79,42 @@
       padding: 20px;
     }
 
-    .hero h1 {
-      font-size: 3.2rem;
-      margin-bottom: 15px;
-    }
+    .hero h1 { font-size: 3rem; }
+    .hero span { color: #f4c430; }
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .hero span {
-      color: #f4c430;
-    }
-
-    /* SECTION */
-    section {
-      padding: 70px 8%;
-    }
+    section { padding: 70px 8%; }
 
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
-    .section-title h2 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #ccc;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* GALLERY – MASONRY STYLE */
+    /* GALLERY */
     .gallery {
       column-count: 3;
       column-gap: 20px;
-    }
-
-    @media (max-width: 900px) {
-      .gallery {
-        column-count: 2;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .gallery {
-        column-count: 1;
-      }
     }
 
     .gallery img {
       width: 100%;
       margin-bottom: 20px;
       border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-      transition: transform 0.4s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.04);
-    }
+    @media(max-width:900px){ .gallery{column-count:2;} }
+    @media(max-width:600px){ .gallery{column-count:1;} }
 
-    /* ABOUT */
-    .about {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      font-size: 1.05rem;
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      font-size: 1.1rem;
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      z-index: 999;
     }
 
     /* FOOTER */
@@ -132,78 +122,112 @@
       background: #070707;
       text-align: center;
       padding: 25px;
-      font-size: 0.9rem;
       color: #aaa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Adventure with <span>Juma</span></h1>
-      <p>
-        Juma Adventures & Safaris is Kenya’s trusted adventure platform, offering unforgettable journeys
-        into nature’s most beautiful and untouched destinations — guided by passion, experience, and local expertise.
-      </p>
-    </div>
+<!-- NAV -->
+<div class="nav">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</div>
+
+<div class="menu" id="menu">
+  <h3>Dashboard</h3>
+  <a href="#about">White Paper</a>
+  <a href="#privacy">Privacy Policy</a>
+  <a href="#terms">Terms & Conditions</a>
+  <a href="#support">Support</a>
+  <a href="#" onclick="toggleMenu()">Close ✖</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Adventure with <span>Juma</span></h1>
+    <p>Authentic Kenyan adventures led by local experts. Discover nature, culture, and unforgettable experiences.</p>
   </div>
+</div>
 
-  <!-- ABOUT -->
-  <section>
-    <div class="section-title">
-      <h2>Why Travel With Us</h2>
-      <p>Not just a tour — a story you will remember for life</p>
-    </div>
+<!-- WHITE PAPER -->
+<section id="about">
+  <div class="section-title">
+    <h2>About Juma Adventures & Safaris</h2>
+  </div>
+  <p>
+    Juma Adventures & Safaris is a Kenyan-based adventure platform focused on sustainable tourism,
+    authentic experiences, and responsible exploration. Our mission is to connect travelers with
+    Kenya’s natural beauty through guided adventures led by experienced local professionals.
+  </p>
+</section>
 
-    <div class="about">
-      <p>
-        At Juma Adventures & Safaris, we believe adventure should feel real, personal, and meaningful.
-        From mountains and waterfalls to hidden trails and cultural encounters, we guide you beyond the ordinary.
-        Every journey is carefully crafted and led by experienced local guides who understand the land,
-        the people, and the spirit of adventure.
-      </p>
-    </div>
-  </section>
+<!-- GALLERY -->
+<section>
+  <div class="section-title">
+    <h2>Our Adventures</h2>
+  </div>
+  <div class="gallery">
+    <img src="images/IMG-20260111-WA0039.jpg">
+    <img src="images/IMG-20260111-WA0035.jpg">
+    <img src="images/IMG-20260111-WA0033.jpg">
+    <img src="images/IMG-20260111-WA0025.jpg">
+    <img src="images/IMG-20260111-WA0021.jpg">
+    <img src="images/IMG-20260111-WA0020.jpg">
+    <img src="images/IMG-20260111-WA0019.jpg">
+    <img src="images/IMG-20260111-WA0018.jpg">
+  </div>
+</section>
 
-  <!-- GALLERY -->
-  <section>
-    <div class="section-title">
-      <h2>Moments from Our Adventures</h2>
-      <p>Real experiences. Real people. Real nature.</p>
-    </div>
+<!-- PRIVACY -->
+<section id="privacy">
+  <div class="section-title">
+    <h2>Privacy Policy</h2>
+  </div>
+  <p>
+    We respect your privacy. Juma Adventures & Safaris does not sell, rent, or misuse personal data.
+    Any information shared is used strictly for communication and service delivery.
+  </p>
+</section>
 
-    <div class="gallery">
-      <img src="images/IMG-20260111-WA0039.jpg">
-      <img src="images/IMG-20260111-WA0035.jpg">
-      <img src="images/IMG-20260111-WA0033.jpg">
-      <img src="images/IMG-20260111-WA0025.jpg">
-      <img src="images/IMG-20260111-WA0021.jpg">
-      <img src="images/IMG-20260111-WA0020.jpg">
-      <img src="images/IMG-20260111-WA0019.jpg">
-      <img src="images/IMG-20260111-WA0018.jpg">
-    </div>
-  </section>
+<!-- TERMS -->
+<section id="terms">
+  <div class="section-title">
+    <h2>Terms & Conditions</h2>
+  </div>
+  <p>
+    By using this website, you agree to our terms of service. All trips are subject to availability,
+    weather conditions, and safety considerations. Content is protected and may not be reused without permission.
+  </p>
+</section>
 
-  <!-- CONTACT -->
-  <section>
-    <div class="section-title">
-      <h2>Plan Your Adventure</h2>
-      <p>Let’s explore Kenya together</p>
-    </div>
+<!-- SUPPORT -->
+<section id="support">
+  <div class="section-title">
+    <h2>Support & Contact</h2>
+  </div>
+  <p>📞 Phone: <a href="tel:+254746011254">+254 746 011 254</a></p>
+  <p>📧 Email: <a href="mailto:jumaadventuresandsafaris@gmail.com">jumaadventuresandsafaris@gmail.com</a></p>
+</section>
 
-    <div class="contact">
-      <p>📞 Phone: <a href="tel:+254746011254">+254 746 011 254</a></p>
-      <p>📧 Email: <a href="mailto:jumaadventuresandsafaris@gmail.com">jumaadventuresandsafaris@gmail.com</a></p>
-    </div>
-  </section>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">
+  WhatsApp Us
+</a>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Juma Adventures & Safaris • #AdventureWithJuma
-  </footer>
+<!-- FOOTER -->
+<footer>
+  © 2026 Juma Adventures & Safaris • #AdventureWithJuma
+</footer>
+
+<script>
+  function toggleMenu(){
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+</script>
 
 </body>
 </html>
