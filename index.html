@@ -1,175 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Juma Adventures</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Juma Adventures</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
 
-    a {
-      text-decoration: none;
-    }
+/* DASH MENU */
+.menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
 
-    /* HERO */
-    .hero {
-      position: relative;
-      height: 90vh;
-      background: url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.menu-btn {
+  font-size: 26px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
+.menu-content {
+  display: none;
+  background: #fff;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
-    .hero-content {
-      position: relative;
-      text-align: center;
-      color: #fff;
-      max-width: 720px;
-      padding: 20px;
-    }
+.menu-content a {
+  display: block;
+  padding: 12px 16px;
+  color: #222;
+  font-size: 14px;
+  text-decoration: none;
+}
 
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+.menu-content a:hover {
+  background: #f4f4f4;
+}
 
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
+/* HERO */
+.hero {
+  height: 90vh;
+  background: url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: #ff9800;
-      color: #fff;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
 
-    .btn:hover {
-      background: #e68900;
-    }
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 720px;
+  padding: 20px;
+}
 
-    /* Powered by WebTool */
-    .powered {
-      margin-top: 18px;
-      display: inline-block;
-      padding: 6px 14px;
-      font-size: 0.8rem;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.4);
-    }
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 
-    /* SECTION */
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.btn {
+  background: #ff9800;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-    .section-title h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
+.powered {
+  margin-top: 15px;
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.15);
+}
 
-    .section-title p {
-      max-width: 700px;
-      margin: auto;
-      color: #555;
-    }
+/* SECTION */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .story {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      align-items: center;
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .story img {
-      width: 100%;
-      border-radius: 14px;
-    }
+.section-title p {
+  color: #555;
+}
 
-    .story-text h3 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
+/* DISCLAIMER */
+.disclaimer {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
 
-    footer {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-    }
-  </style>
+/* FOOTER */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.85rem;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+</style>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menuContent");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Juma Adventures</h1>
-      <p>
-        Discover Kenya beyond the ordinary — raw landscapes, hidden gems,
-        and unforgettable journeys guided by experience and passion.
-      </p>
-      <a href="#about" class="btn">Explore Getaways</a>
-      <br>
-      <span class="powered">Powered by WebTool</span>
-    </div>
-  </section>
+<!-- DASH MENU -->
+<div class="menu">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="menu-content" id="menuContent">
+    <a href="mailto:jumaadventuresandsafaris@gmail.com">Contact Support</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </div>
+</div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-title">
-      <h2>Why Travel With Juma?</h2>
-      <p>
-        Juma Adventures is built on real exploration, local knowledge,
-        and a deep respect for nature and culture.
-      </p>
-    </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Juma Adventures</h1>
+    <p>Explore Kenya through authentic adventures guided by experience, passion, and local knowledge.</p>
+    <a href="#about" class="btn">Explore Getaways</a><br>
+    <span class="powered">Powered by WebTool</span>
+  </div>
+</section>
 
-    <div class="story">
-      <img src="images/IMG-20260111-WA0006.jpg" alt="Adventure Experience">
-      <div class="story-text">
-        <h3>Authentic Experiences</h3>
-        <p>
-          From breathtaking landscapes to quiet moments in nature,
-          every journey is carefully crafted to feel personal and unforgettable.
-        </p>
-      </div>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">
+    <h2>Why Travel With Juma?</h2>
+    <p>We create meaningful journeys that connect people with nature, culture, and unforgettable experiences.</p>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Juma Adventures. All rights reserved.
-  </footer>
+  <p class="disclaimer">
+    Disclaimer: Photos displayed on this platform are used for showcasing adventure experiences and destinations.
+    Individuals appearing in images are part of travel activities and are not used for personal representation.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Juma Adventures. All rights reserved.
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">💬</a>
 
 </body>
 </html>
