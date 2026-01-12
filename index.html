@@ -2,278 +2,191 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Juma Adventures | WebTool</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juma Adventures & Safaris | Explore Kenya</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 body {
-  background: #fff;
-  color: #222;
-  line-height: 1.6;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fa;
+  color: #333;
 }
 
-/* ===== HERO / REO ===== */
-.hero {
-  height: 100vh;
-  background: url("images/IMG-20260111-WA0019.jpg") center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* HEADER */
+header {
+  background: #1e88e5;
+  color: #fff;
+  padding: 18px;
   text-align: center;
 }
 
-.hero::after {
-  content: "";
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-text {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
   padding: 20px;
-  color: #fff;
 }
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  font-weight: 800;
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #eee;
+.hero-text p {
+  max-width: 600px;
+  font-size: 1.1rem;
 }
-
-.hero a {
-  background: #d62828;
-  color: #fff;
-  padding: 15px 35px;
+.hero-text a {
+  margin-top: 20px;
+  background: #ff9800;
+  color: #000;
+  padding: 12px 26px;
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
 }
 
-.hero a:hover {
-  background: #b71c1c;
+/* STORY SECTION */
+.story {
+  padding: 60px 20px;
+  background: #fff;
 }
-
-/* ===== SECTION ===== */
-section {
-  padding: 80px 20px;
+.story-grid {
   max-width: 1200px;
   margin: auto;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.section-title h2 {
-  font-size: 2.3rem;
-}
-
-.section-title p {
-  color: #555;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* ===== WHY JUMA ===== */
-.features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
 }
-
-.feature {
-  background: #f7f7f7;
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
+.story-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
 }
-
-/* ===== GALLERY ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.gallery img {
+.story-card img {
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+}
+.story-caption {
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+}
+.story-caption h3 {
+  margin: 0 0 6px;
 }
 
-/* ===== CONTACT ===== */
-.contact {
-  background: #111;
-  color: #fff;
+/* ABOUT */
+#about {
+  padding: 60px 20px;
+  background: #f5f7fa;
+}
+.about-box {
+  max-width: 900px;
+  margin: auto;
   text-align: center;
 }
-
-.contact p {
-  margin: 10px 0;
+.about-box h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.about-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
-  background: #000;
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
-}
-
-footer a {
-  color: #aaa;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-/* ===== WHATSAPP ===== */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
+  background: #1e88e5;
   color: #fff;
-  padding: 15px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
 }
 </style>
 </head>
 
 <body>
 
+<header>
+  <h2>WebTool – Online Tools</h2>
+</header>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <!-- NEW HERO -->
-<section class="wt-hero-wrapper">
-  <img src="images/IMG-20260111-WA0004.jpg" alt="Profile Hero" class="wt-hero-image">
-  <h1 class="wt-hero-title">
-    Building simple, functional digital tools that solve real problems
-  </h1>
-  <p class="wt-hero-subtitle">
-    Clean design. Clear data. Real usability.
-  </p>
+  <img src="images/IMG-20260111-WA0004.jpg" alt="Juma Adventures Hero">
+  <div class="hero-text">
+    <h1>Juma Adventures</h1>
+    <p>Real journeys. Real people. Experiences that go beyond travel.</p>
+    <a href="#about">Explore Gate</a>
+  </div>
 </section>
 
-<!-- SPECTACULAR GALLERY -->
-<section class="wt-story-wrapper">
+<!-- STORY / GALLERY -->
+<section class="story">
+  <div class="story-grid">
 
-  <div class="wt-story-block">
-    <img src="images/IMG-20260111-WA0004.jpg">
-    <div class="wt-story-text">
-      <h2>Where Ideas Start</h2>
-      <p>Every meaningful solution begins with understanding.</p>
+    <div class="story-card">
+      <img src="images/IMG-20260111-WA0004.jpg" alt="">
+      <div class="story-caption">
+        <h3>The Beginning</h3>
+        <p>Where every road opens into a story worth telling.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="wt-story-block reverse">
-    <img src="images/IMG-20260111-WA0006.jpg">
-    <div class="wt-story-text">
-      <h2>Turning Complexity Into Clarity</h2>
-      <p>Dashboards that surface insight instantly.</p>
+    <div class="story-card">
+      <img src="images/IMG-20260111-WA0006.jpg" alt="">
+      <div class="story-caption">
+        <h3>Into the Wild</h3>
+        <p>Unfiltered landscapes shaped by nature and time.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="wt-story-block">
-    <img src="images/IMG-20260111-WA0008.jpg">
-    <div class="wt-story-text">
-      <h2>Designed for Real People</h2>
-      <p>Usability before decoration.</p>
+    <div class="story-card">
+      <img src="images/IMG-20260111-WA0008.jpg" alt="">
+      <div class="story-caption">
+        <h3>Human Moments</h3>
+        <p>Connections that turn trips into memories.</p>
+      </div>
     </div>
-  </div>
 
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-title">
+  <div class="about-box">
     <h2>Why Juma Adventures</h2>
     <p>
-      We don’t offer ordinary trips. We craft real safari experiences that connect
-      you with Kenya’s wildlife, nature, and culture.
+      We don’t offer ordinary trips. We design experiences that connect you
+      to Kenya’s wildlife, landscapes, and people in a meaningful way.
+      Every journey is crafted with purpose, safety, and unforgettable moments.
     </p>
   </div>
-
-  <div class="features">
-    <div class="feature">
-      <h3>Local Expertise</h3>
-      <p>Led by experienced local guides with deep knowledge of the wild.</p>
-    </div>
-    <div class="feature">
-      <h3>Authentic Safaris</h3>
-      <p>From big cats to hidden landscapes, every journey is unforgettable.</p>
-    </div>
-    <div class="feature">
-      <h3>Safe & Personal</h3>
-      <p>Your comfort, safety, and experience always come first.</p>
-    </div>
-  </div>
 </section>
 
-<!-- GALLERY -->
-<section>
-  <div class="section-title">
-    <h2>Adventure Gallery</h2>
-    <p>A glimpse into the wild moments you’ll experience with us.</p>
-  </div>
-
-  <div class="gallery">
-    <img src="images/IMG-20260111-WA0039.jpg">
-    <img src="images/IMG-20260111-WA0035.jpg">
-    <img src="images/IMG-20260111-WA0033.jpg">
-    <img src="images/IMG-20260111-WA0025.jpg">
-    <img src="images/IMG-20260111-WA0021.jpg">
-    <img src="images/IMG-20260111-WA0020.jpg">
-    <img src="images/IMG-20260111-WA0018.jpg">
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Contact Juma Adventures</h2>
-  <p>📞 +254 746 011 254</p>
-  <p>✉️ jumaadventuresandsafaris@gmail.com</p>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  © 2026 Juma Adventures & Safaris |
-  <a href="#">Privacy Policy</a> |
-  <a href="#">Terms & Conditions</a>
+  © 2026 WebTool • Privacy Safe • No Image Storage
 </footer>
-
-<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">
-  WhatsApp
-</a>
 
 </body>
 </html>
