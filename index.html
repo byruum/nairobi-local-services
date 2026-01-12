@@ -33,9 +33,28 @@ h2{text-align:center;margin-bottom:20px}
 footer{background:#050505;padding:30px;text-align:center;font-size:13px;color:#aaa}
 
 .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50%;font-size:22px}
+  /* FIX TOP BAR OVERLAY ISSUE — DO NOT TOUCH OTHER FEATURES */
+.top-bar,
+.navbar,
+.header,
+.menu-bar {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: transparent !important;
+  z-index: 999;
+}
+
+/* Ensure hero stays full screen behind the bar */
+#hero,
+.hero {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 </style>
 </head>
-
 <body>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
