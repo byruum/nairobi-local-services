@@ -2,207 +2,221 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Juma Adventures</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mountain Adventures & Safaris</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #222;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#f5f5f5;color:#222}
 
-/* DASH MENU */
-.menu {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
+/* HEADER */
+header{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  background:#000;
+  color:#fff;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
 }
+header h1{font-size:18px}
 
-.menu-btn {
-  font-size: 26px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border-radius: 6px;
-  padding: 6px 12px;
-  cursor: pointer;
+/* MENU */
+.menu{
+  position:relative;
 }
-
-.menu-content {
-  display: none;
-  background: #fff;
-  margin-top: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.menu-btn{
+  font-size:22px;
+  cursor:pointer;
 }
-
-.menu-content a {
-  display: block;
-  padding: 12px 16px;
-  color: #222;
-  font-size: 14px;
-  text-decoration: none;
+.dropdown{
+  display:none;
+  position:absolute;
+  right:0;
+  top:35px;
+  background:#fff;
+  color:#000;
+  border-radius:8px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  overflow:hidden;
 }
-
-.menu-content a:hover {
-  background: #f4f4f4;
+.dropdown a{
+  display:block;
+  padding:12px 18px;
+  text-decoration:none;
+  color:#000;
+  font-size:14px;
 }
+.dropdown a:hover{background:#f0f0f0}
+.menu:hover .dropdown{display:block}
 
 /* HERO */
-.hero {
-  height: 90vh;
-  background: url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero{
+  height:100vh;
+  background:url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+.hero-content{
+  background:rgba(0,0,0,.55);
+  padding:30px;
+  border-radius:16px;
+  color:#fff;
+}
+.hero-content h2{font-size:34px;margin-bottom:15px}
+.hero-content p{font-size:16px;margin-bottom:20px}
+.explore-btn{
+  padding:12px 28px;
+  background:#ff9800;
+  color:#000;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
+/* EXPLORE */
+#explore{
+  padding:80px 20px;
+  background:#fff;
+  text-align:center;
 }
-
-.hero-content {
-  position: relative;
-  text-align: center;
-  color: #fff;
-  max-width: 720px;
-  padding: 20px;
+#explore h2{
+  font-size:28px;
+  margin-bottom:40px;
 }
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
 }
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
+.card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
-
-.btn {
-  background: #ff9800;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
 }
-
-.powered {
-  margin-top: 15px;
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.15);
-}
-
-/* SECTION */
-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-title p {
-  color: #555;
-}
-
-/* DISCLAIMER */
-.disclaimer {
-  font-size: 0.85rem;
-  color: #666;
-  text-align: center;
-  max-width: 800px;
-  margin: 40px auto 0;
+.card p{
+  padding:18px;
+  font-size:15px;
+  line-height:1.5;
 }
 
 /* FOOTER */
-footer {
-  background: #111;
-  color: #aaa;
-  text-align: center;
-  padding: 25px;
-  font-size: 0.85rem;
+footer{
+  background:#111;
+  color:#ccc;
+  padding:30px 20px;
+  text-align:center;
+  font-size:13px;
+}
+footer span{
+  display:block;
+  margin-top:8px;
+  opacity:.7;
 }
 
 /* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: #fff;
-  padding: 14px 18px;
-  border-radius: 50%;
-  font-size: 22px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 16px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 </style>
-
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("menuContent");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-</script>
 </head>
 
 <body>
 
-<!-- DASH MENU -->
-<div class="menu">
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <div class="menu-content" id="menuContent">
-    <a href="mailto:jumaadventuresandsafaris@gmail.com">Contact Support</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Service</a>
+<header>
+  <h1>Mountain Adventures & Safaris</h1>
+  <div class="menu">
+    <div class="menu-btn">☰</div>
+    <div class="dropdown">
+      <a href="#explore">Explore</a>
+      <a href="#">Contact Support</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
   </div>
-</div>
+</header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Juma Adventures</h1>
-    <p>Explore Kenya through authentic adventures guided by experience, passion, and local knowledge.</p>
-    <a href="#about" class="btn">Explore Getaways</a><br>
-    <span class="powered">Powered by WebTool</span>
+    <h2>Explore Beyond the Ordinary</h2>
+    <p>Adventure experiences crafted for nature lovers and explorers.</p>
+    <a href="#explore" class="explore-btn">Explore</a>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-title">
-    <h2>Why Travel With Juma?</h2>
-    <p>We create meaningful journeys that connect people with nature, culture, and unforgettable experiences.</p>
-  </div>
+<section id="explore">
+  <h2>Our Adventure Moments</h2>
 
-  <p class="disclaimer">
-    Disclaimer: Photos displayed on this platform are used for showcasing adventure experiences and destinations.
-    Individuals appearing in images are part of travel activities and are not used for personal representation.
-  </p>
+  <div class="gallery">
+    <div class="card">
+      <img src="images/IMG-20260111-WA0004.jpg">
+      <p>
+        A calm escape into nature where every step feels refreshing and
+        every breath reconnects you with the earth.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="images/IMG-20260111-WA0006.jpg">
+      <p>
+        Scenic trails designed for explorers who seek peace, beauty,
+        and unforgettable outdoor moments.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="images/IMG-20260111-WA0008.jpg">
+      <p>
+        Where sunsets meet adventure — moments that turn into stories
+        worth telling for a lifetime.
+      </p>
+    </div>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-© 2026 Juma Adventures. All rights reserved.
+  <p>
+    Disclaimer: Photos shown are for adventure service illustration purposes only.
+  </p>
+  <span>Powered by Webtool</span>
 </footer>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/254705283274" target="_blank">💬</a>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener("click",e=>{
+    const target=document.querySelector(link.getAttribute("href"));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:"smooth"});
+    }
+  });
+});
+</script>
 
 </body>
 </html>
