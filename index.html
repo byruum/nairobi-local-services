@@ -2,164 +2,194 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Juma Adventures & Safaris | Explore With Confidence</title>
+<title>Juma Adventures & Safaris</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0b0b;color:#eee}
-a{text-decoration:none;color:inherit}
-header{position:relative;height:100vh;background:url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat}
-header::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6)}
-.hero{position:relative;z-index:2;text-align:center;top:50%;transform:translateY(-50%);padding:20px}
-.hero h1{font-size:3rem;margin-bottom:15px}
-.hero p{max-width:700px;margin:auto;font-size:1.1rem;color:#ddd}
-.hero a{display:inline-block;margin-top:25px;padding:14px 34px;background:#e11d48;border-radius:30px;font-weight:bold}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
 
-.menu-btn{position:fixed;top:20px;left:20px;font-size:28px;cursor:pointer;z-index:1000}
-nav{position:fixed;top:0;left:-260px;width:260px;height:100%;background:#111;padding:30px;transition:.3s;z-index:999}
-nav a{display:block;margin:20px 0;color:#ddd;font-weight:bold}
-nav.active{left:0}
-
-section{padding:80px 20px;max-width:1100px;margin:auto}
-h2{text-align:center;margin-bottom:20px}
-.sub{text-align:center;color:#aaa;margin-bottom:50px}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.card{background:#151515;border-radius:12px;overflow:hidden}
-.card img{width:100%;height:230px;object-fit:cover}
-.card div{padding:20px}
-.card h3{margin-top:0}
-
-footer{background:#050505;padding:30px;text-align:center;font-size:13px;color:#aaa}
-
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50%;font-size:22px}
-  /* FIX TOP BAR OVERLAY ISSUE — DO NOT TOUCH OTHER FEATURES */
-.top-bar,
-.navbar,
-.header,
-.menu-bar {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  background: transparent !important;
-  z-index: 999;
+/* ===== MENU BUTTON ===== */
+.menu-btn{
+  position:fixed;
+  top:20px;
+  left:20px;
+  z-index:10000;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-/* Ensure hero stays full screen behind the bar */
-#hero,
-.hero {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+/* ===== SIDEBAR NAV (OVERLAY) ===== */
+nav{
+  position:fixed;
+  top:0;
+  left:-260px;
+  width:260px;
+  height:100vh;
+  background:rgba(0,0,0,.8);
+  backdrop-filter:blur(6px);
+  z-index:9999;
+  transition:.3s;
+}
+nav.active{left:0}
+nav a{
+  display:block;
+  color:#fff;
+  padding:16px;
+  text-decoration:none;
+}
+nav a:hover{background:rgba(255,255,255,.1)}
+
+/* ===== HERO ===== */
+header{
+  height:100vh;
+  background:url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
+  position:relative;
+}
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+.hero{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+.hero h1{font-size:3rem;margin-bottom:15px}
+.hero p{max-width:700px;font-size:1.1rem}
+.hero a{
+  margin-top:20px;
+  padding:14px 26px;
+  background:#00c853;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+/* ===== SECTIONS ===== */
+section{padding:70px 20px;max-width:1100px;margin:auto}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:2.2rem;margin-bottom:10px}
+
+/* ===== STORY / PHOTOS ===== */
+.wt-story-block{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-bottom:60px;
+}
+.wt-story-block img{
+  width:100%;
+  border-radius:14px;
+}
+.wt-story-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+@media(max-width:768px){
+  .wt-story-block{grid-template-columns:1fr}
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:.9rem;
+  color:#666;
+}
+footer small{display:block;margin-top:10px}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  z-index:10000;
 }
 </style>
 </head>
+
 <body>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <nav id="menu">
+  <a href="#hero">Home</a>
   <a href="#about">About</a>
-  <a href="#why">Why Juma</a>
-  <a href="#explore">Explore</a>
-  <a href="mailto:jumaadventuresandsafaris@gmail.com">Support</a>
-  <a href="#">Privacy Policy</a>
-  <a href="#">Terms of Service</a>
+  <a href="#gallery">Explore</a>
+  <a href="#">Privacy</a>
+  <a href="#">Terms</a>
 </nav>
 
-<header>
+<header id="hero">
   <div class="hero">
-    <h1>Adventure With Juma</h1>
-    <p>
-      Discover Kenya’s wild beauty through authentic, guided adventures crafted
-      for explorers who want more than just a trip — an experience.
-    </p>
-    <a href="#explore">Explore Adventures</a>
+    <h1>Juma Adventures & Safaris</h1>
+    <p>Authentic Kenyan adventures — nature, wildlife and unforgettable journeys.</p>
+    <a href="#gallery">Scroll to Explore</a>
   </div>
 </header>
 
 <section id="about">
-<h2>About Juma Adventures</h2>
-<p class="sub">
-Juma Adventures & Safaris is built on passion for nature, culture, and unforgettable
-journeys. Every experience is guided with care, safety, and deep local knowledge.
-</p>
+  <div class="section-title">
+    <h2>Why Juma Adventures</h2>
+    <p>We don’t offer ordinary trips — we create meaningful experiences.</p>
+  </div>
 </section>
 
-<section id="why">
-<h2>Why Choose Juma</h2>
-<div class="grid">
-<div class="card"><div>
-<h3>Authentic Experiences</h3>
-<p>Each adventure is carefully planned to showcase real landscapes, real stories,
-and real moments.</p>
-</div></div>
-<div class="card"><div>
-<h3>Local Expertise</h3>
-<p>Led by experienced guides who understand the land, the routes, and the rhythm of nature.</p>
-</div></div>
-<div class="card"><div>
-<h3>Safety & Comfort</h3>
-<p>Your journey is handled responsibly with attention to safety, timing, and enjoyment.</p>
-</div></div>
-</div>
-</section>
+<section id="gallery">
+  <div class="wt-story-block">
+    <img src="images/IMG-20260111-WA0004.jpg">
+    <div class="wt-story-text">
+      <h3>Nature at its Purest</h3>
+      <p>Moments where landscapes speak louder than words.</p>
+    </div>
+  </div>
 
-<section id="explore">
-<h2>Explore Our Adventures</h2>
-<p class="sub">Moments captured during unforgettable journeys across Kenya.</p>
+  <div class="wt-story-block">
+    <img src="images/IMG-20260111-WA0006.jpg">
+    <div class="wt-story-text">
+      <h3>Real Adventures</h3>
+      <p>Journeys crafted for people who want more than photos.</p>
+    </div>
+  </div>
 
-<div class="grid">
-<div class="card">
-<img src="images/IMG-20260111-WA0004.jpg">
-<div>
-<h3>Sunrise Trails</h3>
-<p>Early morning hikes where silence, mist, and golden light create unforgettable calm.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0006.jpg">
-<div>
-<h3>Untouched Paths</h3>
-<p>Hidden routes that lead to breathtaking views rarely seen by ordinary travelers.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0008.jpg">
-<div>
-<h3>Nature Encounters</h3>
-<p>Moments where adventure meets peace, reminding you why exploration matters.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0019.jpg">
-<div>
-<h3>Adventure Spirit</h3>
-<p>Captured joy and determination that defines every journey with Juma Adventures.</p>
-</div>
-</div>
-</div>
+  <div class="wt-story-block">
+    <img src="images/IMG-20260111-WA0008.jpg">
+    <div class="wt-story-text">
+      <h3>Stories Worth Telling</h3>
+      <p>Every trip becomes a memory you carry for life.</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Juma Adventures & Safaris • All rights reserved</p>
-<p style="margin-top:6px">
-Disclaimer: Photos shown belong to individual adventurers and are used solely to showcase adventure experiences.
-</p>
-<p style="margin-top:8px">
-Powered by <a href="https://webtool.co.ke">WebTool</a>
-</p>
+  Powered by <strong>WebTool</strong>
+  <small>Photos shown are for demonstration of adventure services only.</small>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/254746011254" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/254705283274" target="_blank">WhatsApp</a>
 
 <script>
 function toggleMenu(){
- document.getElementById("menu").classList.toggle("active");
+  document.getElementById("menu").classList.toggle("active");
 }
 </script>
 
