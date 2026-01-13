@@ -8,7 +8,7 @@
 <style>
 body{
   margin:0;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family:"Segoe UI", Arial, sans-serif;
   background:#f4f4f4;
   color:#333;
 }
@@ -20,13 +20,11 @@ body{
   right:20px;
   z-index:1000;
 }
-
 .menu-btn{
   font-size:32px;
   color:white;
   cursor:pointer;
 }
-
 .menu-box{
   display:none;
   background:#111;
@@ -34,7 +32,6 @@ body{
   overflow:hidden;
   margin-top:8px;
 }
-
 .menu-box a{
   display:block;
   padding:12px 18px;
@@ -42,41 +39,34 @@ body{
   text-decoration:none;
   font-size:14px;
 }
-
-.menu-box a:hover{
-  background:#d60000;
-}
+.menu-box a:hover{ background:#d60000; }
 
 /* ===== GATE ===== */
 #gate{
   min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
     url("images/IMG-20260111-WA0001.jpg") center/cover no-repeat;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   padding:40px 20px;
   color:white;
 }
-
 .gate-box{
   max-width:950px;
   text-align:center;
 }
-
 .gate-box h1{
   font-size:3.7rem;
   margin-bottom:25px;
 }
-
 .gate-box p{
   font-size:1.4rem;
   line-height:1.9;
   color:#ededed;
   margin-bottom:45px;
 }
-
 .gate-box button{
   padding:24px 75px;
   font-size:1.45rem;
@@ -88,7 +78,6 @@ body{
   cursor:pointer;
   transition:.3s;
 }
-
 .gate-box button:hover{
   background:#ff1a1a;
   transform:scale(1.08);
@@ -103,21 +92,18 @@ header{
   padding:55px 20px;
   text-align:center;
 }
-
 section{
   padding:65px 20px;
-  max-width:1200px;
+  max-width:1250px;
   margin:auto;
 }
-
 h2{
   text-align:center;
-  font-size:2.2rem;
+  font-size:2.3rem;
   margin-bottom:20px;
 }
-
 .text{
-  max-width:900px;
+  max-width:950px;
   margin:auto;
   text-align:center;
   font-size:1.15rem;
@@ -130,27 +116,23 @@ h2{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  margin-top:35px;
+  margin-top:40px;
 }
-
 .card{
   background:white;
   border-radius:14px;
   overflow:hidden;
   box-shadow:0 8px 18px rgba(0,0,0,.12);
 }
-
 .card img{
   width:100%;
   height:220px;
   object-fit:cover;
 }
-
 .card h3{
   padding:14px;
   margin:0;
 }
-
 .card p{
   padding:0 14px 18px;
   font-size:14px;
@@ -166,11 +148,7 @@ h2{
   text-align:center;
   padding:95px 20px;
 }
-
-.cta h2{
-  font-size:2.8rem;
-}
-
+.cta h2{ font-size:2.8rem; }
 .cta p{
   font-size:1.3rem;
   max-width:850px;
@@ -206,9 +184,8 @@ footer{
     <h1>Ready to experience Kenya with Juma Adventures?</h1>
     <p>
       Discover authentic safaris, breathtaking landscapes, and unforgettable
-      journeys crafted for true explorers. From the golden savannahs to hidden
-      natural wonders, every adventure is designed to leave you with stories
-      worth telling.
+      journeys crafted for true explorers. From wild savannahs to quiet
+      highlands, every experience tells a story worth remembering.
     </p>
     <button onclick="enterSite()">Explore</button>
   </div>
@@ -225,50 +202,62 @@ footer{
 <section>
   <h2>Our Story</h2>
   <p class="text">
-    Juma Adventures was born from a passion for exploration, wildlife,
-    and meaningful travel. Every journey shared here reflects real
-    experiences from the heart of Kenya.
+    Juma Adventures captures the raw beauty of Kenya through real journeys,
+    wildlife encounters, and untamed landscapes — inviting you to explore
+    beyond the ordinary.
   </p>
 </section>
 
 <section>
-  <h2>Adventure Gallery</h2>
+  <h2>Adventure & Wildlife Gallery</h2>
   <div class="gallery">
 
     <div class="card">
       <img src="images/IMG-20260111-WA0001.jpg">
-      <h3>The First Step</h3>
-      <p>Every great journey begins with curiosity.</p>
+      <h3>The Journey Begins</h3>
+      <p>Every adventure starts with a single step into the unknown.</p>
     </div>
 
     <div class="card">
       <img src="images/IMG-20260111-WA0003.jpg">
-      <h3>Open Horizons</h3>
-      <p>Roads that lead beyond the ordinary.</p>
+      <h3>Endless Roads</h3>
+      <p>Paths that lead to discovery and freedom.</p>
     </div>
 
     <div class="card">
       <img src="images/IMG-20260111-WA0004.jpg">
-      <h3>Highland Calm</h3>
-      <p>Moments of peace above the noise.</p>
+      <h3>Highland Views</h3>
+      <p>Cool air, wide skies, and peaceful moments.</p>
     </div>
 
     <div class="card">
       <img src="images/IMG-20260111-WA0005.jpg">
-      <h3>Golden Light</h3>
-      <p>Nature at its most poetic.</p>
+      <h3>Golden Landscapes</h3>
+      <p>Nature painted in warm tones and light.</p>
     </div>
 
     <div class="card">
       <img src="images/IMG-20260111-WA0006.jpg">
-      <h3>Wild Encounters</h3>
-      <p>Life in its raw and untamed form.</p>
+      <h3>Safari Moments</h3>
+      <p>Wildlife living freely in its natural rhythm.</p>
     </div>
 
     <div class="card">
       <img src="images/IMG-20260111-WA0007.jpg">
-      <h3>Untouched Beauty</h3>
-      <p>Where nature remains in control.</p>
+      <h3>Untamed Kenya</h3>
+      <p>Where nature remains raw and powerful.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/IMG-20260111-WA0008.jpg">
+      <h3>Wild Encounters</h3>
+      <p>Close moments with Kenya’s iconic wildlife.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/IMG-20260111-WA0026.jpg">
+      <h3>Nature’s Silence</h3>
+      <p>A calm reminder of the balance of the wild.</p>
     </div>
 
   </div>
@@ -278,7 +267,7 @@ footer{
   <h2>Do you want to experience Kenya?</h2>
   <p>
     Or do you want something deeper — a journey that stays with you long
-    after the adventure ends? Juma Adventures invites you to explore more.
+    after the road ends? Juma Adventures invites you to explore more.
   </p>
 </section>
 
@@ -294,10 +283,9 @@ function enterSite(){
   document.getElementById("gate").style.display="none";
   document.getElementById("content").style.display="block";
 }
-
 function toggleMenu(){
-  const menu=document.getElementById("menuBox");
-  menu.style.display = menu.style.display==="block" ? "none" : "block";
+  const m=document.getElementById("menuBox");
+  m.style.display = m.style.display==="block" ? "none" : "block";
 }
 </script>
 
