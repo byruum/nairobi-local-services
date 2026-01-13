@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ===== GENERAL ===== */
 body{
   margin:0;
   font-family: "Segoe UI", Arial, sans-serif;
@@ -14,40 +13,73 @@ body{
   color:#333;
 }
 
-/* ===== GATE / STORY PAGE ===== */
+/* ===== DASHBOARD ===== */
+.menu{
+  position:fixed;
+  top:18px;
+  right:20px;
+  z-index:1000;
+}
+
+.menu-btn{
+  font-size:32px;
+  color:white;
+  cursor:pointer;
+}
+
+.menu-box{
+  display:none;
+  background:#111;
+  border-radius:8px;
+  overflow:hidden;
+  margin-top:8px;
+}
+
+.menu-box a{
+  display:block;
+  padding:12px 18px;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.menu-box a:hover{
+  background:#d60000;
+}
+
+/* ===== GATE ===== */
 #gate{
   min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),
-    url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),
+    url("images/IMG-20260111-WA0001.jpg") center/cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
-  color:white;
   padding:40px 20px;
+  color:white;
 }
 
 .gate-box{
-  max-width:900px;
+  max-width:950px;
+  text-align:center;
 }
 
 .gate-box h1{
-  font-size:3.6rem;
-  margin-bottom:20px;
-  line-height:1.2;
+  font-size:3.7rem;
+  margin-bottom:25px;
 }
 
 .gate-box p{
-  font-size:1.5rem;
-  line-height:1.7;
+  font-size:1.4rem;
+  line-height:1.9;
+  color:#ededed;
   margin-bottom:45px;
-  color:#f0f0f0;
 }
 
-/* EXPLORE BUTTON */
 .gate-box button{
-  padding:22px 75px;
-  font-size:1.4rem;
+  padding:24px 75px;
+  font-size:1.45rem;
   font-weight:bold;
   background:#d60000;
   color:white;
@@ -63,72 +95,40 @@ body{
 }
 
 /* ===== MAIN CONTENT ===== */
-#content{
-  display:none;
-}
+#content{ display:none; }
 
 header{
   background:#111;
   color:white;
+  padding:55px 20px;
   text-align:center;
-  padding:50px 20px;
 }
 
 section{
-  padding:60px 20px;
-  max-width:1100px;
+  padding:65px 20px;
+  max-width:1200px;
   margin:auto;
 }
 
 h2{
   text-align:center;
-  margin-bottom:25px;
+  font-size:2.2rem;
+  margin-bottom:20px;
 }
 
 .text{
-  text-align:center;
-  max-width:850px;
+  max-width:900px;
   margin:auto;
-  font-size:1.1rem;
+  text-align:center;
+  font-size:1.15rem;
   line-height:1.8;
   color:#555;
 }
 
-/* ===== 3-BAR DASHBOARD ===== */
-.dash{
-  max-width:700px;
-  margin:40px auto 0;
-}
-
-.dash-item{
-  background:white;
-  border-radius:12px;
-  padding:22px;
-  margin-bottom:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 5px 12px rgba(0,0,0,.12);
-}
-
-.dash-item span{
-  font-size:1.1rem;
-  font-weight:600;
-}
-
-.dash-item button{
-  background:#d60000;
-  color:white;
-  border:none;
-  padding:10px 18px;
-  border-radius:20px;
-  cursor:pointer;
-}
-
 /* ===== GALLERY ===== */
-.cards{
+.gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
   margin-top:35px;
 }
@@ -137,7 +137,7 @@ h2{
   background:white;
   border-radius:14px;
   overflow:hidden;
-  box-shadow:0 6px 15px rgba(0,0,0,.12);
+  box-shadow:0 8px 18px rgba(0,0,0,.12);
 }
 
 .card img{
@@ -147,184 +147,146 @@ h2{
 }
 
 .card h3{
-  padding:12px;
+  padding:14px;
+  margin:0;
 }
 
 .card p{
-  padding:0 12px 20px;
+  padding:0 14px 18px;
   font-size:14px;
   color:#555;
 }
 
-/* ===== FINAL CTA ===== */
+/* ===== CTA ===== */
 .cta{
-  background:#111;
+  background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),
+    url("images/IMG-20260111-WA0007.jpg") center/cover no-repeat;
   color:white;
   text-align:center;
-  padding:80px 20px;
+  padding:95px 20px;
 }
 
 .cta h2{
-  font-size:2.4rem;
-  margin-bottom:20px;
+  font-size:2.8rem;
 }
 
 .cta p{
-  font-size:1.2rem;
-  max-width:700px;
-  margin:auto;
-  color:#ddd;
+  font-size:1.3rem;
+  max-width:850px;
+  margin:25px auto 0;
 }
 
 /* ===== FOOTER ===== */
 footer{
-  background:#000;
+  background:#111;
   color:#aaa;
-  text-align:center;
-  padding:20px;
+  padding:30px 15px;
   font-size:13px;
-}
-
-/* ===== MODALS ===== */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-.modal-box{
-  background:white;
-  max-width:700px;
-  padding:25px;
-  border-radius:10px;
-}
-
-.close{
-  float:right;
-  cursor:pointer;
-  color:#d60000;
-  font-weight:bold;
+  text-align:center;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== STORY GATE ===== -->
+<!-- DASHBOARD -->
+<div class="menu">
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="menu-box" id="menuBox">
+    <a href="#">Contact Support</a>
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+  </div>
+</div>
+
+<!-- GATE -->
 <div id="gate">
   <div class="gate-box">
-    <h1>Every Journey Begins With a Story</h1>
+    <h1>Ready to experience Kenya with Juma Adventures?</h1>
     <p>
-      Juma Adventures was born from a simple idea — that travel should
-      feel real. Not rushed. Not staged. But deeply human.
-      From Kenya’s wild landscapes to unforgettable wildlife encounters,
-      every step is an invitation to experience nature the way it was
-      meant to be felt.
+      Discover authentic safaris, breathtaking landscapes, and unforgettable
+      journeys crafted for true explorers. From the golden savannahs to hidden
+      natural wonders, every adventure is designed to leave you with stories
+      worth telling.
     </p>
     <button onclick="enterSite()">Explore</button>
   </div>
 </div>
 
-<!-- ===== MAIN SITE ===== -->
+<!-- CONTENT -->
 <div id="content">
 
 <header>
-  <h1>Juma Adventures</h1>
-  <p>Discover • Experience • Remember</p>
+  <h1>Welcome to Juma Adventures</h1>
+  <p>Nature • Wildlife • Experience</p>
 </header>
 
 <section>
-  <h2>Quick Access</h2>
-  <div class="dash">
-    <div class="dash-item">
-      <span>Contact & Support</span>
-      <button onclick="openModal('support')">Open</button>
-    </div>
-    <div class="dash-item">
-      <span>Terms & Conditions</span>
-      <button onclick="openModal('terms')">View</button>
-    </div>
-    <div class="dash-item">
-      <span>Privacy Policy</span>
-      <button onclick="openModal('privacy')">Read</button>
-    </div>
-  </div>
+  <h2>Our Story</h2>
+  <p class="text">
+    Juma Adventures was born from a passion for exploration, wildlife,
+    and meaningful travel. Every journey shared here reflects real
+    experiences from the heart of Kenya.
+  </p>
 </section>
 
 <section>
-  <h2>Our Adventures</h2>
-  <div class="cards">
+  <h2>Adventure Gallery</h2>
+  <div class="gallery">
+
+    <div class="card">
+      <img src="images/IMG-20260111-WA0001.jpg">
+      <h3>The First Step</h3>
+      <p>Every great journey begins with curiosity.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/IMG-20260111-WA0003.jpg">
+      <h3>Open Horizons</h3>
+      <p>Roads that lead beyond the ordinary.</p>
+    </div>
+
     <div class="card">
       <img src="images/IMG-20260111-WA0004.jpg">
-      <h3>Mountain Escape</h3>
-      <p>Quiet trails, open skies, and moments of pure connection.</p>
+      <h3>Highland Calm</h3>
+      <p>Moments of peace above the noise.</p>
     </div>
+
+    <div class="card">
+      <img src="images/IMG-20260111-WA0005.jpg">
+      <h3>Golden Light</h3>
+      <p>Nature at its most poetic.</p>
+    </div>
+
     <div class="card">
       <img src="images/IMG-20260111-WA0006.jpg">
-      <h3>Safari Discovery</h3>
-      <p>Where wildlife meets wonder in the heart of Africa.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Wildlife & Nature</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/IMG-20260111-WA0008.jpg">
       <h3>Wild Encounters</h3>
-      <p>Unfiltered moments captured in the natural world.</p>
+      <p>Life in its raw and untamed form.</p>
     </div>
+
     <div class="card">
-      <img src="images/IMG-20260111-WA0026.jpg">
-      <h3>Nature’s Calm</h3>
-      <p>Peaceful scenes reminding us to slow down.</p>
+      <img src="images/IMG-20260111-WA0007.jpg">
+      <h3>Untouched Beauty</h3>
+      <p>Where nature remains in control.</p>
     </div>
+
   </div>
 </section>
 
 <section class="cta">
-  <h2>Do You Want to Experience Kenya?</h2>
+  <h2>Do you want to experience Kenya?</h2>
   <p>
-    Not as a tourist — but as a traveler.
-    Let Juma Adventures guide you through stories,
-    landscapes, and moments you’ll never forget.
+    Or do you want something deeper — a journey that stays with you long
+    after the adventure ends? Juma Adventures invites you to explore more.
   </p>
 </section>
 
 <footer>
-  © 2026 Juma Adventures · Powered by <strong>Webtool</strong>
+  © 2026 Juma Adventures · Powered by <strong>Webtool</strong><br>
+  Disclaimer: This website is for showcase and storytelling purposes only.
 </footer>
 
-</div>
-
-<!-- ===== MODALS ===== -->
-<div id="support" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeModal('support')">✕</span>
-    <h3>Contact & Support</h3>
-    <p>For inquiries, bookings, or support, please reach out via our official communication channels.</p>
-  </div>
-</div>
-
-<div id="terms" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeModal('terms')">✕</span>
-    <h3>Terms & Conditions</h3>
-    <p>All experiences are subject to availability and conditions. Content is for informational purposes.</p>
-  </div>
-</div>
-
-<div id="privacy" class="modal">
-  <div class="modal-box">
-    <span class="close" onclick="closeModal('privacy')">✕</span>
-    <h3>Privacy Policy</h3>
-    <p>No personal data is collected unless voluntarily provided.</p>
-  </div>
 </div>
 
 <script>
@@ -332,11 +294,10 @@ function enterSite(){
   document.getElementById("gate").style.display="none";
   document.getElementById("content").style.display="block";
 }
-function openModal(id){
-  document.getElementById(id).style.display="flex";
-}
-function closeModal(id){
-  document.getElementById(id).style.display="none";
+
+function toggleMenu(){
+  const menu=document.getElementById("menuBox");
+  menu.style.display = menu.style.display==="block" ? "none" : "block";
 }
 </script>
 
