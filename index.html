@@ -3,225 +3,289 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juma Adventures & Safaris</title>
+<title>Juma Adventures | Experience Kenya</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+body { background: #f4f4f4; color: #222; }
 
-body {
-  background: #f4f4f4;
-  color: #333;
-}
-
-/* NAVBAR */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  background: rgba(0,0,0,0.6);
-}
-
-.navbar img {
-  height: 40px;
-}
-
-.navbar a {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* HERO */
+/* ===== HERO ===== */
 .hero {
   height: 100vh;
-  background: url("images/IMG-20260111-WA0013.jpg") center/cover no-repeat;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+    url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-
-.hero-content {
-  position: relative;
-  color: #fff;
   text-align: center;
-  z-index: 2;
   padding: 20px;
 }
 
-.hero-content h1 {
-  font-size: 42px;
+.hero h1 {
+  color: #fff;
+  font-size: 2.6rem;
   margin-bottom: 15px;
 }
 
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 25px;
+.hero p {
+  color: #eee;
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto 25px;
 }
 
-.hero-content a {
-  background: #ff9800;
+.explore-btn {
+  background: #c62828;
   color: #fff;
-  padding: 12px 30px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
-/* SECTION */
+.explore-btn:hover { background: #b71c1c; }
+
+/* ===== DASHBOARD ===== */
+.menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: #111;
+  padding: 60px 20px;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.nav.show { left: 0; }
+
+/* ===== CONTENT ===== */
 .section {
-  padding: 70px 20px;
-  background: #fff;
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .section h2 {
-  text-align: center;
-  font-size: 30px;
   margin-bottom: 25px;
+  text-align: center;
 }
 
-/* GRID */
+/* ===== GALLERY ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  max-width: 1200px;
-  margin: auto;
 }
 
 .card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
 }
 
-/* FOOTER */
-footer {
-  background: #111;
-  color: #fff;
-  padding: 30px 20px;
-  text-align: center;
+.card .text {
+  padding: 15px;
 }
 
-footer a {
-  color: #ff9800;
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #111;
+  color: #ccc;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ===== FLOATING WHATSAPP LOGO (TOP RIGHT) ===== */
+.floating-logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
 }
 
-/* FLOATING WHATSAPP */
-.floating-logo {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 999;
-}
-
 .floating-logo img {
-  width: 55px;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <img src="images/logo.png" alt="Juma Adventures Logo">
-  <div>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </div>
+<!-- DASHBOARD -->
+<div class="menu" onclick="toggleNav()">☰</div>
+<div class="nav" id="nav">
+  <a href="mailto:jumaadventuresandsafaris@gmail.com">Email Us</a>
+  <a href="#terms">Terms</a>
+  <a href="#privacy">Privacy</a>
 </div>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <h1>Experience Kenya Like Never Before</h1>
-    <p>Safaris, hiking, beach escapes & unforgettable adventures</p>
-    <a href="#gallery">Explore Adventures</a>
+<section class="hero">
+  <div>
+    <h1>Ready to experience Kenya with Juma Adventures?</h1>
+    <p>
+      Authentic hiking tours, mountain expeditions, rock climbing adventures,
+      and wildlife safari experiences across Kenya.
+    </p>
+    <button class="explore-btn" onclick="enterSite()">Explore</button>
   </div>
+</section>
+
+<!-- EXPLORE CONTENT -->
+<div id="content" style="display:none;">
+
+<section class="section">
+<h2>Mountain & Hiking Experiences</h2>
+<div class="grid">
+
+<div class="card">
+<img src="images/IMG-20260111-WA0001.jpg">
+<div class="text">
+<h3>Hiking Experience</h3>
+<p>Guided hiking experience through scenic mountain trails.</p>
+</div>
 </div>
 
-<!-- GOOGLE DRIVE GALLERY -->
-<section id="gallery" class="section">
-  <h2>Latest Uploads</h2>
-  <div id="drive-gallery" class="grid"></div>
+<div class="card">
+<img src="images/IMG-20260111-WA0003.jpg">
+<div class="text">
+<h3>Mountain Expedition</h3>
+<p>A rewarding mountain expedition for adventure seekers.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0004.jpg">
+<div class="text">
+<h3>Rock Climbing Adventure</h3>
+<p>Rock climbing experience guided by local experts.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0006.jpg">
+<div class="text">
+<h3>Outdoor Adventure</h3>
+<p>Authentic outdoor adventure moments.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0008.jpg">
+<div class="text">
+<h3>Nature Exploration</h3>
+<p>Exploring Kenya’s beautiful landscapes.</p>
+</div>
+</div>
+
+</div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <p style="text-align:center">
-    Email: <a href="mailto:jumaadventuresandsafaris@gmail.com">
-    jumaadventuresandsafaris@gmail.com</a>
-  </p>
+<section class="section">
+<h2>Safari Gallery</h2>
+<div class="grid">
+
+<div class="card">
+<img src="images/IMG-20260111-WA0026.jpg">
+<div class="text">
+<h3>Wildlife Safari</h3>
+<p>Masai Mara National Reserve</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0033.jpg">
+<div class="text">
+<h3>Wildlife Safari</h3>
+<p>Amboseli National Park</p>
+</div>
+</div>
+
+</div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Juma Adventures & Safaris</p>
-  <p>Powered by WebTool</p>
+<section class="section" style="text-align:center;">
+<h2>Do you want to experience Kenya?</h2>
+<p>Let Juma Adventures guide your next hiking, expedition, or safari journey.</p>
+</section>
+
+</div>
+
+<footer id="privacy">
+<p>Privacy Policy | Terms & Conditions</p>
+<p>Contact: jumaadventuresandsafaris@gmail.com</p>
+<p>Powered by WebTool</p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
+<!-- FLOATING WHATSAPP LOGO -->
 <a
-  href="https://wa.me/254746011252"
-  target="_blank"
-  class="floating-logo"
+href="https://wa.me/254746011254?text=Hello%20Juma%20Adventures,%20I%20would%20like%20to%20book%20an%20adventure."
+target="_blank"
+class="floating-logo"
+title="Chat with Juma Adventures on WhatsApp"
 >
-  <img src="images/whatsapp-logo.png" alt="WhatsApp">
+<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" alt="Juma Adventures Logo">
 </a>
 
-<!-- GOOGLE DRIVE SCRIPT -->
 <script>
-const FOLDER_ID = "1QEzKsqU5KuKqleDbyKeneMiu0Zev9WBQ";
-const API_KEY = "PASTE_YOUR_GOOGLE_API_KEY_HERE";
+function enterSite() {
+  document.querySelector('.hero').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+}
 
-fetch(
-  `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fields=files(id,name,mimeType)&key=${API_KEY}`
-)
-.then(res => res.json())
-.then(data => {
-  const gallery = document.getElementById("drive-gallery");
-  data.files.forEach(file => {
-    if (file.mimeType.startsWith("image/")) {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      const img = document.createElement("img");
-      img.src = `https://drive.google.com/uc?id=${file.id}`;
-
-      card.appendChild(img);
-      gallery.appendChild(card);
-    }
-  });
-});
+function toggleNav() {
+  document.getElementById('nav').classList.toggle('show');
+}
 </script>
 
 </body>
