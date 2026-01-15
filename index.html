@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Juma Adventures | Experience Kenya</title>
 
+<link rel="canonical" href="https://jumaadventure.webtool.co.ke">
+
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-
 body { background: #f4f4f4; color: #222; }
 
 /* ===== HERO ===== */
@@ -25,7 +26,7 @@ body { background: #f4f4f4; color: #222; }
 
 .hero h1 {
   color: #fff;
-  font-size: 2.4rem;
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
   margin-bottom: 15px;
 }
 
@@ -133,49 +134,55 @@ footer {
   font-size: 0.85rem;
 }
 
-/* ===== FLOATING LOGO & CONTACT ===== */
-.floating-logo {
+/* ===== FLOATING EMAIL ===== */
+.floating-email {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-}
-
-.floating-logo img {
-  width: 64px;
-  height: 64px;
+  bottom: 110px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-  background: #fff;
-  padding: 6px;
-}
-
-.contact-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 9999;
-}
-
-.contact-float a {
-  width: 56px;
-  height: 56px;
   background: #111;
   color: #fff;
-  text-decoration: none;
-  border-radius: 50%;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
 }
 
-.contact-float a:hover {
+.floating-email:hover {
   background: #c62828;
+}
+
+/* ===== FLOATING BRAND LOGO (WHATSAPP) ===== */
+.floating-logo {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.floating-logo:hover {
+  transform: scale(1.06);
+}
+
+.floating-logo img {
+  width: 90%;
+  height: auto;
+  border-radius: 50%;
 }
 </style>
 </head>
@@ -202,7 +209,7 @@ footer {
   </div>
 </section>
 
-<!-- EXPLORE CONTENT -->
+<!-- EXPLORE CONTENT (GATED) -->
 <div id="content" style="display:none;">
 
   <section class="section">
@@ -272,16 +279,22 @@ footer {
   <p>Powered by WebTool</p>
 </footer>
 
-<!-- FLOATING BRAND LOGO -->
-<div class="floating-logo">
-  <img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" alt="Juma Adventures Logo">
-</div>
+<!-- FLOATING EMAIL -->
+<a
+  href="mailto:jumaadventuresandsafaris@gmail.com"
+  class="floating-email"
+  title="Email Juma Adventures"
+>✉</a>
 
-<!-- FLOATING CONTACT -->
-<div class="contact-float">
-  <a href="https://wa.me/254746011254" target="_blank" title="Chat on WhatsApp">💬</a>
-  <a href="mailto:info@jumaadventure.webtool.co.ke" title="Send Email">✉️</a>
-</div>
+<!-- FLOATING BRAND LOGO (WHATSAPP) -->
+<a
+  href="https://wa.me/254746011254?text=Hello%20Juma%20Adventures,%20I%20am%20interested%20in%20a%20Kenyan%20safari%20or%20adventure."
+  target="_blank"
+  class="floating-logo"
+  title="Chat with Juma Adventures on WhatsApp"
+>
+  <img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" alt="Juma Adventures Logo">
+</a>
 
 <script>
 function enterSite() {
