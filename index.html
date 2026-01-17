@@ -91,7 +91,7 @@ body { background: #f4f4f4; color: #222; }
   text-align: center;
 }
 
-/* ===== GALLERY / CARDS ===== */
+/* ===== GALLERY ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -124,6 +124,22 @@ body { background: #f4f4f4; color: #222; }
   color: #555;
 }
 
+/* ===== CTA DESTINATION ===== */
+.destination-box {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.destination-box select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
 /* ===== FOOTER ===== */
 footer {
   background: #111;
@@ -133,7 +149,7 @@ footer {
   font-size: 0.85rem;
 }
 
-/* ===== FLOATING WHATSAPP ===== */
+/* ===== FLOATING LOGO ===== */
 .floating-logo {
   position: fixed;
   top: 20px;
@@ -153,6 +169,7 @@ footer {
 .floating-logo img {
   width: 90%;
   height: 90%;
+  object-fit: cover;
   border-radius: 50%;
 }
 </style>
@@ -160,7 +177,7 @@ footer {
 
 <body>
 
-<!-- MENU -->
+<!-- DASHBOARD -->
 <div class="menu" onclick="toggleNav()">☰</div>
 <div class="nav" id="nav">
   <a href="mailto:jumaadventuresandsafaris@gmail.com">Email Us</a>
@@ -171,43 +188,73 @@ footer {
 <section class="hero">
   <div>
     <h1>Ready to experience Kenya with Juma Adventures?</h1>
-    <p>Authentic hiking tours, mountain expeditions, rock climbing adventures,
-    and wildlife safari experiences across Kenya.</p>
+    <p>
+      Authentic hiking tours, mountain expeditions, rock climbing adventures,
+      and unforgettable safari experiences across Kenya.
+    </p>
     <button class="explore-btn" onclick="enterSite()">Explore</button>
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
+<!-- CONTENT -->
 <div id="content" style="display:none;">
 
 <section class="section">
 <h2>Mountain & Hiking Experiences</h2>
 <div class="grid">
-  <div class="card"><img src="images/IMG-20260111-WA0001.jpg"><div class="text"><h3>Hiking Experience</h3><p>Scenic guided hiking trails.</p></div></div>
-  <div class="card"><img src="images/IMG-20260111-WA0003.jpg"><div class="text"><h3>Mountain Expedition</h3><p>Challenging mountain adventures.</p></div></div>
-  <div class="card"><img src="images/IMG-20260111-WA0004.jpg"><div class="text"><h3>Rock Climbing</h3><p>Expert-guided rock climbing.</p></div></div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0001.jpg">
+<div class="text">
+<h3>Guided Hiking Tours</h3>
+<p>Explore scenic mountain trails with experienced local guides.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0003.jpg">
+<div class="text">
+<h3>Mountain Expeditions</h3>
+<p>Multi-day expeditions designed for adventure lovers.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0004.jpg">
+<div class="text">
+<h3>Rock Climbing Adventures</h3>
+<p>Safe and thrilling climbing experiences guided by professionals.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0006.jpg">
+<div class="text">
+<h3>Outdoor Adventures</h3>
+<p>Authentic moments in Kenya’s great outdoors.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0008.jpg">
+<div class="text">
+<h3>Nature Exploration</h3>
+<p>Discover Kenya’s landscapes, wildlife, and culture.</p>
+</div>
+</div>
+
 </div>
 </section>
 
 <section class="section">
 <h2>Safari Gallery</h2>
 <div class="grid">
-  <div class="card"><img src="images/IMG-20260111-WA0026.jpg"><div class="text"><h3>Masai Mara</h3></div></div>
-  <div class="card"><img src="images/IMG-20260111-WA0033.jpg"><div class="text"><h3>Amboseli</h3></div></div>
-</div>
-</section>
-
-<!-- TOUR PACKAGES -->
-<section class="section">
-<h2>Tour Packages</h2>
-<div class="grid">
 
 <div class="card">
 <img src="images/IMG-20260111-WA0026.jpg">
 <div class="text">
-<h3>Masai Mara Day Trip</h3>
-<p>From KES 15,000</p>
-<button class="explore-btn" onclick="openBooking('Masai Mara Day Trip')">Book Now</button>
+<h3>Masai Mara Safari</h3>
+<p>Experience world-famous wildlife and breathtaking savannahs.</p>
 </div>
 </div>
 
@@ -215,37 +262,56 @@ footer {
 <img src="images/IMG-20260111-WA0033.jpg">
 <div class="text">
 <h3>Amboseli Safari</h3>
-<p>2 Days / 1 Night – From KES 28,000</p>
-<button class="explore-btn" onclick="openBooking('Amboseli Safari')">Book Now</button>
+<p>Witness elephants with Mount Kilimanjaro as the backdrop.</p>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- BOOKING FORM -->
-<section class="section" id="booking" style="display:none;">
-<h2>Book Your Tour</h2>
-<form onsubmit="sendBooking(event)" style="max-width:500px;margin:auto;">
-<input type="hidden" id="tourName">
-<input required placeholder="Full Name" id="name" style="width:100%;padding:12px;margin-bottom:12px;">
-<input required type="email" placeholder="Email" id="email" style="width:100%;padding:12px;margin-bottom:12px;">
-<input required placeholder="Phone / WhatsApp" id="phone" style="width:100%;padding:12px;margin-bottom:12px;">
-<input required type="date" id="date" style="width:100%;padding:12px;margin-bottom:20px;">
-<button class="explore-btn" style="width:100%;">Send Booking</button>
-</form>
+<!-- DESTINATION CTA -->
+<section class="section" style="background:#fff; border-top:1px solid #ddd;">
+<h2>Where do you want to go next?</h2>
+<p style="text-align:center; max-width:700px; margin:0 auto 25px;">
+Choose your preferred destination and let us plan a personalized adventure for you.
+</p>
+
+<div class="destination-box">
+<select id="destination">
+<option value="">Select a destination</option>
+<option>Masai Mara National Reserve</option>
+<option>Amboseli National Park</option>
+<option>Tsavo East National Park</option>
+<option>Tsavo West National Park</option>
+<option>Lake Nakuru National Park</option>
+<option>Mount Kenya</option>
+<option>Hell’s Gate National Park</option>
+<option>Diani Beach</option>
+<option>Watamu Marine Park</option>
+<option>Samburu National Reserve</option>
+<option>Custom Tour</option>
+</select>
+
+<button class="explore-btn" onclick="sendDestination()">Plan My Trip</button>
+</div>
 </section>
 
 </div>
 
 <footer id="privacy">
+<p>Privacy Policy | Terms & Conditions</p>
 <p>Contact: jumaadventuresandsafaris@gmail.com</p>
 <p>Powered by WebTool</p>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/254746011254" target="_blank" class="floating-logo">
-<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png">
+<a
+href="https://wa.me/254746011254?text=Hello%20Juma%20Adventures,%20I%20would%20like%20to%20book%20an%20adventure."
+target="_blank"
+class="floating-logo"
+title="Chat with Juma Adventures on WhatsApp"
+>
+<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" alt="Juma Adventures Logo">
 </a>
 
 <script>
@@ -258,24 +324,14 @@ function toggleNav() {
   document.getElementById('nav').classList.toggle('show');
 }
 
-function openBooking(tour) {
-  document.getElementById('tourName').value = tour;
-  document.getElementById('booking').style.display = 'block';
-  window.scrollTo({ top: booking.offsetTop, behavior: 'smooth' });
-}
-
-function sendBooking(e) {
-  e.preventDefault();
-  const t = tourName.value;
-  const n = name.value;
-  const eMail = email.value;
-  const p = phone.value;
-  const d = date.value;
-
-  const msg = `Booking Request\nTour: ${t}\nName: ${n}\nEmail: ${eMail}\nPhone: ${p}\nDate: ${d}`;
-
-  window.location.href = `mailto:jumaadventuresandsafaris@gmail.com?subject=Tour Booking&body=${encodeURIComponent(msg)}`;
-  window.open(`https://wa.me/254746011254?text=${encodeURIComponent(msg)}`, '_blank');
+function sendDestination() {
+  const place = document.getElementById("destination").value;
+  if (!place) {
+    alert("Please select a destination.");
+    return;
+  }
+  const msg = "Hello Juma Adventures, I would like to plan a trip to: " + place;
+  window.open("https://wa.me/254746011254?text=" + encodeURIComponent(msg), "_blank");
 }
 </script>
 
