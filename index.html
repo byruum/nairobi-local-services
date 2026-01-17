@@ -20,18 +20,41 @@ body { background: #f4f4f4; color: #222; }
   right: 0;
   z-index: 1002;
   display: flex;
-  gap: 10px;
   align-items: center;
-  overflow-x: auto;
-  white-space: nowrap;
 }
-.top-bar strong { margin-right: 8px; }
-.top-bar span {
-  background: #eee;
-  padding: 6px 10px;
+
+.top-bar button {
+  background: #f2f2f2;
+  border: none;
+  padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.85rem;
+}
+
+/* DESTINATION PICKER */
+.destination-picker {
+  position: fixed;
+  top: 45px;
+  left: 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  padding: 15px;
+  display: none;
+  z-index: 1003;
+  width: 260px;
+}
+
+.destination-picker span {
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.destination-picker span:hover {
+  background: #f4f4f4;
 }
 
 /* ===== HERO ===== */
@@ -49,22 +72,23 @@ body { background: #f4f4f4; color: #222; }
   position: relative;
 }
 
-/* LOGO TOP LEFT */
-.brand-logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 70px;
-  z-index: 1001;
-}
-
-/* WATERMARK */
+/* HERO WATERMARK */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: url("images/file_00000000b8a0722f94b276953bf7dc5d.png") center/280px no-repeat;
   opacity: 0.06;
+  pointer-events: none;
+}
+
+/* LOGO TOP LEFT */
+.brand-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 70px;
+  z-index: 5;
 }
 
 .hero h1 {
@@ -78,6 +102,7 @@ body { background: #f4f4f4; color: #222; }
   max-width: 760px;
   margin: 0 auto 25px;
 }
+
 .explore-btn {
   background: #c62828;
   color: #fff;
@@ -86,8 +111,9 @@ body { background: #f4f4f4; color: #222; }
   border: none;
   border-radius: 30px;
   cursor: pointer;
+  position: relative;
+  z-index: 5;
 }
-.explore-btn:hover { background: #b71c1c; }
 
 /* ===== DASHBOARD ===== */
 .menu {
@@ -99,6 +125,7 @@ body { background: #f4f4f4; color: #222; }
   cursor: pointer;
   z-index: 1003;
 }
+
 .nav {
   position: fixed;
   top: 0;
@@ -110,12 +137,14 @@ body { background: #f4f4f4; color: #222; }
   transition: 0.3s;
   z-index: 1002;
 }
+
 .nav a {
   display: block;
   color: #fff;
   text-decoration: none;
   margin-bottom: 20px;
 }
+
 .nav.show { left: 0; }
 
 /* ===== CONTENT ===== */
@@ -124,68 +153,59 @@ body { background: #f4f4f4; color: #222; }
   max-width: 1100px;
   margin: auto;
 }
-.section h2 {
-  margin-bottom: 25px;
-  text-align: center;
-}
 
-/* ===== GALLERY ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
+
 .card {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
 }
+
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
+
 .card .text {
   padding: 15px;
 }
-.card h3 { font-size: 1.05rem; margin-bottom: 6px; }
-.card p { font-size: 0.9rem; color: #555; }
 
-/* ===== PACKAGES ===== */
-.package {
-  background: #fff;
-  border-radius: 14px;
-  padding: 25px;
-  margin-bottom: 30px;
-}
-.package h3 { margin-bottom: 8px; }
-.price { color: #c62828; font-weight: bold; margin-bottom: 10px; }
-.tags span {
-  display: inline-block;
-  background: #eee;
-  padding: 5px 10px;
-  border-radius: 15px;
-  margin: 3px;
-  font-size: 0.8rem;
+/* ===== FLOATING ACTION BUTTONS ===== */
+.floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1003;
 }
 
-/* ===== CTA ===== */
-.cta {
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 50px 20px;
+.floating a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
-.cta button {
-  margin: 10px;
-  padding: 12px 28px;
-  border-radius: 30px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
+
+.floating img {
+  width: 60%;
 }
-.cta .whatsapp { background: #25D366; color: #fff; }
-.cta .email { background: #c62828; color: #fff; }
+
+/* WHATSAPP */
+.whatsapp { background: #25D366; }
+
+/* EMAIL */
+.email { background: #c62828; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -195,24 +215,6 @@ footer {
   text-align: center;
   font-size: 0.85rem;
 }
-
-/* ===== FLOATING WHATSAPP ===== */
-.floating-logo {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1003;
-}
-.floating-logo img {
-  width: 55%;
-}
 </style>
 </head>
 
@@ -220,14 +222,17 @@ footer {
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <strong>Where to?</strong>
+  <button onclick="toggleDestinations()">Where to?</button>
+</div>
+
+<!-- DESTINATION PICKER -->
+<div class="destination-picker" id="destinations">
   <span>Masai Mara</span>
   <span>Amboseli</span>
-  <span>Nairobi Park</span>
   <span>Lake Nakuru</span>
-  <span>Giraffe Centre</span>
-  <span>Mt Kenya</span>
   <span>Tsavo</span>
+  <span>Mount Kenya</span>
+  <span>Nairobi National Park</span>
 </div>
 
 <!-- DASHBOARD -->
@@ -240,129 +245,61 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" class="brand-logo" alt="Juma Adventures Logo">
+  <img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" class="brand-logo" alt="Logo">
   <div>
-    <h1>Ready to experience East Africa with Juma Adventures?</h1>
-    <p>
-      Embark on unforgettable wildlife safaris across Kenya and Tanzania —
-      from the legendary Masai Mara to thrilling mountain expeditions and
-      family-friendly adventures.
-    </p>
+    <h1>Ready to experience East Africa?</h1>
+    <p>Luxury, budget, adventure & family-friendly safaris across Kenya.</p>
     <button class="explore-btn" onclick="enterSite()">Explore</button>
   </div>
 </section>
 
 <!-- CONTENT -->
 <div id="content" style="display:none;">
-
-<section class="section">
-<h2>Destinations & Experiences</h2>
-<div class="grid">
-
-<div class="card">
-<img src="images/IMG-20260111-WA0026.jpg">
-<div class="text">
-<h3>Masai Mara National Reserve</h3>
-<p>Luxury & premium safaris featuring the Big Five and iconic savannahs.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0033.jpg">
-<div class="text">
-<h3>Amboseli National Park</h3>
-<p>Family-friendly elephant encounters with Mount Kilimanjaro views.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0008.jpg">
-<div class="text">
-<h3>Lake Nakuru National Park</h3>
-<p>Budget-friendly rhino safaris and breathtaking lake scenery.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0004.jpg">
-<div class="text">
-<h3>Giraffe Centre</h3>
-<p>Interactive wildlife experience ideal for families and short tours.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0001.jpg">
-<div class="text">
-<h3>Mount Kenya</h3>
-<p>Adventure hiking and premium mountain expeditions.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="section">
-<h2>Sample Packages</h2>
-
-<div class="package">
-<h3>Masai Mara – 3 Days / 2 Nights</h3>
-<div class="price">From $650 per person</div>
-<div class="tags">
-<span>Luxury</span><span>Premium</span><span>Family Friendly</span>
-</div>
-<p><strong>Experience:</strong> Big Five game drives, luxury lodges, professional guides.</p>
-<p><strong>Itinerary:</strong> Day 1 Nairobi–Mara | Day 2 Full safari | Day 3 Return</p>
-</div>
-
-<div class="package">
-<h3>Amboseli – 2 Days / 1 Night</h3>
-<div class="price">From $420 per person</div>
-<div class="tags">
-<span>Budget</span><span>Family Friendly</span>
-</div>
-<p><strong>Experience:</strong> Elephant herds, scenic landscapes, relaxed safari pace.</p>
-<p><strong>Itinerary:</strong> Day 1 Game drive | Day 2 Sunrise safari & return</p>
-</div>
-
-<div class="package">
-<h3>Mount Kenya Hiking – 4 Days</h3>
-<div class="price">From $780 per person</div>
-<div class="tags">
-<span>Adventure</span><span>Premium</span>
-</div>
-<p><strong>Experience:</strong> Guided climbs, alpine views, challenging trails.</p>
-<p><strong>Itinerary:</strong> Progressive ascent, summit attempt, descent</p>
-</div>
-
-</section>
-
-<section class="cta">
-<h2>Ready to plan your adventure?</h2>
-<button class="whatsapp" onclick="window.open('https://wa.me/254746011254')">WhatsApp Booking</button>
-<button class="email" onclick="window.location.href='mailto:jumaadventuresandsafaris@gmail.com'">Email Support</button>
-</section>
-
+  <section class="section">
+    <h2>Destinations & Experiences</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="images/IMG-20260111-WA0026.jpg">
+        <div class="text">
+          <h3>Masai Mara</h3>
+          <p>Premium Big Five safari experiences.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <footer id="privacy">
-<p>Privacy Policy | Terms & Conditions</p>
 <p>Contact: jumaadventuresandsafaris@gmail.com</p>
 <p>Powered by WebTool</p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/254746011254" target="_blank" class="floating-logo">
-<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" alt="WhatsApp">
-</a>
+<!-- FLOATING ICONS -->
+<div class="floating">
+  <!-- WHATSAPP -->
+  <a class="whatsapp" href="https://wa.me/254746011254" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- EMAIL -->
+  <a class="email" href="mailto:jumaadventuresandsafaris@gmail.com">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Email">
+  </a>
+</div>
 
 <script>
 function enterSite() {
-  document.querySelector('.hero').style.display = 'none';
   document.getElementById('content').style.display = 'block';
+  document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
 }
+
 function toggleNav() {
   document.getElementById('nav').classList.toggle('show');
+}
+
+function toggleDestinations() {
+  const box = document.getElementById('destinations');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
 }
 </script>
 
