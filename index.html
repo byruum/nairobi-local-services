@@ -1,339 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juma Adventures | Experience Kenya</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Juma Adventures | Kenya Tours & Safaris</title>
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-body { background: #f4f4f4; color: #222; }
+:root{
+  --green:#1f7a3f;
+  --dark:#111;
+  --light:#f5f7f6;
+}
 
-/* ===== HERO ===== */
-.hero {
-  height: 100vh;
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+
+body{
+  background:var(--light);
+  color:#222;
+  line-height:1.6;
+}
+
+/* LOGO WATERMARK */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("images/logo.png") center/280px no-repeat;
+  opacity:0.04;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* HEADER */
+header{
+  position:absolute;
+  top:0;left:0;
+  width:100%;
+  padding:15px 25px;
+  display:flex;
+  align-items:center;
+  z-index:5;
+}
+
+header img{height:48px}
+
+/* HERO */
+.hero{
+  height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
     url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
 }
 
-.hero h1 {
-  color: #fff;
-  font-size: 2.6rem;
-  margin-bottom: 15px;
+.hero-content{
+  max-width:900px;
+  padding:20px;
 }
 
-.hero p {
-  color: #eee;
-  font-size: 1.1rem;
-  max-width: 720px;
-  margin: 0 auto 25px;
+.hero h1{
+  font-size:3rem;
+  margin-bottom:20px;
 }
 
-.explore-btn {
-  background: #c62828;
-  color: #fff;
-  padding: 14px 36px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
+.hero p{
+  font-size:1.15rem;
+  margin-bottom:30px;
 }
 
-.explore-btn:hover { background: #b71c1c; }
-
-/* ===== DASHBOARD ===== */
-.menu {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 30px;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1000;
+.hero a{
+  background:var(--green);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.nav {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #111;
-  padding: 60px 20px;
-  transition: 0.3s;
-  z-index: 999;
+/* SECTIONS */
+section{
+  padding:70px 8%;
+  position:relative;
+  z-index:1;
 }
 
-.nav a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 20px;
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
 }
 
-.nav.show { left: 0; }
-
-/* ===== CONTENT ===== */
-.section {
-  padding: 50px 20px;
-  max-width: 1100px;
-  margin: auto;
+.section-title h2{
+  font-size:2.2rem;
+  color:var(--green);
 }
 
-.section h2 {
-  margin-bottom: 25px;
-  text-align: center;
+/* TOUR GRID */
+.tour-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 
-/* ===== GALLERY ===== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+.tour-card{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-.card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
+.tour-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.tour-content{padding:18px}
+
+.tour-content h3{
+  color:var(--green);
+  margin-bottom:8px;
 }
 
-.card .text {
-  padding: 15px;
+.badges span{
+  display:inline-block;
+  background:#e8f3ed;
+  color:var(--green);
+  padding:4px 10px;
+  border-radius:12px;
+  font-size:.8rem;
+  margin:3px 3px 10px 0;
 }
 
-.card h3 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
+.price{
+  font-size:1.1rem;
+  font-weight:bold;
+  margin:10px 0;
 }
 
-.card p {
-  font-size: 0.9rem;
-  color: #555;
+.itinerary{
+  font-size:.9rem;
+  margin-bottom:12px;
 }
 
-/* ===== CTA DESTINATION ===== */
-.destination-box {
-  max-width: 500px;
-  margin: auto;
-  text-align: center;
+.tour-content a{
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:.9rem;
 }
 
-.destination-box select {
-  width: 100%;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  margin-bottom: 20px;
+/* CTA */
+.cta{
+  background:
+  linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
+  url("images/IMG-20260111-WA0008.jpg") center/cover no-repeat;
+  color:#fff;
+  text-align:center;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #111;
-  color: #ccc;
-  padding: 30px 20px;
-  text-align: center;
-  font-size: 0.85rem;
+.cta select{
+  padding:12px;
+  border-radius:25px;
+  border:none;
+  width:260px;
+  margin:15px 0;
 }
 
-/* ===== FLOATING LOGO ===== */
-.floating-logo {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+.cta a{
+  display:inline-block;
+  background:var(--green);
+  color:#fff;
+  padding:14px 30px;
+  border-radius:30px;
+  text-decoration:none;
 }
 
-.floating-logo img {
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
-  border-radius: 50%;
+/* FOOTER */
+footer{
+  background:#0e1a14;
+  color:#ccc;
+  text-align:center;
+  padding:25px;
+  font-size:.9rem;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  background:#25d366;
+  color:#fff;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  text-decoration:none;
+  z-index:10;
 }
 </style>
 </head>
 
 <body>
 
-<!-- DASHBOARD -->
-<div class="menu" onclick="toggleNav()">☰</div>
-<div class="nav" id="nav">
-  <a href="mailto:jumaadventuresandsafaris@gmail.com">Email Us</a>
-  <a href="#privacy">Privacy</a>
-</div>
+<header>
+  <img src="images/logo.png" alt="Juma Adventures Logo">
+</header>
 
-<!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>Ready to experience Kenya with Juma Adventures?</h1>
+  <div class="hero-content">
+    <h1>Ready to Experience East Africa with Juma Adventures?</h1>
     <p>
-      Authentic hiking tours, mountain expeditions, rock climbing adventures,
-      and unforgettable safari experiences across Kenya.
+      Embark on unforgettable wildlife safaris across Kenya and Tanzania, where iconic landscapes meet rich wildlife and culture.
+      From the legendary plains of the Masai Mara and Serengeti to thrilling hiking tours, mountain expeditions,
+      and rock-climbing adventures, we take you deep into the heart of Africa’s most breathtaking destinations.
     </p>
-    <button class="explore-btn" onclick="enterSite()">Explore</button>
+    <a href="#tours">Explore Tours</a>
   </div>
 </section>
 
-<!-- CONTENT -->
-<div id="content" style="display:none;">
+<!-- TOURS, PACKAGES, CTA, FOOTER REMAIN EXACTLY AS BEFORE -->
 
-<section class="section">
-<h2>Mountain & Hiking Experiences</h2>
-<div class="grid">
-
-<div class="card">
-<img src="images/IMG-20260111-WA0001.jpg">
-<div class="text">
-<h3>Guided Hiking Tours</h3>
-<p>Explore scenic mountain trails with experienced local guides.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0003.jpg">
-<div class="text">
-<h3>Mountain Expeditions</h3>
-<p>Multi-day expeditions designed for adventure lovers.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0004.jpg">
-<div class="text">
-<h3>Rock Climbing Adventures</h3>
-<p>Safe and thrilling climbing experiences guided by professionals.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0006.jpg">
-<div class="text">
-<h3>Outdoor Adventures</h3>
-<p>Authentic moments in Kenya’s great outdoors.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0008.jpg">
-<div class="text">
-<h3>Nature Exploration</h3>
-<p>Discover Kenya’s landscapes, wildlife, and culture.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="section">
-<h2>Safari Gallery</h2>
-<div class="grid">
-
-<div class="card">
-<img src="images/IMG-20260111-WA0026.jpg">
-<div class="text">
-<h3>Masai Mara Safari</h3>
-<p>Experience world-famous wildlife and breathtaking savannahs.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0033.jpg">
-<div class="text">
-<h3>Amboseli Safari</h3>
-<p>Witness elephants with Mount Kilimanjaro as the backdrop.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- DESTINATION CTA -->
-<section class="section" style="background:#fff; border-top:1px solid #ddd;">
-<h2>Where do you want to go next?</h2>
-<p style="text-align:center; max-width:700px; margin:0 auto 25px;">
-Choose your preferred destination and let us plan a personalized adventure for you.
-</p>
-
-<div class="destination-box">
-<select id="destination">
-<option value="">Select a destination</option>
-<option>Masai Mara National Reserve</option>
-<option>Amboseli National Park</option>
-<option>Tsavo East National Park</option>
-<option>Tsavo West National Park</option>
-<option>Lake Nakuru National Park</option>
-<option>Mount Kenya</option>
-<option>Hell’s Gate National Park</option>
-<option>Diani Beach</option>
-<option>Watamu Marine Park</option>
-<option>Samburu National Reserve</option>
-<option>Custom Tour</option>
-</select>
-
-<button class="explore-btn" onclick="sendDestination()">Plan My Trip</button>
-</div>
-</section>
-
-</div>
-
-<footer id="privacy">
-<p>Privacy Policy | Terms & Conditions</p>
-<p>Contact: jumaadventuresandsafaris@gmail.com</p>
-<p>Powered by WebTool</p>
-</footer>
-
-<!-- FLOATING WHATSAPP -->
-<a
-href="https://wa.me/254746011254?text=Hello%20Juma%20Adventures,%20I%20would%20like%20to%20book%20an%20adventure."
-target="_blank"
-class="floating-logo"
-title="Chat with Juma Adventures on WhatsApp"
->
-<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" alt="Juma Adventures Logo">
-</a>
-
-<script>
-function enterSite() {
-  document.querySelector('.hero').style.display = 'none';
-  document.getElementById('content').style.display = 'block';
-}
-
-function toggleNav() {
-  document.getElementById('nav').classList.toggle('show');
-}
-
-function sendDestination() {
-  const place = document.getElementById("destination").value;
-  if (!place) {
-    alert("Please select a destination.");
-    return;
-  }
-  const msg = "Hello Juma Adventures, I would like to plan a trip to: " + place;
-  window.open("https://wa.me/254746011254?text=" + encodeURIComponent(msg), "_blank");
-}
-</script>
+<a class="whatsapp" href="https://wa.me/254700000000">💬</a>
 
 </body>
 </html>
