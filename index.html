@@ -6,354 +6,279 @@
 <title>Juma Adventures | Experience Kenya</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#f4f4f4;color:#222}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+body{background:#f4f4f4;color:#222;line-height:1.6}
 
-/* TOP BAR */
-.top-bar{
-background:#fff;
-padding:10px 15px;
+/* LOGO WATERMARK */
+body::before{
+content:"";
 position:fixed;
-top:0;left:0;right:0;
-z-index:1002;
+top:50%;
+left:50%;
+width:300px;
+height:300px;
+background:url("images/logo.png") center/contain no-repeat;
+opacity:0.04;
+transform:translate(-50%,-50%);
+z-index:-1;
+}
+
+/* HEADER */
+header{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+padding:15px 20px;
 display:flex;
-gap:10px;
 align-items:center;
-overflow-x:auto;
-white-space:nowrap;
-font-size:0.85rem
+z-index:10;
 }
-.top-bar strong{margin-right:6px}
-.top-bar span{
-background:#eee;
-padding:6px 12px;
-border-radius:20px;
-cursor:pointer
-}
+header img{height:45px}
 
 /* HERO */
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.7)),
 url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+color:#fff;
 padding:20px;
-margin-top:45px;
-position:relative
 }
-.brand-logo{
-position:absolute;
-top:20px;
-left:20px;
-width:70px;
-z-index:1001
-}
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:url("images/file_00000000b8a0722f94b276953bf7dc5d.png") center/280px no-repeat;
-opacity:.05
-}
-.hero h1{
-color:#fff;
-font-size:clamp(1.8rem,4vw,2.6rem);
-margin-bottom:15px
-}
-.hero p{
-color:#eee;
-font-size:clamp(.95rem,2.5vw,1.1rem);
-max-width:760px;
-margin:0 auto 25px
-}
-.explore-btn{
-background:#c62828;
-color:#fff;
-padding:14px 36px;
-font-size:1.05rem;
+.hero h1{font-size:2.8rem;margin-bottom:15px}
+.hero p{font-size:1.1rem;max-width:700px;margin:auto;margin-bottom:25px}
+.hero button{
+padding:14px 32px;
+background:#1fa84f;
 border:none;
-border-radius:30px;
-cursor:pointer
-}
-
-/* DASHBOARD */
-.menu{
-position:fixed;
-top:60px;
-left:20px;
-font-size:30px;
 color:#fff;
+font-size:1rem;
 cursor:pointer;
-z-index:1003
+border-radius:30px;
 }
-.nav{
-position:fixed;
-top:0;
-left:-260px;
-width:260px;
-height:100%;
-background:#111;
-padding:80px 20px;
-transition:.3s;
-z-index:1002
-}
-.nav a{
-display:block;
-color:#fff;
-text-decoration:none;
-margin-bottom:20px
-}
-.nav.show{left:0}
 
 /* SECTIONS */
-.section{
-padding:50px 20px;
-max-width:1100px;
-margin:auto
+section{padding:60px 20px;display:none}
+section.active{display:block}
+.container{max-width:1100px;margin:auto}
+
+/* WHERE TO BAR */
+.where-bar{
+background:#fff;
+padding:15px;
+border-radius:8px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:40px;
 }
-.section h2{text-align:center;margin-bottom:25px}
+.where-bar select{
+padding:10px;
+border-radius:5px;
+border:1px solid #ccc;
+flex:1;
+}
 
 /* GALLERY */
-.grid{
+.gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-bottom:60px;
 }
 .card{
 background:#fff;
-border-radius:12px;
-overflow:hidden
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-.card img{
-width:100%;
-height:200px;
-object-fit:cover
-}
-.card .text{padding:15px}
-.card h3{font-size:1.05rem;margin-bottom:6px}
-.card p{font-size:.9rem;color:#555}
+.card img{width:100%;height:200px;object-fit:cover}
+.card div{padding:15px}
+.card h3{margin-bottom:8px;font-size:1.1rem}
+.card p{font-size:0.95rem}
 
 /* PACKAGES */
 .package{
 background:#fff;
-border-radius:14px;
 padding:25px;
-margin-bottom:30px
+border-radius:10px;
+margin-bottom:30px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-.price{color:#c62828;font-weight:bold;margin-bottom:8px}
-.tags span{
-background:#eee;
-padding:5px 10px;
-border-radius:15px;
-font-size:.8rem;
-margin:3px;
-display:inline-block
-}
+.package h3{margin-bottom:10px;color:#1fa84f}
+.package ul{margin-left:20px;margin-top:10px}
 
-/* CTA */
-.cta{
-background:#111;
+/* WHERE TO BOTTOM */
+.where-bottom{
+background:#1fa84f;
 color:#fff;
+padding:40px 20px;
 text-align:center;
-padding:50px 20px
 }
-.cta button{
-padding:12px 28px;
+.where-bottom select{
+margin-top:15px;
+padding:12px;
+border-radius:5px;
 border:none;
-border-radius:30px;
-font-size:1rem;
-margin:8px;
-cursor:pointer
-}
-.whatsapp{background:#25D366;color:#fff}
-.email{background:#c62828;color:#fff}
-
-/* FOOTER */
-footer{
-background:#111;
-color:#ccc;
-text-align:center;
-padding:30px 20px;
-font-size:.85rem
+width:300px;
+max-width:100%;
 }
 
 /* FLOATING ICONS */
-.floating{
+.float-whatsapp,.float-email{
 position:fixed;
-bottom:20px;
 right:20px;
-display:flex;
-flex-direction:column;
-gap:12px;
-z-index:1003
-}
-.floating a{
-width:60px;
-height:60px;
+width:55px;
+height:55px;
 border-radius:50%;
 display:flex;
 align-items:center;
-justify-content:center
+justify-content:center;
+color:#fff;
+font-size:26px;
+z-index:999;
 }
-.floating img{width:55%}
-.whatsapp-float{background:#25D366}
-.email-float{background:#c62828}
+.float-whatsapp{bottom:20px;background:#25d366}
+.float-email{bottom:90px;background:#0072c6}
+.float-whatsapp a,.float-email a{color:#fff;text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.hero h1{font-size:2rem}
+.hero p{font-size:1rem}
+}
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-<strong>Where to?</strong>
-<span>Masai Mara</span>
-<span>Amboseli</span>
-<span>Nairobi Park</span>
-<span>Lake Nakuru</span>
-<span>Giraffe Centre</span>
-<span>Mt Kenya</span>
-</div>
-
-<!-- DASHBOARD -->
-<div class="menu" onclick="toggleNav()">☰</div>
-<div class="nav" id="nav">
-<a href="mailto:jumaadventuresandsafaris@gmail.com">Email Support</a>
-<a href="#">Privacy Policy</a>
-<a href="#">Terms & Conditions</a>
-</div>
+<header>
+<img src="images/logo.png" alt="Juma Adventures Logo">
+</header>
 
 <!-- HERO -->
-<section class="hero">
-<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" class="brand-logo">
+<div class="hero">
 <div>
-<h1>Ready to experience East Africa with Juma Adventures?</h1>
-<p>
-Embark on unforgettable wildlife safaris across Kenya —
-from city adventures to iconic national parks, mountain hikes,
-and family-friendly experiences.
-</p>
-<button class="explore-btn" onclick="scrollToContent()">Explore</button>
-</div>
-</section>
-
-<!-- CONTENT -->
-<div id="content">
-
-<section class="section">
-<h2>Destinations & Experiences</h2>
-
-<div class="grid">
-
-<!-- SAME ORDER AS WHATSAPP -->
-
-<div class="card">
-<img src="images/IMG-20260111-WA0013.jpg">
-<div class="text">
-<h3>Nairobi National Park</h3>
-<p>Unique city safari offering wildlife encounters just minutes from Nairobi.</p>
+<h1>Experience Kenya Like Never Before</h1>
+<p>Luxury, budget, adventure & family-friendly tours crafted by local experts across Kenya.</p>
+<button onclick="openExplore()">Explore</button>
 </div>
 </div>
+
+<!-- EXPLORE SECTION -->
+<section id="explore">
+<div class="container">
+
+<!-- WHERE TO TOP -->
+<div class="where-bar">
+<select>
+<option>Where to?</option>
+<option>Maasai Mara</option>
+<option>Nairobi National Park</option>
+<option>Amboseli</option>
+<option>Tsavo East</option>
+<option>Diani Beach</option>
+<option>Lake Nakuru</option>
+</select>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
 
 <div class="card">
 <img src="images/IMG-20260111-WA0033.jpg">
-<div class="text">
-<h3>Amboseli National Park</h3>
-<p>Large elephant herds with breathtaking Mount Kilimanjaro views.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0008.jpg">
-<div class="text">
-<h3>Lake Nakuru National Park</h3>
-<p>Famous for flamingos, rhinos, and scenic lakeside landscapes.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="images/IMG-20260111-WA0004.jpg">
-<div class="text">
-<h3>Giraffe Centre</h3>
-<p>Interactive conservation experience perfect for families and short visits.</p>
+<div>
+<h3>Nairobi National Park</h3>
+<p>Wildlife encounters just minutes from the city skyline — rhinos, lions and breathtaking scenery.</p>
 </div>
 </div>
 
 <div class="card">
 <img src="images/IMG-20260111-WA0026.jpg">
-<div class="text">
-<h3>Masai Mara National Reserve</h3>
-<p>World-class Big Five safaris and the iconic Great Migration.</p>
+<div>
+<h3>Maasai Mara National Reserve</h3>
+<p>World-famous savannahs, Big Five sightings and the Great Wildebeest Migration.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="images/IMG-20260111-WA0001.jpg">
-<div class="text">
-<h3>Mount Kenya</h3>
-<p>Adventure trekking, alpine scenery, and guided mountain expeditions.</p>
+<img src="images/IMG-20260111-WA0006.jpg">
+<div>
+<h3>Amboseli National Park</h3>
+<p>Iconic views of Mount Kilimanjaro with large elephant herds roaming freely.</p>
 </div>
 </div>
 
 </div>
-</section>
 
-<section class="section">
-<h2>Sample Tour Packages</h2>
+<!-- PACKAGES -->
+<div class="package">
+<h3>Maasai Mara – Luxury Safari (USD 1,250)</h3>
+<p>Premium tented camps, expert guides and unforgettable wildlife encounters.</p>
+<strong>Itinerary:</strong>
+<ul>
+<li>Day 1: Arrival & evening game drive</li>
+<li>Day 2: Full-day safari</li>
+<li>Day 3: Sunrise drive & departure</li>
+</ul>
+</div>
 
 <div class="package">
-<h3>Masai Mara – 3 Days / 2 Nights</h3>
-<div class="price">From $650 per person</div>
-<div class="tags"><span>Luxury</span><span>Premium</span><span>Family Friendly</span></div>
-<p><strong>Experience:</strong> Big Five game drives, luxury lodges, professional guides.</p>
-<p><strong>Itinerary:</strong> Day 1 Nairobi → Mara | Day 2 Full safari | Day 3 Return</p>
+<h3>Nairobi National Park – Budget Adventure (USD 120)</h3>
+<p>Perfect for short stays and first-time visitors.</p>
+<strong>Itinerary:</strong>
+<ul>
+<li>Half-day guided game drive</li>
+<li>Optional lunch experience</li>
+</ul>
 </div>
 
 <div class="package">
-<h3>Amboseli – 2 Days / 1 Night</h3>
-<div class="price">From $420 per person</div>
-<div class="tags"><span>Budget</span><span>Family Friendly</span></div>
-<p><strong>Experience:</strong> Elephant encounters and relaxed scenic safaris.</p>
-<p><strong>Itinerary:</strong> Day 1 Safari | Day 2 Sunrise drive & return</p>
+<h3>Amboseli – Family Friendly Safari (USD 680)</h3>
+<p>Relaxed pace, scenic views and educational wildlife moments.</p>
+<strong>Itinerary:</strong>
+<ul>
+<li>Day 1: Drive & evening safari</li>
+<li>Day 2: Morning safari & return</li>
+</ul>
 </div>
 
+</div>
 </section>
 
-<section class="cta">
-<h2>Ready to plan your adventure?</h2>
-<button class="whatsapp" onclick="window.open('https://wa.me/254746011254')">WhatsApp Booking</button>
-<button class="email" onclick="location.href='mailto:jumaadventuresandsafaris@gmail.com'">Email Support</button>
-</section>
-
+<!-- WHERE TO BOTTOM -->
+<div class="where-bottom">
+<h2>Where would you like to go next?</h2>
+<select>
+<option>Select Destination</option>
+<option>Maasai Mara</option>
+<option>Nairobi National Park</option>
+<option>Amboseli</option>
+<option>Tsavo</option>
+<option>Diani Beach</option>
+<option>Lake Naivasha</option>
+</select>
 </div>
 
-<footer>
-<p>Privacy Policy | Terms & Conditions</p>
-<p>Contact: jumaadventuresandsafaris@gmail.com</p>
-<p>Powered by WebTool</p>
-</footer>
+<!-- FLOATING ICONS -->
+<div class="float-whatsapp">
+<a href="https://wa.me/254705283274" target="_blank">💬</a>
+</div>
 
-<!-- FLOATING -->
-<div class="floating">
-<a href="https://wa.me/254746011254" target="_blank" class="whatsapp-float">
-<img src="images/whatsapp.png">
-</a>
-<a href="mailto:jumaadventuresandsafaris@gmail.com" class="email-float">
-<img src="images/email.png">
-</a>
+<div class="float-email">
+<a href="mailto:info@jumaadventures.co.ke">✉️</a>
 </div>
 
 <script>
-function scrollToContent(){
-document.getElementById('content').scrollIntoView({behavior:'smooth'})
-}
-function toggleNav(){
-document.getElementById('nav').classList.toggle('show')
+function openExplore(){
+document.getElementById("explore").classList.add("active");
+window.scrollTo({top:document.getElementById("explore").offsetTop,behavior:"smooth"});
 }
 </script>
 
 </body>
-</html>
+  </html>
