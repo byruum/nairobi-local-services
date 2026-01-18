@@ -34,7 +34,7 @@ align-items:center;
 padding:20px
 }
 .hero-content{
-max-width:750px;
+max-width:760px;
 color:#fff
 }
 .hero h1{
@@ -47,7 +47,7 @@ line-height:1.6;
 margin-bottom:25px
 }
 .hero button{
-padding:14px 30px;
+padding:14px 32px;
 font-size:1rem;
 border:none;
 background:#ff9800;
@@ -56,20 +56,42 @@ cursor:pointer;
 border-radius:4px
 }
 
-/* SECTIONS */
-section{padding:70px 20px}
-.section-title{text-align:center;margin-bottom:30px}
-.section-title h2{font-size:2rem}
-
-/* WHERE TO */
-select{
+/* WHERE TO BAR */
+.where-bar{
+display:none;
+position:fixed;
+top:65px;
+left:0;
 width:100%;
-max-width:400px;
-padding:14px;
-font-size:1rem;
-display:block;
-margin:0 auto
+background:#fff;
+padding:15px;
+z-index:999;
+box-shadow:0 3px 10px rgba(0,0,0,.2)
 }
+.where-inner{
+max-width:900px;
+margin:auto;
+display:flex;
+gap:15px;
+align-items:center
+}
+.where-inner button{
+padding:12px 18px;
+border:none;
+background:#2e7d32;
+color:#fff;
+cursor:pointer;
+border-radius:4px
+}
+.where-inner select{
+flex:1;
+padding:12px;
+font-size:1rem
+}
+
+/* SECTIONS */
+section{padding:80px 20px}
+.section-title{text-align:center;margin-bottom:30px}
 
 /* GALLERY */
 .gallery{
@@ -116,18 +138,9 @@ justify-content:center;
 z-index:999;
 box-shadow:0 4px 10px rgba(0,0,0,.3)
 }
-.whatsapp{
-bottom:90px;
-background:#25D366
-}
-.email{
-bottom:20px;
-background:#2196F3
-}
-.float img{
-width:32px;
-height:32px
-}
+.whatsapp{bottom:90px;background:#25D366}
+.email{bottom:20px;background:#2196F3}
+.float img{width:32px;height:32px}
 
 /* FOOTER */
 footer{
@@ -144,6 +157,7 @@ margin-bottom:10px
 
 @media(max-width:768px){
 .hero h1{font-size:2rem}
+.where-inner{flex-direction:column}
 }
 </style>
 </head>
@@ -151,8 +165,21 @@ margin-bottom:10px
 <body>
 
 <header>
-<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" alt="Juma Adventures Logo">
+<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png">
 </header>
+
+<!-- WHERE TO BAR -->
+<div class="where-bar" id="whereBar">
+<div class="where-inner">
+<button onclick="closeWhere()">Close</button>
+<select onchange="goToDestination(this.value)">
+<option value="">Where would you like to go?</option>
+<option value="nairobi">Nairobi National Park</option>
+<option value="mara">Masai Mara</option>
+<option value="serengeti">Serengeti</option>
+</select>
+</div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -163,31 +190,13 @@ Embark on unforgettable wildlife safaris across Kenya and Tanzania, where iconic
 From the legendary plains of the Masai Mara and Serengeti to thrilling hiking tours, mountain expeditions, and rock-climbing adventures,
 we take you deep into the heart of Africa's most breathtaking destinations.
 </p>
-<button onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">
-Explore Adventures
-</button>
+<button onclick="openWhere()">Explore Adventures</button>
 </div>
 </section>
 
-<!-- EXPLORE -->
-<section id="explore">
-<div class="section-title">
-<h2>Where To Go</h2>
-</div>
-
-<select onchange="location.href=this.value">
-<option value="">Select Destination</option>
-<option value="#nairobi">Nairobi National Park</option>
-<option value="#mara">Masai Mara</option>
-<option value="#serengeti">Serengeti</option>
-</select>
-</section>
-
-<!-- GALLERY -->
+<!-- DESTINATIONS -->
 <section>
-<div class="section-title">
-<h2>Featured Destinations</h2>
-</div>
+<div class="section-title"><h2>Featured Destinations</h2></div>
 
 <div class="gallery">
 
@@ -195,7 +204,7 @@ Explore Adventures
 <img src="images/IMG-20260111-WA0033.jpg">
 <div>
 <h3>Nairobi National Park</h3>
-<p>Wildlife safari with city skyline views, just minutes from Nairobi CBD.</p>
+<p>Wildlife safari against a dramatic city skyline.</p>
 </div>
 </div>
 
@@ -203,7 +212,7 @@ Explore Adventures
 <img src="images/IMG-20260111-WA0026.jpg">
 <div>
 <h3>Masai Mara</h3>
-<p>Home of the Great Migration and endless golden savannahs.</p>
+<p>Luxury and budget safaris across the legendary plains.</p>
 </div>
 </div>
 
@@ -211,7 +220,7 @@ Explore Adventures
 <img src="images/IMG-20260111-WA0006.jpg">
 <div>
 <h3>Serengeti</h3>
-<p>Iconic African plains filled with lions, elephants, and vast horizons.</p>
+<p>Premium wildlife experiences in endless savannahs.</p>
 </div>
 </div>
 
@@ -220,24 +229,20 @@ Explore Adventures
 
 <!-- PACKAGES -->
 <section>
-<div class="section-title">
-<h2>Our Packages</h2>
-</div>
+<div class="section-title"><h2>Our Packages</h2></div>
 
 <div class="packages">
 <div class="package">
-<h3>Day Safaris</h3>
-<p>Perfect for quick wildlife experiences and first-time explorers.</p>
+<h3>Luxury Safaris</h3>
+<p>High-end lodges, premium vehicles, and private guides.</p>
 </div>
-
 <div class="package">
-<h3>Camping Adventures</h3>
-<p>Sleep under the stars inside Africa’s greatest parks.</p>
+<h3>Budget Adventures</h3>
+<p>Affordable safaris without compromising experience.</p>
 </div>
-
 <div class="package">
-<h3>Hiking & Climbing</h3>
-<p>Mountain hikes, rock climbing, and nature expeditions.</p>
+<h3>Family Friendly Tours</h3>
+<p>Safe, exciting, and educational adventures for all ages.</p>
 </div>
 </div>
 </section>
@@ -251,11 +256,24 @@ Explore Adventures
 <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg">
 </a>
 
-<!-- FOOTER -->
 <footer>
 <img src="images/file_00000000b8a0722f94b276953bf7dc5d.png">
 <p>© Juma Adventures | Experience East Africa</p>
 </footer>
+
+<script>
+function openWhere(){
+document.getElementById("whereBar").style.display="block";
+}
+function closeWhere(){
+document.getElementById("whereBar").style.display="none";
+}
+function goToDestination(id){
+if(!id) return;
+closeWhere();
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+</script>
 
 </body>
 </html>
