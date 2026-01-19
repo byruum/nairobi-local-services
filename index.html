@@ -9,7 +9,7 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
 body{background:#f4f4f4;color:#222}
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 height:100vh;
 background:
@@ -22,13 +22,13 @@ text-align:center;
 padding:20px;
 position:relative;
 }
-.hero h1{color:#fff;font-size:2.7rem;margin-bottom:15px}
-.hero p{color:#eee;font-size:1.1rem;max-width:720px;margin:0 auto 25px;line-height:1.6}
+.hero h1{color:#fff;font-size:2.6rem;margin-bottom:15px}
+.hero p{color:#eee;font-size:1.05rem;max-width:760px;margin:0 auto 25px;line-height:1.6}
 
 .explore-btn{
 background:#c62828;
 color:#fff;
-padding:14px 38px;
+padding:14px 40px;
 font-size:1.1rem;
 border:none;
 border-radius:30px;
@@ -39,13 +39,13 @@ cursor:pointer;
 /* LOGO WATERMARK */
 .watermark{
 position:absolute;
-bottom:20px;
-right:20px;
-opacity:.25;
-width:110px;
+bottom:25px;
+right:25px;
+width:120px;
+opacity:.2;
 }
 
-/* DASHBOARD */
+/* ===== DASHBOARD ===== */
 .menu{
 position:fixed;
 top:20px;
@@ -62,7 +62,7 @@ left:-260px;
 width:260px;
 height:100%;
 background:#111;
-padding:60px 20px;
+padding:70px 20px;
 transition:.3s;
 z-index:999;
 }
@@ -75,66 +75,80 @@ margin-bottom:20px;
 font-size:1.05rem;
 }
 
-/* CONTENT */
+/* ===== CONTENT ===== */
 #content{display:none;padding:40px 20px}
 
-.section{margin-bottom:50px}
-.section h2{text-align:center;margin-bottom:20px}
+.section{margin-bottom:60px}
+.section h2{text-align:center;margin-bottom:25px}
 
+/* ===== GALLERY ===== */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
-
 .card{
 background:#fff;
-border-radius:10px;
+border-radius:12px;
 overflow:hidden;
 box-shadow:0 4px 10px rgba(0,0,0,.1);
 }
 .card img{width:100%;height:200px;object-fit:cover}
 .card .text{padding:15px}
-.card .text h3{margin-bottom:8px}
-.card .text p{font-size:.95rem;line-height:1.4}
+.card h3{margin-bottom:6px}
+.card p{font-size:.92rem;line-height:1.4;color:#555}
 
-/* PACKAGES */
+/* ===== PACKAGES ===== */
 .package{
 background:#fff;
-padding:20px;
-border-radius:10px;
+padding:25px;
+border-radius:12px;
 box-shadow:0 4px 10px rgba(0,0,0,.1);
-margin-bottom:25px;
+margin-bottom:30px;
 }
 .package h3{margin-bottom:10px}
 .package ul{margin-left:18px}
 
-/* WHERE TO GO */
-.where-to{
+/* ===== WHERE TO GO ===== */
+.where-box{
 background:#fff;
 padding:25px;
-border-radius:10px;
+border-radius:12px;
+max-width:500px;
+margin:0 auto;
 text-align:center;
 }
-.where-to button{
+.where-box button{
 background:#1976d2;
 color:#fff;
 border:none;
-padding:12px 28px;
+padding:12px 30px;
 border-radius:25px;
 font-size:1rem;
 cursor:pointer;
 }
+.where-list{
+display:none;
+margin-top:20px;
+}
+.where-list span{
+display:inline-block;
+background:#eee;
+padding:8px 14px;
+border-radius:20px;
+margin:6px;
+font-size:.9rem;
+}
 
-/* FLOATING ICONS */
-.floating-whatsapp{
+/* ===== FLOATING ICONS ===== */
+.float-whatsapp{
 position:fixed;
 bottom:20px;
 left:20px;
 width:55px;
 z-index:1000;
 }
-.floating-email{
+.float-email{
 position:fixed;
 bottom:20px;
 right:20px;
@@ -142,6 +156,7 @@ width:55px;
 z-index:1000;
 }
 
+/* ===== FOOTER ===== */
 footer{
 text-align:center;
 padding:25px;
@@ -153,47 +168,44 @@ color:#555;
 
 <body>
 
-<!-- MENU -->
+<!-- DASHBOARD -->
 <div class="menu" onclick="toggleNav()">☰</div>
-
 <div class="nav" id="nav">
 <a href="#" onclick="enterSite()">Explore</a>
-<a href="#packages">Packages</a>
 <a href="#gallery">Gallery</a>
+<a href="#packages">Packages</a>
 <a href="#where">Where To Go</a>
+<a href="mailto:jumaadventuresandsafaris@gmail.com">Email Support</a>
 </div>
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
 <div>
 <h1>Experience Kenya</h1>
-
 <p>
-Discover Kenya like never before with Juma Adventures.
-We offer luxury, budget, family-friendly and premium safari
-experiences designed to deliver authentic memories,
-professional service and unforgettable encounters.
+Discover Kenya with Juma Adventures — offering luxury, budget,
+family-friendly and premium safari experiences across Kenya’s
+most iconic destinations. From wildlife safaris to cultural
+and city tours, we deliver unforgettable journeys.
 </p>
-
 <button class="explore-btn" onclick="enterSite()">Explore</button>
 </div>
-
 <img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" class="watermark">
-</div>
+</section>
 
-<!-- CONTENT -->
+<!-- MAIN CONTENT -->
 <div id="content">
 
 <!-- GALLERY -->
 <section class="section" id="gallery">
-<h2>Featured Experiences</h2>
+<h2>Destinations & Experiences</h2>
 <div class="grid">
 
 <div class="card">
 <img src="images/IMG-20260111-WA0026.jpg">
 <div class="text">
-<h3>Masai Mara Safari</h3>
-<p>Luxury and budget wildlife safari featuring the Big Five and vast savannah landscapes.</p>
+<h3>Masai Mara National Reserve</h3>
+<p>Luxury and premium safaris featuring the Big Five and the Great Migration.</p>
 </div>
 </div>
 
@@ -201,7 +213,31 @@ professional service and unforgettable encounters.
 <img src="images/IMG-20260111-WA0033.jpg">
 <div class="text">
 <h3>Nairobi National Park</h3>
-<p>Unique city safari experience with wildlife against Nairobi’s skyline.</p>
+<p>A unique city safari experience with wildlife against Nairobi’s skyline.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0008.jpg">
+<div class="text">
+<h3>Lake Nakuru National Park</h3>
+<p>Famous for flamingos, rhinos and scenic lake views.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0004.jpg">
+<div class="text">
+<h3>Giraffe Centre</h3>
+<p>Interactive wildlife experience ideal for families and short tours.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/IMG-20260111-WA0001.jpg">
+<div class="text">
+<h3>Mount Kenya</h3>
+<p>Adventure hiking, mountain climbing and alpine scenery.</p>
 </div>
 </div>
 
@@ -210,46 +246,56 @@ professional service and unforgettable encounters.
 
 <!-- PACKAGES -->
 <section class="section" id="packages">
-<h2>Tour Packages</h2>
+<h2>Sample Packages</h2>
 
 <div class="package">
-<h3>Masai Mara – Luxury Safari (USD 1,250)</h3>
-<p><strong>Experience:</strong> Premium wildlife encounters, luxury camps.</p>
+<h3>Masai Mara – 3 Days / 2 Nights (Luxury)</h3>
 <ul>
-<li>Day 1: Nairobi – Masai Mara drive</li>
+<li>Day 1: Nairobi – Masai Mara</li>
 <li>Day 2: Full-day game drive</li>
 <li>Day 3: Morning safari & return</li>
 </ul>
 </div>
 
 <div class="package">
-<h3>Nairobi National Park – Budget Tour (USD 150)</h3>
-<p><strong>Experience:</strong> Affordable city wildlife adventure.</p>
+<h3>Nairobi National Park – Half Day Tour</h3>
 <ul>
-<li>Half-day guided safari</li>
-<li>Professional local guide</li>
-<li>Park entry included</li>
+<li>Guided city safari</li>
+<li>Perfect for short visits</li>
+<li>Budget friendly</li>
 </ul>
 </div>
-
 </section>
 
-<!-- WHERE TO -->
-<section class="section where-to" id="where">
+<!-- WHERE TO GO -->
+<section class="section" id="where">
 <h2>Where do you want to go?</h2>
-<p>Select your destination and we’ll plan everything.</p>
-<button>Select Destination</button>
+<div class="where-box">
+<button onclick="toggleWhere()">Select Destination</button>
+<div class="where-list" id="whereList">
+<span>Masai Mara</span>
+<span>Amboseli</span>
+<span>Nairobi National Park</span>
+<span>Lake Nakuru</span>
+<span>Tsavo East</span>
+<span>Tsavo West</span>
+<span>Mount Kenya</span>
+<span>Giraffe Centre</span>
+<span>Diani Beach</span>
+<span>Watamu</span>
+</div>
+</div>
 </section>
 
 </div>
 
 <!-- FLOATING ICONS -->
 <a href="https://wa.me/254746011254" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="floating-whatsapp">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="float-whatsapp">
 </a>
 
 <a href="mailto:jumaadventuresandsafaris@gmail.com">
-<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="floating-email">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="float-email">
 </a>
 
 <footer>
@@ -266,6 +312,11 @@ window.scrollTo(0,0);
 }
 function toggleNav(){
 document.getElementById('nav').classList.toggle('show');
+}
+function toggleWhere(){
+document.getElementById('whereList').style.display =
+document.getElementById('whereList').style.display === 'block'
+? 'none' : 'block';
 }
 </script>
 
