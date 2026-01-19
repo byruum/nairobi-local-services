@@ -9,7 +9,7 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
 body{background:#f4f4f4;color:#222}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
 height:100vh;
 background:
@@ -45,7 +45,7 @@ width:120px;
 opacity:.25;
 }
 
-/* ===== DASHBOARD ===== */
+/* DASHBOARD */
 .menu{
 position:fixed;
 top:20px;
@@ -75,12 +75,12 @@ margin-bottom:20px;
 font-size:1.05rem;
 }
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 #content{display:none;padding:40px 20px}
-.section{margin-bottom:70px}
-.section h2{text-align:center;margin-bottom:30px}
+.section{margin-bottom:60px}
+.section h2{text-align:center;margin-bottom:25px}
 
-/* ===== GALLERY ===== */
+/* GALLERY */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -94,49 +94,50 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
 }
 .card img{width:100%;height:200px;object-fit:cover}
 .card .text{padding:15px}
-.card h3{margin-bottom:6px}
-.card p{font-size:.92rem;line-height:1.4;color:#555}
 
-/* ===== TOURS ===== */
-.tour{
-background:#fff;
-padding:30px;
-border-radius:14px;
-box-shadow:0 4px 12px rgba(0,0,0,.12);
-max-width:800px;
-margin:0 auto 30px;
-}
-.tour h3{margin-bottom:10px;color:#c62828}
-
-/* ===== WHERE TO GO ===== */
-.where-box{
+/* PACKAGES */
+.package{
 background:#fff;
 padding:25px;
 border-radius:12px;
-max-width:500px;
-margin:0 auto;
-text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+margin-bottom:30px;
 }
-.where-box button{
+.package button{
+margin-top:15px;
 background:#1976d2;
 color:#fff;
 border:none;
-padding:12px 30px;
+padding:10px 25px;
 border-radius:25px;
-font-size:1rem;
 cursor:pointer;
 }
-.where-list{display:none;margin-top:20px}
-.where-list span{
-display:inline-block;
-background:#eee;
-padding:8px 14px;
-border-radius:20px;
-margin:6px;
-font-size:.9rem;
+
+/* BOOKING MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,.6);
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+.modal-content{
+background:#fff;
+padding:25px;
+border-radius:12px;
+max-width:400px;
+width:100%;
+}
+.modal-content input,select{
+width:100%;
+padding:10px;
+margin-bottom:10px;
 }
 
-/* ===== FLOATING ICONS ===== */
+/* FLOATING ICONS */
 .float-whatsapp{
 position:fixed;
 bottom:20px;
@@ -152,13 +153,11 @@ width:55px;
 z-index:1000;
 }
 
-/* ===== FOOTER ===== */
 footer{
 text-align:center;
 padding:25px;
 font-size:.9rem;
 color:#555;
-background:#fff;
 }
 </style>
 </head>
@@ -170,9 +169,8 @@ background:#fff;
 <div class="nav" id="nav">
 <a href="#" onclick="enterSite()">Explore</a>
 <a href="#gallery">Gallery</a>
-<a href="#tours">Tours</a>
+<a href="#packages">Packages</a>
 <a href="#where">Where To Go</a>
-<a href="mailto:jumaadventuresandsafaris@gmail.com">Email Support</a>
 </div>
 
 <!-- HERO -->
@@ -190,7 +188,6 @@ and city tours, we deliver unforgettable journeys.
 <img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" class="watermark">
 </section>
 
-<!-- MAIN CONTENT -->
 <div id="content">
 
 <!-- GALLERY -->
@@ -199,87 +196,104 @@ and city tours, we deliver unforgettable journeys.
 <div class="grid" id="galleryGrid"></div>
 </section>
 
-<!-- TOURS -->
-<section class="section" id="tours">
-<h2>Tours & Packages</h2>
+<!-- PACKAGES -->
+<section class="section" id="packages">
+<h2>Available Tours</h2>
 
-<div class="tour">
+<div class="package">
 <h3>Nairobi City Tour – Day Trip</h3>
-<p><strong>Cost:</strong> $360 per tour (Maximum 2 Pax)</p>
-<p><strong>Includes:</strong> Transportation, entry fees, guiding fee</p>
+<p><strong>Price:</strong> $360 (Max 2 Pax)</p>
+<p><strong>Includes:</strong> Transport, entry fees, guiding</p>
 <p><strong>Excludes:</strong> Personal expenses</p>
+<button onclick="openBooking('Nairobi City Tour – Day Trip',360)">Book Now</button>
 </div>
 
 </section>
 
-<!-- WHERE TO GO -->
-<section class="section" id="where">
-<h2>Where do you want to go?</h2>
-<div class="where-box">
-<button onclick="toggleWhere()">Select Destination</button>
-<div class="where-list" id="whereList">
-<span>Masai Mara</span>
-<span>Amboseli</span>
-<span>Nairobi City</span>
-<span>Lake Nakuru</span>
-<span>Tsavo East</span>
-<span>Mount Kenya</span>
-<span>Diani Beach</span>
 </div>
-</div>
-</section>
 
+<!-- BOOKING MODAL -->
+<div class="modal" id="bookingModal">
+<div class="modal-content">
+<h3>Book Tour</h3>
+<input type="text" id="tourName" readonly>
+<input type="date" id="tourDate">
+<select id="pax">
+<option value="1">1 Pax</option>
+<option value="2">2 Pax</option>
+</select>
+<button onclick="submitBooking()">Confirm Booking</button>
+<button onclick="closeBooking()">Cancel</button>
+</div>
 </div>
 
 <!-- FLOATING ICONS -->
 <a href="https://wa.me/254746011254" target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="float-whatsapp">
 </a>
-
 <a href="mailto:jumaadventuresandsafaris@gmail.com">
 <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="float-email">
 </a>
 
 <footer>
 <p>Privacy Policy | Terms & Conditions</p>
-<p>Contact: jumaadventuresandsafaris@gmail.com</p>
 <p>Powered by WebTool</p>
 </footer>
 
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
 <script>
+firebase.initializeApp({
+apiKey:"AIzaSyD88iH62FmlfY13LF3pDoE7MmRR76JSboI",
+authDomain:"local-service-hub-26b50.firebaseapp.com",
+projectId:"local-service-hub-26b50"
+});
+const db=firebase.firestore();
+
+/* NAV */
+function toggleNav(){document.getElementById('nav').classList.toggle('show')}
 function enterSite(){
 document.querySelector('.hero').style.display='none';
 document.getElementById('content').style.display='block';
-window.scrollTo(0,0);
-}
-function toggleNav(){
-document.getElementById('nav').classList.toggle('show');
-}
-function toggleWhere(){
-const list=document.getElementById('whereList');
-list.style.display=list.style.display==='block'?'none':'block';
 }
 
-/* ===== AUTOMATIC GALLERY ===== */
-const galleryData=[
-{img:"images/IMG-20260111-WA0026.jpg",title:"Masai Mara",desc:"Luxury safaris & Great Migration"},
-{img:"images/IMG-20260111-WA0033.jpg",title:"Nairobi National Park",desc:"City wildlife safari"},
-{img:"images/IMG-20260111-WA0008.jpg",title:"Lake Nakuru",desc:"Flamingos & rhinos"},
-{img:"images/IMG-20260111-WA0004.jpg",title:"Giraffe Centre",desc:"Interactive wildlife"},
-{img:"images/IMG-20260111-WA0001.jpg",title:"Mount Kenya",desc:"Hiking & adventure"}
+/* GALLERY AUTO */
+const gallery=[
+{img:"images/IMG-20260111-WA0026.jpg",title:"Masai Mara",desc:"Big Five & Migration"},
+{img:"images/IMG-20260111-WA0033.jpg",title:"Nairobi National Park",desc:"City Safari"},
+{img:"images/IMG-20260111-WA0008.jpg",title:"Lake Nakuru",desc:"Flamingos & Rhinos"},
+{img:"images/IMG-20260111-WA0004.jpg",title:"Giraffe Centre",desc:"Family Friendly"},
+{img:"images/IMG-20260111-WA0001.jpg",title:"Mount Kenya",desc:"Hiking & Adventure"}
 ];
-
 const grid=document.getElementById("galleryGrid");
-galleryData.forEach(item=>{
+gallery.forEach(g=>{
 grid.innerHTML+=`
 <div class="card">
-<img src="${item.img}">
-<div class="text">
-<h3>${item.title}</h3>
-<p>${item.desc}</p>
-</div>
+<img src="${g.img}">
+<div class="text"><h3>${g.title}</h3><p>${g.desc}</p></div>
 </div>`;
 });
+
+/* BOOKING */
+function openBooking(name){
+document.getElementById("bookingModal").style.display="flex";
+document.getElementById("tourName").value=name;
+}
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none";
+}
+function submitBooking(){
+db.collection("bookings").add({
+tour:tourName.value,
+date:tourDate.value,
+pax:pax.value,
+created:new Date()
+});
+alert("Booking sent!");
+closeBooking();
+}
 </script>
 
 </body>
