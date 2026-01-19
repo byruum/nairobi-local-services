@@ -3,181 +3,244 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juma Adventures | Experience Kenya</title>
+<title>Juma Adventures | Experience East Africa</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{background:#f4f4f4;color:#222}
+
+/* TOP BAR */
+header{
+position:fixed;
+top:0;left:0;width:100%;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+background:rgba(0,0,0,0.4);
+color:#fff;
+}
+header h2{font-size:20px}
+header nav a{
+color:#fff;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+}
+header nav a:hover{text-decoration:underline}
 
 /* HERO */
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.75)),
 url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:20px;
-position:relative;
+padding:40px;
 }
-.hero h1{color:#fff;font-size:2.6rem;margin-bottom:15px}
-.hero p{color:#eee;font-size:1.05rem;max-width:760px;margin:0 auto 25px;line-height:1.6}
-.explore-btn{
-background:#c62828;color:#fff;padding:14px 40px;
-font-size:1.1rem;border:none;border-radius:30px;cursor:pointer;
+.hero div{max-width:850px;color:#fff}
+.hero h1{font-size:48px;margin-bottom:20px}
+.hero p{font-size:18px;line-height:1.7}
+.hero button{
+margin-top:30px;
+padding:14px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#e0a800;
+color:#000;
+cursor:pointer;
 }
-.watermark{
-position:absolute;bottom:25px;right:25px;width:120px;opacity:.2;
+.hero button:hover{background:#ffbe2e}
+
+/* SECTIONS */
+.section{
+padding:80px 30px;
+max-width:1200px;
+margin:auto;
+}
+.section h2{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
 }
 
-/* DASHBOARD */
-.menu{
-position:fixed;top:20px;left:20px;
-font-size:30px;color:#fff;cursor:pointer;z-index:1000;
-}
-.nav{
-position:fixed;top:0;left:-260px;width:260px;height:100%;
-background:#111;padding:70px 20px;transition:.3s;z-index:999;
-}
-.nav.show{left:0}
-.nav a{display:block;color:#fff;text-decoration:none;margin-bottom:20px}
-
-/* CONTENT */
-#content{display:none;padding:40px 20px}
-.section{margin-bottom:60px}
-.section h2{text-align:center;margin-bottom:25px}
-
-/* GALLERY */
-.grid{
+/* WHY JUMA */
+.why{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
+text-align:center;
 }
-.card{
-background:#fff;border-radius:12px;overflow:hidden;
+.why div{
+background:#fff;
+padding:25px;
+border-radius:10px;
 box-shadow:0 4px 10px rgba(0,0,0,.1);
 }
-.card img{width:100%;height:200px;object-fit:cover}
-.card .text{padding:15px}
 
-/* FLOATING */
-.float-whatsapp{position:fixed;bottom:20px;left:20px;width:55px}
-.float-email{position:fixed;bottom:20px;right:20px;width:55px}
+/* DESTINATIONS */
+.destinations{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+.card{
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+cursor:pointer;
+}
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+.card div{padding:15px}
+.card h3{margin-bottom:5px}
 
-footer{text-align:center;padding:25px;font-size:.9rem;color:#555}
+/* GALLERY */
+#gallery{
+display:none;
+background:#000;
+min-height:100vh;
+padding:80px 20px;
+color:#fff;
+}
+#gallery h2{text-align:center;margin-bottom:20px}
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+.gallery-grid img{
+width:100%;
+border-radius:10px;
+object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:#aaa;
+text-align:center;
+padding:25px;
+font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- DASHBOARD -->
-<div class="menu" onclick="toggleNav()">☰</div>
-<div class="nav" id="nav">
-<a href="#" onclick="enterSite()">Explore</a>
-<a href="#gallery">Gallery</a>
-<a href="#about">About Juma</a>
-<a href="#why">Why Juma</a>
-</div>
+<header>
+  <h2>Juma Adventures</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#destinations">Explore</a>
+    <a href="#why">Why Juma</a>
+  </nav>
+</header>
 
-<!-- HERO -->
 <section class="hero">
-<div>
-<h1>Experience Kenya</h1>
-<p>
-Discover Kenya with Juma Adventures — luxury, budget and family safaris
-across Kenya’s most iconic destinations.
-</p>
-<button class="explore-btn" onclick="enterSite()">Explore</button>
-</div>
-<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" class="watermark">
+  <div>
+    <h1>Experience East Africa</h1>
+    <p>
+      <strong>Ready to experience East Africa with Juma Adventures?</strong><br><br>
+      Embark on unforgettable wildlife safaris across Kenya and Tanzania, where iconic landscapes meet rich wildlife and culture.
+      From the legendary plains of the Masai Mara and Serengeti to thrilling hiking tours, mountain expeditions,
+      and rock-climbing adventures, we take you deep into the heart of Africa’s most breathtaking destinations.
+    </p>
+    <button onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">
+      Explore
+    </button>
+  </div>
 </section>
 
-<!-- CONTENT -->
-<div id="content">
-
-<!-- ABOUT -->
 <section class="section" id="about">
-<h2>About Juma Adventures</h2>
-<p style="max-width:800px;margin:auto;text-align:center">
-Juma Adventures & Safaris is a Kenyan-based tour company offering
-authentic safari experiences, city tours and beach holidays.
-</p>
+  <h2>About Juma Adventures</h2>
+  <p style="max-width:850px;margin:auto;text-align:center;line-height:1.7">
+    Ready to experience East Africa with Juma Adventures?
+    Embark on unforgettable wildlife safaris across Kenya and Tanzania, where iconic landscapes meet rich wildlife and culture.
+    From the legendary plains of the Masai Mara and Serengeti to thrilling hiking tours, mountain expeditions,
+    and rock-climbing adventures, we take you deep into the heart of Africa’s most breathtaking destinations.
+  </p>
 </section>
 
-<!-- WHY -->
 <section class="section" id="why">
-<h2>Why Choose Juma</h2>
-<p style="text-align:center">
-✔ Experienced local guides  
-✔ Flexible packages  
-✔ Affordable pricing  
-✔ Personalized adventures
-</p>
+  <h2>Why Choose Juma Adventures</h2>
+  <div class="why">
+    <div>✔ Experienced Local Guides</div>
+    <div>✔ Flexible Packages</div>
+    <div>✔ Affordable Pricing</div>
+    <div>✔ Personalized Adventures</div>
+  </div>
 </section>
 
-<!-- AUTOMATIC GALLERY -->
-<section class="section" id="gallery">
-<h2>Destinations & Experiences</h2>
-<div class="grid" id="galleryGrid"></div>
+<section class="section" id="destinations">
+  <h2>Where do you want to go?</h2>
+
+  <div class="destinations">
+    <div class="card" onclick="openGallery('masai-mara','Masai Mara – Big Five & Great Migration')">
+      <img src="images/masai-mara/1.jpg">
+      <div><h3>Masai Mara</h3><p>Big Five & Great Migration</p></div>
+    </div>
+
+    <div class="card" onclick="openGallery('amboseli','Amboseli – Mt Kilimanjaro Views')">
+      <img src="images/amboseli/1.jpg">
+      <div><h3>Amboseli</h3><p>Elephants & Kilimanjaro</p></div>
+    </div>
+
+    <div class="card" onclick="openGallery('nairobi-national-park','Nairobi National Park – City Safari')">
+      <img src="images/nairobi-national-park/1.jpg">
+      <div><h3>Nairobi National Park</h3><p>City Wildlife Safari</p></div>
+    </div>
+
+    <div class="card" onclick="openGallery('tsavo','Tsavo – Red Elephants')">
+      <img src="images/tsavo/1.jpg">
+      <div><h3>Tsavo</h3><p>Red Elephants</p></div>
+    </div>
+
+    <div class="card" onclick="openGallery('samburu','Samburu – Unique Wildlife')">
+      <img src="images/samburu/1.jpg">
+      <div><h3>Samburu</h3><p>Rare Northern Species</p></div>
+    </div>
+
+    <div class="card" onclick="openGallery('ngorongoro','Ngorongoro – Crater Safari')">
+      <img src="images/ngorongoro/1.jpg">
+      <div><h3>Ngorongoro</h3><p>World Heritage Crater</p></div>
+    </div>
+  </div>
 </section>
 
-</div>
-
-<!-- FLOATING ICONS -->
-<a href="https://wa.me/254746011254" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="float-whatsapp">
-</a>
-<a href="mailto:jumaadventuresandsafaris@gmail.com">
-<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="float-email">
-</a>
+<section id="gallery">
+  <h2 id="galleryTitle"></h2>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
 
 <footer>
-<p>Powered by WebTool</p>
+  © Juma Adventures | Powered by Webtool
 </footer>
 
 <script>
-const destinations = [
-{
-name:"Masai Mara",
-desc:"Big Five & Great Migration",
-folder:"masai-mara",
-images:["1.jpg","2.jpg","3.jpg"]
-},
-{
-name:"Amboseli",
-desc:"Mt Kilimanjaro views",
-folder:"amboseli",
-images:["1.jpg","2.jpg"]
-},
-{
-name:"Tsavo",
-desc:"Red elephants & wilderness",
-folder:"tsavo",
-images:["1.jpg","2.jpg"]
-}
-];
+function openGallery(folder,title){
+  document.getElementById('gallery').style.display='block';
+  document.getElementById('galleryTitle').innerText=title;
+  const grid=document.getElementById('galleryGrid');
+  grid.innerHTML='';
 
-const grid=document.getElementById("galleryGrid");
-destinations.forEach(d=>{
-const card=document.createElement("div");
-card.className="card";
-card.innerHTML=`
-<img src="images/${d.folder}/${d.images[0]}">
-<div class="text">
-<h3>${d.name}</h3>
-<p>${d.desc}</p>
-</div>`;
-grid.appendChild(card);
-});
+  for(let i=1;i<=12;i++){
+    const img=document.createElement('img');
+    img.src=`images/${folder}/${i}.jpg`;
+    img.onerror=()=>img.remove();
+    grid.appendChild(img);
+  }
 
-function enterSite(){
-document.querySelector(".hero").style.display="none";
-document.getElementById("content").style.display="block";
-}
-function toggleNav(){
-document.getElementById("nav").classList.toggle("show");
+  window.scrollTo({top:document.getElementById('gallery').offsetTop,behavior:'smooth'});
 }
 </script>
 
