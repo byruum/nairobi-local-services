@@ -77,8 +77,8 @@ font-size:1.05rem;
 
 /* ===== CONTENT ===== */
 #content{display:none;padding:40px 20px}
-.section{margin-bottom:60px}
-.section h2{text-align:center;margin-bottom:25px}
+.section{margin-bottom:70px}
+.section h2{text-align:center;margin-bottom:30px}
 
 /* ===== GALLERY ===== */
 .grid{
@@ -97,16 +97,16 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
 .card h3{margin-bottom:6px}
 .card p{font-size:.92rem;line-height:1.4;color:#555}
 
-/* ===== PACKAGES ===== */
-.package{
+/* ===== TOURS ===== */
+.tour{
 background:#fff;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,.1);
-margin-bottom:30px;
+padding:30px;
+border-radius:14px;
+box-shadow:0 4px 12px rgba(0,0,0,.12);
+max-width:800px;
+margin:0 auto 30px;
 }
-.package h3{margin-bottom:10px}
-.package ul{margin-left:18px}
+.tour h3{margin-bottom:10px;color:#c62828}
 
 /* ===== WHERE TO GO ===== */
 .where-box{
@@ -126,10 +126,7 @@ border-radius:25px;
 font-size:1rem;
 cursor:pointer;
 }
-.where-list{
-display:none;
-margin-top:20px;
-}
+.where-list{display:none;margin-top:20px}
 .where-list span{
 display:inline-block;
 background:#eee;
@@ -161,6 +158,7 @@ text-align:center;
 padding:25px;
 font-size:.9rem;
 color:#555;
+background:#fff;
 }
 </style>
 </head>
@@ -172,7 +170,7 @@ color:#555;
 <div class="nav" id="nav">
 <a href="#" onclick="enterSite()">Explore</a>
 <a href="#gallery">Gallery</a>
-<a href="#packages">Packages</a>
+<a href="#tours">Tours</a>
 <a href="#where">Where To Go</a>
 <a href="mailto:jumaadventuresandsafaris@gmail.com">Email Support</a>
 </div>
@@ -201,27 +199,17 @@ and city tours, we deliver unforgettable journeys.
 <div class="grid" id="galleryGrid"></div>
 </section>
 
-<!-- PACKAGES -->
-<section class="section" id="packages">
-<h2>Sample Packages</h2>
+<!-- TOURS -->
+<section class="section" id="tours">
+<h2>Tours & Packages</h2>
 
-<div class="package">
-<h3>Masai Mara – 3 Days / 2 Nights (Luxury)</h3>
-<ul>
-<li>Day 1: Nairobi – Masai Mara</li>
-<li>Day 2: Full-day game drive</li>
-<li>Day 3: Morning safari & return</li>
-</ul>
+<div class="tour">
+<h3>Nairobi City Tour – Day Trip</h3>
+<p><strong>Cost:</strong> $360 per tour (Maximum 2 Pax)</p>
+<p><strong>Includes:</strong> Transportation, entry fees, guiding fee</p>
+<p><strong>Excludes:</strong> Personal expenses</p>
 </div>
 
-<div class="package">
-<h3>Nairobi National Park – Half Day Tour</h3>
-<ul>
-<li>Guided city safari</li>
-<li>Perfect for short visits</li>
-<li>Budget friendly</li>
-</ul>
-</div>
 </section>
 
 <!-- WHERE TO GO -->
@@ -232,14 +220,11 @@ and city tours, we deliver unforgettable journeys.
 <div class="where-list" id="whereList">
 <span>Masai Mara</span>
 <span>Amboseli</span>
-<span>Nairobi National Park</span>
+<span>Nairobi City</span>
 <span>Lake Nakuru</span>
 <span>Tsavo East</span>
-<span>Tsavo West</span>
 <span>Mount Kenya</span>
-<span>Giraffe Centre</span>
 <span>Diani Beach</span>
-<span>Watamu</span>
 </div>
 </div>
 </section>
@@ -267,11 +252,9 @@ document.querySelector('.hero').style.display='none';
 document.getElementById('content').style.display='block';
 window.scrollTo(0,0);
 }
-
 function toggleNav(){
 document.getElementById('nav').classList.toggle('show');
 }
-
 function toggleWhere(){
 const list=document.getElementById('whereList');
 list.style.display=list.style.display==='block'?'none':'block';
@@ -279,45 +262,23 @@ list.style.display=list.style.display==='block'?'none':'block';
 
 /* ===== AUTOMATIC GALLERY ===== */
 const galleryData=[
-{
-img:"images/IMG-20260111-WA0026.jpg",
-title:"Masai Mara National Reserve",
-desc:"Luxury and premium safaris featuring the Big Five and the Great Migration."
-},
-{
-img:"images/IMG-20260111-WA0033.jpg",
-title:"Nairobi National Park",
-desc:"A unique city safari experience with wildlife against Nairobi’s skyline."
-},
-{
-img:"images/IMG-20260111-WA0008.jpg",
-title:"Lake Nakuru National Park",
-desc:"Famous for flamingos, rhinos and scenic lake views."
-},
-{
-img:"images/IMG-20260111-WA0004.jpg",
-title:"Giraffe Centre",
-desc:"Interactive wildlife experience ideal for families and short tours."
-},
-{
-img:"images/IMG-20260111-WA0001.jpg",
-title:"Mount Kenya",
-desc:"Adventure hiking, mountain climbing and alpine scenery."
-}
+{img:"images/IMG-20260111-WA0026.jpg",title:"Masai Mara",desc:"Luxury safaris & Great Migration"},
+{img:"images/IMG-20260111-WA0033.jpg",title:"Nairobi National Park",desc:"City wildlife safari"},
+{img:"images/IMG-20260111-WA0008.jpg",title:"Lake Nakuru",desc:"Flamingos & rhinos"},
+{img:"images/IMG-20260111-WA0004.jpg",title:"Giraffe Centre",desc:"Interactive wildlife"},
+{img:"images/IMG-20260111-WA0001.jpg",title:"Mount Kenya",desc:"Hiking & adventure"}
 ];
 
-const galleryGrid=document.getElementById("galleryGrid");
-
+const grid=document.getElementById("galleryGrid");
 galleryData.forEach(item=>{
-const card=document.createElement("div");
-card.className="card";
-card.innerHTML=`
+grid.innerHTML+=`
+<div class="card">
 <img src="${item.img}">
 <div class="text">
 <h3>${item.title}</h3>
 <p>${item.desc}</p>
+</div>
 </div>`;
-galleryGrid.appendChild(card);
 });
 </script>
 
