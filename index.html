@@ -9,12 +9,12 @@
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
 body{background:#f4f4f4;color:#222}
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
 height:100vh;
 background:
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
-url("images/hero.jpg") center/cover no-repeat;
+url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -24,127 +24,47 @@ position:relative;
 }
 .hero h1{color:#fff;font-size:2.6rem;margin-bottom:15px}
 .hero p{color:#eee;font-size:1.05rem;max-width:760px;margin:0 auto 25px;line-height:1.6}
-
 .explore-btn{
-background:#c62828;
-color:#fff;
-padding:14px 40px;
-font-size:1.1rem;
-border:none;
-border-radius:30px;
-cursor:pointer;
+background:#c62828;color:#fff;padding:14px 40px;
+font-size:1.1rem;border:none;border-radius:30px;cursor:pointer;
 }
-.explore-btn:hover{background:#b71c1c}
-
-/* LOGO */
 .watermark{
-position:absolute;
-bottom:25px;
-right:25px;
-width:120px;
-opacity:.25;
+position:absolute;bottom:25px;right:25px;width:120px;opacity:.2;
 }
 
-/* ===== DASHBOARD ===== */
+/* DASHBOARD */
 .menu{
-position:fixed;
-top:20px;
-left:20px;
-font-size:30px;
-color:#fff;
-cursor:pointer;
-z-index:1000;
+position:fixed;top:20px;left:20px;
+font-size:30px;color:#fff;cursor:pointer;z-index:1000;
 }
 .nav{
-position:fixed;
-top:0;
-left:-260px;
-width:260px;
-height:100%;
-background:#111;
-padding:70px 20px;
-transition:.3s;
-z-index:999;
+position:fixed;top:0;left:-260px;width:260px;height:100%;
+background:#111;padding:70px 20px;transition:.3s;z-index:999;
 }
 .nav.show{left:0}
-.nav a{
-display:block;
-color:#fff;
-text-decoration:none;
-margin-bottom:18px;
-font-size:1.05rem;
-}
+.nav a{display:block;color:#fff;text-decoration:none;margin-bottom:20px}
 
-/* ===== CONTENT ===== */
+/* CONTENT */
 #content{display:none;padding:40px 20px}
-
-.section{margin-bottom:70px}
+.section{margin-bottom:60px}
 .section h2{text-align:center;margin-bottom:25px}
 
-/* ===== GALLERY ===== */
+/* GALLERY */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 .card{
-background:#fff;
-border-radius:12px;
-overflow:hidden;
+background:#fff;border-radius:12px;overflow:hidden;
 box-shadow:0 4px 10px rgba(0,0,0,.1);
 }
 .card img{width:100%;height:200px;object-fit:cover}
 .card .text{padding:15px}
-.card h3{margin-bottom:6px}
-.card p{font-size:.9rem;color:#555}
 
-/* ===== WHERE TO GO ===== */
-.where-box{
-background:#fff;
-padding:25px;
-border-radius:12px;
-max-width:520px;
-margin:0 auto;
-text-align:center;
-}
-.where-box button{
-background:#1976d2;
-color:#fff;
-border:none;
-padding:12px 30px;
-border-radius:25px;
-font-size:1rem;
-cursor:pointer;
-}
-.where-list{
-display:none;
-margin-top:20px;
-}
-.where-list span{
-display:inline-block;
-background:#e3f2fd;
-padding:8px 14px;
-border-radius:20px;
-margin:6px;
-font-size:.9rem;
-cursor:pointer;
-}
-
-/* FLOATING ICONS */
-.float-whatsapp{
-position:fixed;
-bottom:20px;
-left:20px;
-width:55px;
-z-index:1000;
-}
-.float-email{
-position:fixed;
-bottom:20px;
-right:20px;
-width:55px;
-z-index:1000;
-}
+/* FLOATING */
+.float-whatsapp{position:fixed;bottom:20px;left:20px;width:55px}
+.float-email{position:fixed;bottom:20px;right:20px;width:55px}
 
 footer{text-align:center;padding:25px;font-size:.9rem;color:#555}
 </style>
@@ -156,10 +76,9 @@ footer{text-align:center;padding:25px;font-size:.9rem;color:#555}
 <div class="menu" onclick="toggleNav()">☰</div>
 <div class="nav" id="nav">
 <a href="#" onclick="enterSite()">Explore</a>
+<a href="#gallery">Gallery</a>
 <a href="#about">About Juma</a>
 <a href="#why">Why Juma</a>
-<a href="#gallery">Gallery</a>
-<a href="#where">Where To Go</a>
 </div>
 
 <!-- HERO -->
@@ -167,65 +86,46 @@ footer{text-align:center;padding:25px;font-size:.9rem;color:#555}
 <div>
 <h1>Experience Kenya</h1>
 <p>
-Discover Kenya with Juma Adventures — offering luxury, budget,
-family-friendly and premium safari experiences across Kenya’s
-most iconic destinations. From wildlife safaris to cultural and
-city tours, we deliver unforgettable journeys.
+Discover Kenya with Juma Adventures — luxury, budget and family safaris
+across Kenya’s most iconic destinations.
 </p>
 <button class="explore-btn" onclick="enterSite()">Explore</button>
 </div>
-<img src="images/logo.png" class="watermark">
+<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png" class="watermark">
 </section>
 
 <!-- CONTENT -->
 <div id="content">
 
+<!-- ABOUT -->
 <section class="section" id="about">
 <h2>About Juma Adventures</h2>
 <p style="max-width:800px;margin:auto;text-align:center">
-Juma Adventures is a Kenyan-owned tours and safaris company
-committed to authentic travel experiences across Kenya’s
-national parks, cultural landmarks, beaches and cities.
+Juma Adventures & Safaris is a Kenyan-based tour company offering
+authentic safari experiences, city tours and beach holidays.
 </p>
 </section>
 
+<!-- WHY -->
 <section class="section" id="why">
-<h2>Why Choose Juma?</h2>
-<p style="max-width:800px;margin:auto;text-align:center">
-✔ Experienced local guides<br>
-✔ Flexible packages<br>
-✔ Affordable pricing<br>
+<h2>Why Choose Juma</h2>
+<p style="text-align:center">
+✔ Experienced local guides  
+✔ Flexible packages  
+✔ Affordable pricing  
 ✔ Personalized adventures
 </p>
 </section>
 
+<!-- AUTOMATIC GALLERY -->
 <section class="section" id="gallery">
 <h2>Destinations & Experiences</h2>
 <div class="grid" id="galleryGrid"></div>
 </section>
 
-<section class="section" id="where">
-<h2>Where do you want to go?</h2>
-<div class="where-box">
-<button onclick="toggleWhere()">Select Destination</button>
-<div class="where-list" id="whereList">
-<span>Masai Mara</span>
-<span>Amboseli</span>
-<span>Nairobi National Park</span>
-<span>Lake Nakuru</span>
-<span>Tsavo East</span>
-<span>Tsavo West</span>
-<span>Mount Kenya</span>
-<span>Giraffe Centre</span>
-<span>Diani Beach</span>
-<span>Watamu</span>
-</div>
-</div>
-</section>
-
 </div>
 
-<!-- FLOATING -->
+<!-- FLOATING ICONS -->
 <a href="https://wa.me/254746011254" target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="float-whatsapp">
 </a>
@@ -234,44 +134,51 @@ national parks, cultural landmarks, beaches and cities.
 </a>
 
 <footer>
-<p>Contact: jumaadventuresandsafaris@gmail.com</p>
 <p>Powered by WebTool</p>
 </footer>
 
 <script>
-function enterSite(){
-document.querySelector('.hero').style.display='none';
-document.getElementById('content').style.display='block';
-window.scrollTo(0,0);
+const destinations = [
+{
+name:"Masai Mara",
+desc:"Big Five & Great Migration",
+folder:"masai-mara",
+images:["1.jpg","2.jpg","3.jpg"]
+},
+{
+name:"Amboseli",
+desc:"Mt Kilimanjaro views",
+folder:"amboseli",
+images:["1.jpg","2.jpg"]
+},
+{
+name:"Tsavo",
+desc:"Red elephants & wilderness",
+folder:"tsavo",
+images:["1.jpg","2.jpg"]
 }
-function toggleNav(){document.getElementById('nav').classList.toggle('show')}
-function toggleWhere(){
-let w=document.getElementById('whereList');
-w.style.display=w.style.display==='block'?'none':'block';
-}
-
-/* ===== AUTOMATIC GALLERY ===== */
-const destinations=[
-{title:"Masai Mara",desc:"Big Five & Great Migration",folder:"masai-mara"},
-{title:"Nairobi National Park",desc:"City wildlife safari",folder:"nairobi-national-park"},
-{title:"Lake Nakuru",desc:"Flamingos & rhinos",folder:"lake-nakuru"},
-{title:"Mount Kenya",desc:"Hiking & alpine scenery",folder:"mount-kenya"},
-{title:"Giraffe Centre",desc:"Family wildlife experience",folder:"giraffe-centre"}
 ];
 
 const grid=document.getElementById("galleryGrid");
 destinations.forEach(d=>{
-for(let i=1;i<=3;i++){
-grid.innerHTML+=`
-<div class="card">
-<img src="images/${d.folder}/${i}.jpg">
+const card=document.createElement("div");
+card.className="card";
+card.innerHTML=`
+<img src="images/${d.folder}/${d.images[0]}">
 <div class="text">
-<h3>${d.title}</h3>
+<h3>${d.name}</h3>
 <p>${d.desc}</p>
-</div>
 </div>`;
-}
+grid.appendChild(card);
 });
+
+function enterSite(){
+document.querySelector(".hero").style.display="none";
+document.getElementById("content").style.display="block";
+}
+function toggleNav(){
+document.getElementById("nav").classList.toggle("show");
+}
 </script>
 
 </body>
