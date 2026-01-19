@@ -13,7 +13,7 @@ body{background:#f4f4f4;color:#222}
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.75)),
 url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
@@ -22,10 +22,10 @@ text-align:center;
 padding:20px;
 position:relative;
 }
-.hero h1{color:#fff;font-size:2.6rem;margin-bottom:15px}
+.hero h1{color:#fff;font-size:2.7rem;margin-bottom:15px}
 .hero p{color:#eee;font-size:1.05rem;max-width:760px;margin:0 auto 25px;line-height:1.6}
 .explore-btn{
-background:#c62828;color:#fff;padding:14px 40px;
+background:#c62828;color:#fff;padding:14px 42px;
 font-size:1.1rem;border:none;border-radius:30px;cursor:pointer
 }
 .explore-btn:hover{background:#b71c1c}
@@ -35,7 +35,7 @@ font-size:1.1rem;border:none;border-radius:30px;cursor:pointer
 position:absolute;bottom:25px;right:25px;width:120px;opacity:.25
 }
 
-/* DASHBOARD */
+/* MENU */
 .menu{
 position:fixed;top:20px;left:20px;font-size:30px;
 color:#fff;cursor:pointer;z-index:1000
@@ -49,39 +49,48 @@ background:#111;padding:70px 20px;transition:.3s;z-index:999
 
 /* CONTENT */
 #content{display:none;padding:40px 20px}
-.section{margin-bottom:60px}
-.section h2{text-align:center;margin-bottom:25px}
+.section{margin-bottom:70px}
+.section h2{text-align:center;margin-bottom:30px}
 
-/* GALLERY */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px
-}
-.card{
-background:#fff;border-radius:12px;overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,.1)
-}
-.card img{width:100%;height:200px;object-fit:cover}
-.card .text{padding:15px}
-.card h3{margin-bottom:6px}
-
-/* PACKAGES */
+/* CARD / PACKAGE */
 .package{
-background:#fff;padding:25px;border-radius:12px;
-box-shadow:0 4px 10px rgba(0,0,0,.1);margin-bottom:30px
+background:#fff;border-radius:14px;
+box-shadow:0 4px 12px rgba(0,0,0,.12);
+overflow:hidden;margin-bottom:40px;
+max-width:900px;margin-left:auto;margin-right:auto;
+}
+.package img{width:100%;height:260px;object-fit:cover}
+.package .info{padding:25px}
+.package h3{margin-bottom:10px}
+.package ul{margin-left:20px;margin-top:10px}
+.package p{line-height:1.6}
+
+/* BOOKING */
+.booking{
+margin-top:18px;
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+align-items:center;
+}
+.booking input{
+padding:10px;
+border:1px solid #ccc;
+border-radius:6px;
 }
 .book-btn{
-margin-top:15px;background:#1976d2;color:#fff;
-border:none;padding:10px 25px;border-radius:25px;cursor:pointer
+background:#1976d2;color:#fff;
+border:none;padding:10px 26px;
+border-radius:25px;cursor:pointer
 }
+.book-btn:hover{background:#125ea8}
 
 /* FLOATING */
-.float-whatsapp{position:fixed;bottom:20px;left:20px;width:55px}
-.float-email{position:fixed;bottom:20px;right:20px;width:55px}
+.float-whatsapp{position:fixed;bottom:20px;left:20px;width:55px;z-index:1000}
+.float-email{position:fixed;bottom:20px;right:20px;width:55px;z-index:1000}
 
 /* FOOTER */
-footer{text-align:center;padding:25px;font-size:.9rem;color:#555}
+footer{text-align:center;padding:30px;font-size:.9rem;color:#555}
 </style>
 </head>
 
@@ -95,6 +104,7 @@ footer{text-align:center;padding:25px;font-size:.9rem;color:#555}
 <a href="#contact">Contact</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
 <div>
 <h1>Experience Kenya</h1>
@@ -111,120 +121,102 @@ and city tours, we deliver unforgettable journeys.
 
 <div id="content">
 
-<!-- DESTINATION OVERVIEW -->
+<!-- DESTINATIONS -->
 <section class="section" id="destinations">
 <h2>Destination Overview – Kenya Highlights</h2>
 
 <div class="package">
+<img src="images/IMG-20260111-WA0001.jpg">
+<div class="info">
 <h3>Lake Naivasha</h3>
 <p>
 A beautiful freshwater lake in the Great Rift Valley, Lake Naivasha is famous
 for its peaceful scenery and rich birdlife. Visitors enjoy boat rides,
 walking safaris on Crescent Island, and close encounters with hippos,
-giraffes, and zebras. It’s an ideal place for relaxation and nature photography.
+giraffes, and zebras.
 </p>
+<div class="booking">
+<input type="date">
+<button class="book-btn">Book Now</button>
+</div>
+</div>
 </div>
 
 <div class="package">
+<img src="images/IMG-20260111-WA0008.jpg">
+<div class="info">
 <h3>Lake Nakuru National Park</h3>
 <p>
 Known for its flamingos and large rhino population, Lake Nakuru National Park
-is one of Kenya’s best places to see endangered black and white rhinos.
-The park also offers stunning viewpoints, waterfalls, forests, and diverse
-wildlife including lions, leopards, giraffes, and buffalo.
+offers waterfalls, forests, viewpoints and wildlife including lions,
+leopards, giraffes and buffalo.
 </p>
+<div class="booking">
+<input type="date">
+<button class="book-btn">Book Now</button>
+</div>
+</div>
 </div>
 
 <div class="package">
+<img src="images/IMG-20260111-WA0026.jpg">
+<div class="info">
 <h3>Masai Mara National Reserve</h3>
 <p>
-The Masai Mara is Kenya’s most famous safari destination, renowned for the
-Great Wildebeest Migration and incredible year-round wildlife viewing.
-It offers vast open savannahs, big cats, and authentic Maasai culture,
-making it the ultimate African safari experience.
+Kenya’s most famous safari destination, renowned for the Great Wildebeest
+Migration, big cats and authentic Maasai culture.
 </p>
+<div class="booking">
+<input type="date">
+<button class="book-btn">Book Now</button>
+</div>
+</div>
 </div>
 
 <div class="package">
-<h3>Nairobi City</h3>
+<img src="images/IMG-20260111-WA0033.jpg">
+<div class="info">
+<h3>Nairobi City Tour</h3>
 <p>
-Kenya’s vibrant capital city blends modern life with rich culture and wildlife
-conservation. Highlights include the Giraffe Centre, David Sheldrick Elephant
-Orphanage, museums, markets, and lively streets. Nairobi is the perfect
-starting point for any Kenyan adventure.
+Visit Nairobi National Park, Giraffe Centre, David Sheldrick Elephant
+Orphanage, museums and vibrant markets.
 </p>
+<div class="booking">
+<input type="date">
+<button class="book-btn">Book Now</button>
 </div>
+</div>
+</div>
+
 </section>
 
 <!-- 6 DAY SAFARI -->
 <section class="section" id="safari">
-<h2>6-Day Safari Package</h2>
+<h2>6-Day Safari (Lake Naivasha, Lake Nakuru, Masai Mara & Nairobi City)</h2>
 
 <div class="package">
-<h3>Day 1: Pick-up Nairobi → Lake Naivasha</h3>
+<img src="images/IMG-20260111-WA0026.jpg">
+<div class="info">
+<h3>Complete 6-Day Safari Experience</h3>
 <ul>
-<li>Pick-up from Nairobi hotel or airport</li>
-<li>Drive to Lake Naivasha</li>
-<li>Boat ride and Crescent Island walking safari</li>
-<li>Overnight in Lake Naivasha (hotel/lodge)</li>
+<li>Day 1: Nairobi → Lake Naivasha (Boat ride & Crescent Island)</li>
+<li>Day 2: Lake Naivasha → Masai Mara</li>
+<li>Day 3: Full-day Masai Mara safari</li>
+<li>Day 4: Mara River & Maasai village (optional)</li>
+<li>Day 5: Masai Mara → Nairobi</li>
+<li>Day 6: Nairobi City Tour</li>
 </ul>
+<div class="booking">
+<input type="date">
+<button class="book-btn">Book Full Safari</button>
 </div>
-
-<div class="package">
-<h3>Day 2: Lake Naivasha → Masai Mara</h3>
-<ul>
-<li>Breakfast</li>
-<li>Scenic drive to Masai Mara National Reserve</li>
-<li>Afternoon game drive</li>
-<li>Overnight at Masai Mara hotel/lodge</li>
-</ul>
 </div>
-
-<div class="package">
-<h3>Day 3: Masai Mara Safari</h3>
-<ul>
-<li>Full-day game drive with picnic lunch</li>
-<li>Search for Big Five and other wildlife</li>
-<li>Overnight in Masai Mara (hotel/lodge)</li>
-</ul>
-</div>
-
-<div class="package">
-<h3>Day 4: Masai Mara Safari</h3>
-<ul>
-<li>Morning and afternoon game drives</li>
-<li>Visit Mara River</li>
-<li>Optional Maasai village visit</li>
-<li>Overnight in Masai Mara (hotel/lodge)</li>
-</ul>
-</div>
-
-<div class="package">
-<h3>Day 5: Masai Mara → Nairobi</h3>
-<ul>
-<li>Breakfast</li>
-<li>Depart Masai Mara</li>
-<li>Transfer back to Nairobi City</li>
-<li>Check-in and rest</li>
-<li>Overnight in Nairobi (hotel/lodge)</li>
-</ul>
-</div>
-
-<div class="package">
-<h3>Day 6: Nairobi City Tour</h3>
-<ul>
-<li>Nairobi National Park</li>
-<li>David Sheldrick Elephant Orphanage</li>
-<li>Giraffe Centre</li>
-<li>End of tour at hotel / lodge / airport</li>
-</ul>
-
-<button class="book-btn">Book This Safari</button>
 </div>
 </section>
 
 </div>
 
+<!-- FLOATING -->
 <a href="https://wa.me/254746011254" target="_blank">
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="float-whatsapp">
 </a>
