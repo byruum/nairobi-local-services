@@ -7,241 +7,358 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+html{scroll-behavior:smooth}
 body{background:#f4f4f4;color:#222}
 
-/* TOP BAR */
-header{
+/* ===== DASHBOARD ===== */
+.menu{
 position:fixed;
-top:0;left:0;width:100%;
-z-index:1000;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-background:rgba(0,0,0,0.4);
+top:18px;
+left:18px;
+font-size:32px;
 color:#fff;
+cursor:pointer;
+z-index:2000;
 }
-header h2{font-size:20px}
-header nav a{
-color:#fff;
-margin-left:20px;
-text-decoration:none;
-font-weight:bold;
-}
-header nav a:hover{text-decoration:underline}
 
-/* HERO */
+.nav{
+position:fixed;
+top:0;
+left:-280px;
+width:280px;
+height:100%;
+background:#111;
+padding:30px 20px;
+transition:.3s;
+z-index:1999;
+}
+
+.nav.show{left:0}
+
+.nav img{
+width:140px;
+display:block;
+margin:0 auto 30px;
+}
+
+.nav a{
+display:block;
+color:#fff;
+text-decoration:none;
+padding:12px 0;
+font-size:1.05rem;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+/* ===== HERO ===== */
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.75)),
-url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+url("images/hero.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:40px;
+padding:20px;
+position:relative;
 }
-.hero div{max-width:850px;color:#fff}
-.hero h1{font-size:48px;margin-bottom:20px}
-.hero p{font-size:18px;line-height:1.7}
-.hero button{
-margin-top:30px;
-padding:14px 30px;
-font-size:18px;
+
+.hero-logo{
+position:absolute;
+top:20px;
+right:20px;
+width:120px;
+opacity:.9;
+}
+
+.hero h1{
+color:#fff;
+font-size:2.6rem;
+margin-bottom:18px;
+}
+
+.hero p{
+color:#eee;
+max-width:900px;
+margin:0 auto 30px;
+line-height:1.7;
+font-size:1.05rem;
+}
+
+.explore-btn{
+background:#c62828;
+color:#fff;
+padding:14px 44px;
 border:none;
 border-radius:30px;
-background:#e0a800;
-color:#000;
+font-size:1.1rem;
 cursor:pointer;
 }
-.hero button:hover{background:#ffbe2e}
 
-/* SECTIONS */
+.explore-btn:hover{background:#b71c1c}
+
+/* ===== SECTIONS ===== */
 .section{
-padding:80px 30px;
+padding:70px 20px;
 max-width:1200px;
 margin:auto;
 }
+
 .section h2{
 text-align:center;
-margin-bottom:30px;
-font-size:32px;
+margin-bottom:35px;
+font-size:2rem;
 }
 
-/* WHY JUMA */
-.why{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-text-align:center;
-}
-.why div{
+/* ===== ABOUT / WHY ===== */
+.text-box{
 background:#fff;
-padding:25px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,.1);
+padding:30px;
+border-radius:14px;
+box-shadow:0 4px 12px rgba(0,0,0,.1);
+line-height:1.7;
 }
 
-/* DESTINATIONS */
-.destinations{
+/* ===== DESTINATION GRID ===== */
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+gap:22px;
 }
+
 .card{
 background:#fff;
-border-radius:12px;
+border-radius:14px;
 overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,.1);
-cursor:pointer;
+box-shadow:0 4px 12px rgba(0,0,0,.1);
 }
+
 .card img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 }
-.card div{padding:15px}
-.card h3{margin-bottom:5px}
 
-/* GALLERY */
-#gallery{
-display:none;
-background:#000;
-min-height:100vh;
-padding:80px 20px;
-color:#fff;
+.card .text{
+padding:18px;
 }
-#gallery h2{text-align:center;margin-bottom:20px}
-.gallery-grid{
+
+.card h3{margin-bottom:6px}
+.card p{font-size:.95rem;color:#555}
+
+/* ===== AUTO GALLERY ===== */
+.gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:15px;
 }
-.gallery-grid img{
+
+.gallery img{
 width:100%;
-border-radius:10px;
+height:180px;
 object-fit:cover;
+border-radius:10px;
 }
 
-/* FOOTER */
+/* ===== WHERE TO GO ===== */
+.where-box{
+text-align:center;
+}
+
+.where-box button{
+background:#1976d2;
+color:#fff;
+border:none;
+padding:14px 36px;
+border-radius:30px;
+font-size:1rem;
+cursor:pointer;
+}
+
+.where-list{
+display:none;
+margin-top:20px;
+}
+
+.where-list span{
+display:inline-block;
+background:#eee;
+padding:8px 16px;
+border-radius:20px;
+margin:6px;
+font-size:.9rem;
+}
+
+/* ===== FOOTER ===== */
 footer{
 background:#111;
-color:#aaa;
+color:#ccc;
+padding:30px 20px;
 text-align:center;
-padding:25px;
-font-size:14px;
+font-size:.9rem;
 }
+footer a{color:#ccc;text-decoration:none}
+footer a:hover{text-decoration:underline}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h2>Juma Adventures</h2>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#destinations">Explore</a>
-    <a href="#why">Why Juma</a>
-  </nav>
-</header>
+<!-- DASHBOARD -->
+<div class="menu" onclick="toggleNav()">☰</div>
 
+<div class="nav" id="nav">
+<img src="images/logo.png" alt="Juma Adventures Logo">
+<a href="#about">About Juma</a>
+<a href="#why">Why Juma</a>
+<a href="#destinations">Destinations</a>
+<a href="#gallery">Gallery</a>
+<a href="#where">Where To Go</a>
+<a href="#footer">Privacy & Terms</a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>Experience East Africa</h1>
-    <p>
-      <strong>Ready to experience East Africa with Juma Adventures?</strong><br><br>
-      Embark on unforgettable wildlife safaris across Kenya and Tanzania, where iconic landscapes meet rich wildlife and culture.
-      From the legendary plains of the Masai Mara and Serengeti to thrilling hiking tours, mountain expeditions,
-      and rock-climbing adventures, we take you deep into the heart of Africa’s most breathtaking destinations.
-    </p>
-    <button onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">
-      Explore
-    </button>
-  </div>
+<img src="images/logo.png" class="hero-logo" alt="Logo">
+
+<div>
+<h1>Ready to experience East Africa with Juma Adventures?</h1>
+<p>
+Embark on unforgettable wildlife safaris across Kenya and Tanzania,
+where iconic landscapes meet rich wildlife and culture.
+From the legendary plains of the Masai Mara and Serengeti to thrilling
+hiking tours, mountain expeditions, and rock-climbing adventures,
+we take you deep into the heart of Africa’s most breathtaking destinations.
+</p>
+<button class="explore-btn" onclick="scrollToContent()">Explore</button>
+</div>
 </section>
 
+<!-- ABOUT -->
 <section class="section" id="about">
-  <h2>About Juma Adventures</h2>
-  <p style="max-width:850px;margin:auto;text-align:center;line-height:1.7">
-    Ready to experience East Africa with Juma Adventures?
-    Embark on unforgettable wildlife safaris across Kenya and Tanzania, where iconic landscapes meet rich wildlife and culture.
-    From the legendary plains of the Masai Mara and Serengeti to thrilling hiking tours, mountain expeditions,
-    and rock-climbing adventures, we take you deep into the heart of Africa’s most breathtaking destinations.
-  </p>
+<h2>About Juma Adventures</h2>
+<div class="text-box">
+Juma Adventures is a trusted East African tour company delivering
+authentic safari, adventure, cultural, and coastal experiences.
+We specialize in tailor-made journeys for solo travelers, families,
+groups, and corporate clients.
+</div>
 </section>
 
+<!-- WHY -->
 <section class="section" id="why">
-  <h2>Why Choose Juma Adventures</h2>
-  <div class="why">
-    <div>✔ Experienced Local Guides</div>
-    <div>✔ Flexible Packages</div>
-    <div>✔ Affordable Pricing</div>
-    <div>✔ Personalized Adventures</div>
-  </div>
+<h2>Why Choose Juma Adventures</h2>
+<div class="text-box">
+✔ Experienced local guides<br>
+✔ Flexible and affordable packages<br>
+✔ Safety-focused adventures<br>
+✔ Personalized travel planning<br>
+✔ Deep local knowledge of East Africa
+</div>
 </section>
 
+<!-- DESTINATIONS -->
 <section class="section" id="destinations">
-  <h2>Where do you want to go?</h2>
+<h2>Destinations & Experiences</h2>
 
-  <div class="destinations">
-    <div class="card" onclick="openGallery('masai-mara','Masai Mara – Big Five & Great Migration')">
-      <img src="images/masai-mara/1.jpg">
-      <div><h3>Masai Mara</h3><p>Big Five & Great Migration</p></div>
-    </div>
+<div class="grid">
+<div class="card">
+<img src="images/masai-mara/1.jpg">
+<div class="text">
+<h3>Masai Mara</h3>
+<p>Big Five safaris & the Great Migration.</p>
+</div>
+</div>
 
-    <div class="card" onclick="openGallery('amboseli','Amboseli – Mt Kilimanjaro Views')">
-      <img src="images/amboseli/1.jpg">
-      <div><h3>Amboseli</h3><p>Elephants & Kilimanjaro</p></div>
-    </div>
+<div class="card">
+<img src="images/amboseli/1.jpg">
+<div class="text">
+<h3>Amboseli</h3>
+<p>Elephants with Mount Kilimanjaro views.</p>
+</div>
+</div>
 
-    <div class="card" onclick="openGallery('nairobi-national-park','Nairobi National Park – City Safari')">
-      <img src="images/nairobi-national-park/1.jpg">
-      <div><h3>Nairobi National Park</h3><p>City Wildlife Safari</p></div>
-    </div>
+<div class="card">
+<img src="images/nairobi-national-park/1.jpg">
+<div class="text">
+<h3>Nairobi National Park</h3>
+<p>City wildlife safari experience.</p>
+</div>
+</div>
 
-    <div class="card" onclick="openGallery('tsavo','Tsavo – Red Elephants')">
-      <img src="images/tsavo/1.jpg">
-      <div><h3>Tsavo</h3><p>Red Elephants</p></div>
-    </div>
-
-    <div class="card" onclick="openGallery('samburu','Samburu – Unique Wildlife')">
-      <img src="images/samburu/1.jpg">
-      <div><h3>Samburu</h3><p>Rare Northern Species</p></div>
-    </div>
-
-    <div class="card" onclick="openGallery('ngorongoro','Ngorongoro – Crater Safari')">
-      <img src="images/ngorongoro/1.jpg">
-      <div><h3>Ngorongoro</h3><p>World Heritage Crater</p></div>
-    </div>
-  </div>
+<div class="card">
+<img src="images/tsavo/1.jpg">
+<div class="text">
+<h3>Tsavo</h3>
+<p>Vast landscapes and red elephants.</p>
+</div>
+</div>
+</div>
 </section>
 
-<section id="gallery">
-  <h2 id="galleryTitle"></h2>
-  <div class="gallery-grid" id="galleryGrid"></div>
+<!-- AUTO GALLERY -->
+<section class="section" id="gallery">
+<h2>Adventure Gallery</h2>
+<div class="gallery" id="autoGallery"></div>
 </section>
 
-<footer>
-  © Juma Adventures | Powered by Webtool
+<!-- WHERE -->
+<section class="section" id="where">
+<h2>Where do you want to go?</h2>
+<div class="where-box">
+<button onclick="toggleWhere()">Select Destination</button>
+<div class="where-list" id="whereList">
+<span>Masai Mara</span>
+<span>Amboseli</span>
+<span>Tsavo</span>
+<span>Samburu</span>
+<span>Ngorongoro</span>
+<span>Diani Beach</span>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+<p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+<p>© Juma Adventures & Safaris</p>
 </footer>
 
 <script>
-function openGallery(folder,title){
-  document.getElementById('gallery').style.display='block';
-  document.getElementById('galleryTitle').innerText=title;
-  const grid=document.getElementById('galleryGrid');
-  grid.innerHTML='';
-
-  for(let i=1;i<=12;i++){
-    const img=document.createElement('img');
-    img.src=`images/${folder}/${i}.jpg`;
-    img.onerror=()=>img.remove();
-    grid.appendChild(img);
-  }
-
-  window.scrollTo({top:document.getElementById('gallery').offsetTop,behavior:'smooth'});
+function toggleNav(){
+document.getElementById("nav").classList.toggle("show");
 }
+
+function scrollToContent(){
+document.getElementById("about").scrollIntoView({behavior:"smooth"});
+}
+
+function toggleWhere(){
+let w=document.getElementById("whereList");
+w.style.display=w.style.display==="block"?"none":"block";
+}
+
+/* ===== AUTOMATIC GALLERY ===== */
+const folders=[
+"masai-mara",
+"amboseli",
+"nairobi-national-park",
+"tsavo",
+"samburu",
+"ngorongoro"
+];
+
+const gallery=document.getElementById("autoGallery");
+
+folders.forEach(folder=>{
+for(let i=1;i<=6;i++){
+let img=document.createElement("img");
+img.src=`images/${folder}/${i}.jpg`;
+img.onerror=()=>img.remove();
+gallery.appendChild(img);
+}
+});
 </script>
 
 </body>
