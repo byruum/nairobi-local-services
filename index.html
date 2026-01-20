@@ -3,261 +3,294 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juma Adventures | Experience East Africa</title>
+<title>Juma Adventures | Kenya Safaris & Tours</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f4f4f4;color:#222;line-height:1.6}
-
-/* HEADER */
-header{
-position:fixed;top:0;left:0;width:100%;
-background:rgba(0,0,0,0.6);
-padding:15px 25px;
-display:flex;align-items:center;justify-content:space-between;
-z-index:1000
+:root{
+  --primary:#0b5ed7;
+  --dark:#111;
+  --light:#f8f9fa;
+  --card:#ffffff;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
 }
-header img{height:45px}
-.menu{font-size:28px;color:#fff}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+
+body{background:#fff;color:#222;line-height:1.6}
+
+/* NAVBAR */
+nav{
+  position:absolute;
+  top:0;left:0;width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  z-index:10;
+}
+nav img{height:48px}
+nav ul{display:flex;gap:30px;list-style:none}
+nav ul li a{
+  color:#fff;text-decoration:none;font-weight:600
+}
 
 /* HERO */
 .hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
-url("images/IMG-20260111-WA0026.jpg") center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:#fff;padding:20px
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+  url("images/hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
 }
-.hero h1{font-size:42px;margin-bottom:20px}
-.hero p{max-width:950px;font-size:18px}
+.hero-content{max-width:650px;color:#fff}
+.hero h1{font-size:48px;margin-bottom:20px}
+.hero p{font-size:18px;margin-bottom:30px}
 .hero button{
-margin-top:30px;
-padding:15px 40px;
-background:#e67e22;color:#fff;
-border:none;border-radius:30px;
-font-size:16px;cursor:pointer
+  background:var(--primary);
+  border:none;
+  padding:14px 28px;
+  font-size:16px;
+  color:#fff;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-/* SECTIONS */
+/* SECTION */
 section{padding:80px 8%}
-.section-title{text-align:center;margin-bottom:40px}
-.section-title h2{font-size:32px}
-
-/* WHERE TO GO */
-.filter{text-align:center;margin-bottom:30px}
-.filter select{padding:10px 20px;font-size:16px}
-
-/* PACKAGE */
-.package{
-background:#fff;
-border-radius:12px;
-overflow:hidden;
-margin-bottom:60px;
-box-shadow:0 5px 15px rgba(0,0,0,.1)
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
 }
-.package img{width:100%;height:320px;object-fit:cover}
-.package-content{padding:30px}
-.package-content h3{font-size:26px;color:#e67e22}
-.package-content h4{margin-top:20px}
-.package-content ul{margin-left:20px}
-.package-content button{
-margin-top:25px;
-padding:12px 30px;
-background:#27ae60;color:#fff;
-border:none;border-radius:25px;
-cursor:pointer
-}
-.package-content input{margin-top:15px;padding:10px;width:200px}
+.section-title h2{font-size:36px;margin-bottom:10px}
+.section-title p{color:#666}
 
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:10px;margin-top:20px
+/* DESTINATIONS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
-.gallery img{
-width:100%;height:150px;object-fit:cover;border-radius:8px
+.card{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+.card .content{padding:20px}
+.card h3{margin-bottom:10px}
+.card p{font-size:14px;color:#555}
+
+/* TOUR DETAILS */
+.tour-box{
+  background:var(--light);
+  border-radius:14px;
+  padding:40px;
+  box-shadow:var(--shadow);
+  margin-bottom:60px;
+}
+.tour-box h3{font-size:28px;margin-bottom:15px}
+.tour-box h4{margin-top:25px}
+.tour-box ul{margin-left:20px;margin-top:10px}
+.tour-box li{margin-bottom:8px}
+
+/* BOOK */
+.book{
+  display:flex;
+  gap:15px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+.book input, .book button{
+  padding:12px;
+  font-size:15px;
+}
+.book button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-/* FLOATING */
-.float{position:fixed;right:20px;z-index:2000}
+/* FLOATING BUTTONS */
+.floating{
+  position:fixed;
+  right:20px;
+  z-index:999;
+}
 .whatsapp{bottom:90px}
-.email{bottom:20px}
-.float a{
-display:block;
-background:#25d366;
-color:#fff;
-padding:15px;
-border-radius:50%;
-text-align:center;
-font-size:20px;
-margin-top:10px;
-text-decoration:none
+.email{bottom:30px}
+.floating a{
+  display:block;
+  background:#25d366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  margin-top:10px;
+  box-shadow:var(--shadow);
 }
-.email a{background:#3498db}
+.email a{background:#0b5ed7}
 
-footer{background:#222;color:#fff;text-align:center;padding:20px}
+/* FOOTER */
+footer{
+  background:#111;color:#aaa;
+  padding:40px 8%;
+  text-align:center;
+}
+footer span{color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{font-size:34px}
+nav ul{display:none}
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<img src="images/logo.png">
-<div class="menu">☰</div>
-</header>
+<!-- NAV -->
+<nav>
+  <img src="images/logo.png" alt="Logo">
+  <ul>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#tours">Tours</a></li>
+    <li><a href="#nairobi">City Tour</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
 <!-- HERO -->
 <div class="hero">
-<div>
-<h1>Ready to experience East Africa with Juma Adventures?</h1>
-<p>
-Embark on unforgettable wildlife safaris across Kenya and Tanzania, where iconic landscapes meet rich wildlife and culture. From the legendary plains of the Masai Mara and Serengeti to thrilling hiking tours, mountain expeditions, and rock-climbing adventures, we take you deep into the heart of Africa's most breathtaking destinations.
-</p>
-<button onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">
-Explore Destinations
-</button>
-</div>
+  <div class="hero-content">
+    <h1>Experience Kenya Like Never Before</h1>
+    <p>Authentic safaris, mountain adventures, and unforgettable city experiences across Kenya’s most iconic destinations.</p>
+    <button onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">
+      Explore Tours
+    </button>
+  </div>
 </div>
 
-<!-- WHERE TO GO -->
-<section id="explore">
-<div class="section-title">
-<h2>Destination Overview – Kenya Highlights</h2>
-</div>
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <div class="section-title">
+    <h2>Destination Overview – Kenya Highlights</h2>
+    <p>Discover Kenya’s most breathtaking locations</p>
+  </div>
 
-<p><strong>Lake Naivasha</strong><br>
-A beautiful freshwater lake in the Great Rift Valley, Lake Naivasha is famous for its peaceful scenery and rich birdlife. Visitors enjoy boat rides, walking safaris on Crescent Island, and close encounters with hippos, giraffes, and zebras. It’s an ideal place for relaxation and nature photography.
-</p><br>
+  <div class="grid">
+    <div class="card">
+      <img src="images/naivasha.jpg">
+      <div class="content">
+        <h3>Lake Naivasha</h3>
+        <p>A beautiful freshwater lake in the Great Rift Valley, famous for boat rides, Crescent Island walking safaris, birdlife, and hippos.</p>
+      </div>
+    </div>
 
-<p><strong>Lake Nakuru National Park</strong><br>
-Known for its flamingos and large rhino population, Lake Nakuru National Park is one of Kenya’s best places to see endangered black and white rhinos. The park also offers stunning viewpoints, waterfalls, forests, and diverse wildlife including lions, leopards, giraffes, and buffalo.
-</p><br>
+    <div class="card">
+      <img src="images/nakuru.jpg">
+      <div class="content">
+        <h3>Lake Nakuru National Park</h3>
+        <p>Home to flamingos and endangered rhinos with forests, waterfalls, and rich wildlife.</p>
+      </div>
+    </div>
 
-<p><strong>Masai Mara National Reserve</strong><br>
-The Masai Mara is Kenya’s most famous safari destination, renowned for the Great Wildebeest Migration and incredible year-round wildlife viewing. It offers vast open savannahs, big cats, and authentic Maasai culture, making it the ultimate African safari experience.
-</p><br>
+    <div class="card">
+      <img src="images/mara.jpg">
+      <div class="content">
+        <h3>Masai Mara</h3>
+        <p>Kenya’s most famous reserve, known for the Great Migration, big cats, and Maasai culture.</p>
+      </div>
+    </div>
 
-<p><strong>Nairobi City</strong><br>
-Kenya’s vibrant capital city blends modern life with rich culture and wildlife conservation. Highlights include the Giraffe Centre, David Sheldrick Elephant Orphanage, museums, markets, and lively streets. Nairobi is the perfect starting point for any Kenyan adventure.
-</p>
+    <div class="card">
+      <img src="images/nairobi.jpg">
+      <div class="content">
+        <h3>Nairobi City</h3>
+        <p>A vibrant capital blending wildlife, culture, museums, and modern city life.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- PACKAGES -->
-<section>
+<!-- TOURS -->
+<section id="tours">
 
-<div class="package">
-<img src="images/safari.jpg">
-<div class="package-content">
-<h3>6-Day Safari – Lake Naivasha, Lake Nakuru, Masai Mara & Nairobi City</h3>
+<div class="tour-box">
+<h3>6-Day Safari: Lake Naivasha – Lake Nakuru – Masai Mara – Nairobi</h3>
 
 <h4>Itinerary</h4>
-<ul>
-<li>Day 1: Pick-up Nairobi → Lake Naivasha, boat ride & Crescent Island walking safari</li>
-<li>Day 2: Lake Naivasha → Masai Mara, afternoon game drive</li>
-<li>Day 3: Full-day Masai Mara safari with picnic lunch</li>
-<li>Day 4: Morning & afternoon game drives, visit Mara River, optional Maasai village</li>
-<li>Day 5: Masai Mara → Nairobi, rest overnight</li>
-<li>Day 6: Nairobi City Tour – National Park, Elephant Orphanage & Giraffe Centre</li>
-</ul>
+<p><strong>Day 1:</strong> Pick-up Nairobi → Lake Naivasha (Boat ride & Crescent Island)</p>
+<p><strong>Day 2:</strong> Lake Naivasha → Masai Mara (Afternoon game drive)</p>
+<p><strong>Day 3:</strong> Full-day Masai Mara safari (Big Five)</p>
+<p><strong>Day 4:</strong> Masai Mara game drives & Mara River</p>
+<p><strong>Day 5:</strong> Masai Mara → Nairobi (Rest)</p>
+<p><strong>Day 6:</strong> Nairobi City Tour & departure</p>
 
-<input type="date"><br>
-<button>Book Now</button>
-
-<div class="gallery">
-<img src="images/safari1.jpg">
-<img src="images/safari2.jpg">
-<img src="images/safari3.jpg">
-<img src="images/safari4.jpg">
-</div>
+<div class="book">
+  <input type="date">
+  <button>Book Now</button>
 </div>
 </div>
 
-<div class="package">
-<img src="images/mtkenya.jpg">
-<div class="package-content">
-<h3>Mount Kenya 4–5 Days Trekking Adventure – $2350</h3>
+<div class="tour-box">
+<h3>Mount Kenya Trek – Point Lenana (4–5 Days)</h3>
+<p><strong>Cost:</strong> $2350</p>
+<p>A scenic trekking adventure to Africa’s second-highest mountain with sunrise summit views.</p>
 
-<p>
-Embark on an unforgettable 4–5 days hiking adventure to Mount Kenya, Africa’s second-highest mountain (5,199 m), culminating at Point Lenana (4,985 m).
-</p>
-
-<h4>Included</h4>
 <ul>
 <li>Park fees & permits</li>
-<li>Professional guide & porters</li>
+<li>Professional guides & porters</li>
 <li>Full-board meals</li>
 <li>Accommodation</li>
-<li>Transfers</li>
 </ul>
 
-<h4>Not Included</h4>
-<ul>
-<li>Personal hiking gear</li>
-<li>Tips for crew</li>
-</ul>
-
-<input type="date"><br>
-<button>Book Now</button>
-
-<div class="gallery">
-<img src="images/mt1.jpg">
-<img src="images/mt2.jpg">
-<img src="images/mt3.jpg">
-<img src="images/mt4.jpg">
-</div>
+<div class="book">
+  <input type="date">
+  <button>Book Now</button>
 </div>
 </div>
 
-<div class="package">
-<img src="images/nairobi.jpg">
-<div class="package-content">
-<h3>Nairobi City Day Tour – $360</h3>
+</section>
 
-<p>
-Enjoy a full-day guided tour exploring the best of Nairobi including Elephant Orphanage, Giraffe Centre, Nairobi National Museum, CBD landmarks and Maasai Market.
-</p>
+<!-- NAIROBI -->
+<section id="nairobi">
+<div class="tour-box">
+<h3>Nairobi City Tour</h3>
+<p><strong>Cost:</strong> $360</p>
+<p>Includes transport, Giraffe Centre, Elephant Orphanage, Museum & guiding.</p>
+<p><strong>Excluded:</strong> Personal expenses & lunch</p>
 
-<h4>Included</h4>
-<ul>
-<li>Transportation</li>
-<li>Entry fees</li>
-<li>Professional guide</li>
-</ul>
-
-<h4>Excluded</h4>
-<ul>
-<li>Personal expenses</li>
-<li>Food & lunch</li>
-</ul>
-
-<input type="date"><br>
-<button>Book Now</button>
-
-<div class="gallery">
-<img src="images/nairobi1.jpg">
-<img src="images/nairobi2.jpg">
-<img src="images/nairobi3.jpg">
-<img src="images/nairobi4.jpg">
+<div class="book">
+  <input type="date">
+  <button>Book Now</button>
 </div>
 </div>
-</div>
-
 </section>
 
 <!-- FLOATING -->
-<div class="float whatsapp">
-<a href="https://wa.me/254705283274">💬</a>
+<div class="floating whatsapp">
+  <a href="https://wa.me/254705283274">WhatsApp</a>
+</div>
+<div class="floating email">
+  <a href="mailto:wanyonyibyram95@gmail.com">Email</a>
 </div>
 
-<div class="float email">
-<a href="mailto:info@jumaadventures.com">✉️</a>
-</div>
-
-<footer>
-<p>© 2026 Juma Adventures | Experience East Africa</p>
+<!-- FOOTER -->
+<footer id="contact">
+<p>© <span>Juma Adventures</span> | Experience Kenya</p>
+<p>Powered by Webtool</p>
 </footer>
 
 </body>
-</html>
+  </html>
