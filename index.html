@@ -2,398 +2,306 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Kenya Safari Adventures</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juma Adventures | Experience Kenya</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{background:#f4f4f4;color:#222}
 
-/* ===== DASHBOARD ===== */
+/* ===== TOP BAR ===== */
+.topbar{
+position:fixed;
+top:0;left:0;
+width:100%;
+padding:15px 20px;
+display:flex;
+align-items:center;
+z-index:1000;
+background:transparent;
+}
 .menu{
-position:fixed;
-top:20px;
-left:20px;
-font-size:30px;
-color:#fff;
+font-size:28px;
 cursor:pointer;
-z-index:3000;
-}
-.nav{
-position:fixed;
-top:0;
-left:-260px;
-width:260px;
-height:100%;
-background:#111;
-padding:80px 25px;
-transition:.3s;
-z-index:2999;
-}
-.nav.show{left:0}
-.nav a{
-display:block;
 color:#fff;
-text-decoration:none;
-margin-bottom:20px;
-font-size:1.05rem;
+}
+.logo{
+margin-left:15px;
+font-size:20px;
+font-weight:bold;
+color:#fff;
 }
 
 /* ===== HERO ===== */
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.75)),
 url("images/hero.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:25px;
+color:#fff;
+padding:20px;
 position:relative;
 overflow:hidden;
 }
 
-/* LOGO WATERMARK */
+/* background logo fade */
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:url("images/logo.png") center/320px no-repeat;
-opacity:0.08;
-pointer-events:none;
+background:url("images/file_00000000b8a0722f94b276953bf7dc5d.png") center/contain no-repeat;
+opacity:.08;
+animation:fadeLogo 8s infinite alternate;
+}
+@keyframes fadeLogo{
+0%{opacity:.04}
+100%{opacity:.12}
 }
 
 .hero-content{
-max-width:900px;
 position:relative;
 z-index:2;
+max-width:800px;
 }
-
 .hero h1{
-color:#fff;
-font-size:2.8rem;
-margin-bottom:18px;
-min-height:90px;
+font-size:42px;
+margin-bottom:15px;
+min-height:60px;
 }
-
 .hero p{
-color:#eee;
-font-size:1.05rem;
-line-height:1.7;
-margin-bottom:30px;
-}
-
-.explore-btn{
-background:#c62828;
-color:#fff;
-border:none;
-padding:15px 45px;
-border-radius:30px;
-font-size:1.1rem;
-cursor:pointer;
-}
-.explore-btn:hover{background:#b71c1c}
-
-/* ===== CONTENT ===== */
-#content{display:none;padding:60px 20px}
-.section{margin-bottom:70px}
-.section h2{text-align:center;margin-bottom:25px}
-
-/* ===== WHERE TO GO ===== */
-.filter{
-text-align:center;
+font-size:18px;
 margin-bottom:25px;
+line-height:1.6;
 }
-.filter button{
-margin:6px;
-padding:10px 18px;
-border:none;
-border-radius:25px;
-background:#1976d2;
-color:#fff;
-cursor:pointer;
+.btn{
+background:#e0b44c;
+color:#000;
+padding:14px 30px;
+text-decoration:none;
+font-weight:bold;
+border-radius:30px;
+display:inline-block;
 }
-.filter button:hover{background:#125ea8}
 
-/* ===== GRID ===== */
-.grid{
+/* ===== WORD BY WORD ANIMATION ===== */
+.word span{
+opacity:0;
+display:inline-block;
+animation:showWord .4s forwards;
+}
+@keyframes showWord{
+to{opacity:1}
+}
+
+/* ===== SECTION ===== */
+section{padding:80px 20px}
+.title{text-align:center;margin-bottom:40px}
+.title h2{font-size:32px}
+
+/* ===== EXPLORE ===== */
+.explore-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
-
-/* ===== CARD ===== */
 .card{
 background:#fff;
-border-radius:14px;
+border-radius:12px;
 overflow:hidden;
-box-shadow:0 6px 15px rgba(0,0,0,.12);
-transition:.3s;
+box-shadow:0 6px 15px rgba(0,0,0,.1);
+cursor:pointer;
 }
-.card:hover{transform:translateY(-6px)}
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-.card .box{padding:18px}
+.card img{width:100%;height:200px;object-fit:cover}
+.card .c-body{padding:15px}
 .card h3{margin-bottom:10px}
-.card p{font-size:.95rem;line-height:1.6;color:#555}
 
-/* ===== PACKAGE ===== */
+/* ===== PACKAGES ===== */
+.packages{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
 .package{
 background:#fff;
-border-radius:14px;
-padding:25px;
-box-shadow:0 6px 15px rgba(0,0,0,.12);
-margin-bottom:40px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 6px 15px rgba(0,0,0,.1);
 }
-.package h3{margin-bottom:8px}
-.price{color:#c62828;font-weight:bold;margin-bottom:15px}
-.package ul{margin-left:18px;margin-bottom:15px}
-.package button{
-background:#2e7d32;
-color:#fff;
-border:none;
-padding:12px 28px;
-border-radius:25px;
-cursor:pointer;
-font-size:1rem;
-}
-.package button:hover{background:#1e5d23}
-
-/* ===== BOOKING MODAL ===== */
-.modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.65);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:4000;
-}
-.modal-content{
-background:#fff;
-padding:30px;
-border-radius:14px;
-width:90%;
-max-width:400px;
-}
-.modal-content h3{margin-bottom:15px}
-.modal-content input, .modal-content button{
+.package img{width:100%;height:220px;object-fit:cover}
+.package .p-body{padding:20px}
+.package ul{margin:15px 0;padding-left:20px}
+.package li{margin-bottom:8px}
+.package input{
 width:100%;
-padding:12px;
-margin-bottom:12px;
+padding:10px;
+margin-bottom:10px;
 }
+.package .btn{width:100%;text-align:center}
 
-/* ===== FLOATING ICONS ===== */
-.float-whatsapp{
+/* ===== FLOATING ===== */
+.float{
 position:fixed;
-bottom:20px;
-left:20px;
-width:55px;
-z-index:3000;
+right:15px;
+bottom:15px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:1000;
 }
-.float-email{
-position:fixed;
-bottom:20px;
-right:20px;
-width:55px;
-z-index:3000;
-}
-
-/* ===== FOOTER ===== */
-footer{
+.float a{
+background:#25d366;
+color:#fff;
+padding:14px;
+border-radius:50%;
+font-size:22px;
 text-align:center;
-padding:30px;
-font-size:.9rem;
-color:#555;
+text-decoration:none;
 }
+.float a.email{background:#444}
 </style>
 </head>
 
 <body>
 
-<!-- DASHBOARD -->
-<div class="menu" onclick="toggleNav()">☰</div>
-<div class="nav" id="nav">
-<a href="#" onclick="enterSite()">Explore</a>
-<a href="#destinations">Destinations</a>
-<a href="#packages">Packages</a>
-<a href="mailto:jumaadventuresandsafaris@gmail.com">Email Support</a>
+<!-- TOP BAR -->
+<div class="topbar">
+<div class="menu">☰</div>
+<div class="logo">KENYA SAFARIS</div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1 id="animatedText"></h1>
+
 <p>
-Discover Kenya with Juma Adventures — offering luxury, budget,
-family-friendly and premium safari experiences across Kenya’s
-most iconic destinations. From wildlife safaris to cultural
-and city tours, we deliver unforgettable journeys.
+Discover Kenya’s breathtaking landscapes, iconic wildlife, rich culture,
+and unforgettable adventures — from city tours to mountain treks and world-class safaris.
 </p>
-<button class="explore-btn" onclick="enterSite()">Explore</button>
+
+<a href="#explore" class="btn">Explore Tours</a>
 </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<div id="content">
-
-<!-- DESTINATIONS -->
-<section class="section" id="destinations">
-<h2>Destination Highlights</h2>
-
-<div class="filter">
-<button onclick="filterCards('all')">All</button>
-<button onclick="filterCards('mara')">Masai Mara</button>
-<button onclick="filterCards('naivasha')">Lake Naivasha</button>
-<button onclick="filterCards('nakuru')">Lake Nakuru</button>
-<button onclick="filterCards('nairobi')">Nairobi</button>
-<button onclick="filterCards('mountkenya')">Mount Kenya</button>
+<!-- EXPLORE -->
+<section id="explore">
+<div class="title">
+<h2>Where To Go</h2>
 </div>
 
-<div class="grid">
-<div class="card mara">
-<img src="images/mara.jpg">
-<div class="box">
-<h3>Masai Mara National Reserve</h3>
-<p>The Masai Mara is Kenya’s most famous safari destination, renowned for the Great Wildebeest Migration and incredible year-round wildlife viewing.</p>
-</div>
-</div>
-
-<div class="card naivasha">
+<div class="explore-grid">
+<div class="card">
 <img src="images/naivasha.jpg">
-<div class="box">
+<div class="c-body">
 <h3>Lake Naivasha</h3>
-<p>A beautiful freshwater lake in the Great Rift Valley, famous for birdlife, boat rides and Crescent Island walking safaris.</p>
+<p>Peaceful freshwater lake with boat rides, walking safaris and rich birdlife.</p>
 </div>
 </div>
 
-<div class="card nakuru">
+<div class="card">
 <img src="images/nakuru.jpg">
-<div class="box">
-<h3>Lake Nakuru National Park</h3>
-<p>Known for flamingos and large rhino population with stunning viewpoints and diverse wildlife.</p>
+<div class="c-body">
+<h3>Lake Nakuru</h3>
+<p>Home to flamingos, rhinos and stunning landscapes.</p>
 </div>
 </div>
 
-<div class="card nairobi">
+<div class="card">
+<img src="images/mara.jpg">
+<div class="c-body">
+<h3>Masai Mara</h3>
+<p>World-famous for the Great Wildebeest Migration.</p>
+</div>
+</div>
+
+<div class="card">
 <img src="images/nairobi.jpg">
-<div class="box">
+<div class="c-body">
 <h3>Nairobi City</h3>
-<p>Kenya’s vibrant capital blending modern life, culture and wildlife conservation.</p>
-</div>
-</div>
-
-<div class="card mountkenya">
-<img src="images/mountkenya.jpg">
-<div class="box">
-<h3>Mount Kenya</h3>
-<p>Adventure hiking, alpine scenery and unforgettable trekking to Point Lenana.</p>
+<p>Wildlife, museums, culture and vibrant city life.</p>
 </div>
 </div>
 </div>
 </section>
 
 <!-- PACKAGES -->
-<section class="section" id="packages">
+<section>
+<div class="title">
 <h2>Tour Packages</h2>
+</div>
+
+<div class="packages">
 
 <div class="package">
-<h3>Nairobi City Day Tour</h3>
-<div class="price">$360 per tour (Max 2 pax)</div>
-<p>Enjoy a full-day guided tour exploring the best of Nairobi including wildlife conservation, culture and city landmarks.</p>
+<img src="images/package1.jpg">
+<div class="p-body">
+<h3>6-Day Kenya Safari</h3>
+<p><b>Lake Naivasha • Lake Nakuru • Masai Mara • Nairobi</b></p>
 <ul>
-<li>David Sheldrick Elephant Orphanage</li>
-<li>Giraffe Centre</li>
-<li>Nairobi National Museum</li>
-<li>City drive & Maasai Market</li>
+<li>Boat ride & walking safari</li>
+<li>Masai Mara game drives</li>
+<li>Nairobi City Tour</li>
 </ul>
-<button onclick="openBooking('Nairobi City Tour')">Book Now</button>
-</div>
-
-<div class="package">
-<h3>6-Day Kenya Safari (Naivasha, Nakuru, Masai Mara & Nairobi)</h3>
-<div class="price">Custom Pricing</div>
-<p>Experience Kenya’s highlights from the Great Rift Valley to the legendary Masai Mara and Nairobi City.</p>
-<button onclick="openBooking('6 Day Safari')">Book Now</button>
-</div>
-
-<div class="package">
-<h3>Mount Kenya 4–5 Days Trekking Adventure</h3>
-<div class="price">$2350</div>
-<p>Unforgettable hiking adventure to Point Lenana (4,985 m), Africa’s second-highest mountain.</p>
-<button onclick="openBooking('Mount Kenya Trek')">Book Now</button>
-</div>
-
-</section>
-</div>
-
-<!-- BOOKING MODAL -->
-<div class="modal" id="bookingModal">
-<div class="modal-content">
-<h3 id="tourName"></h3>
 <input type="date">
-<button onclick="closeBooking()">Confirm Booking</button>
+<a href="#" class="btn">Book Now</a>
 </div>
 </div>
 
-<!-- FLOATING ICONS -->
-<a href="https://wa.me/254746011254" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="float-whatsapp">
-</a>
-<a href="mailto:jumaadventuresandsafaris@gmail.com">
-<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="float-email">
-</a>
+<div class="package">
+<img src="images/package2.jpg">
+<div class="p-body">
+<h3>Mount Kenya – Point Lenana</h3>
+<p><b>4–5 Days Trekking Adventure</b></p>
+<ul>
+<li>UNESCO World Heritage Site</li>
+<li>Sunrise summit experience</li>
+<li>Professional guides & porters</li>
+</ul>
+<input type="date">
+<a href="#" class="btn">Book Now</a>
+</div>
+</div>
 
-<footer>
-<p>Privacy Policy | Terms & Conditions</p>
-<p>Powered by WebTool</p>
-</footer>
+<div class="package">
+<img src="images/package3.jpg">
+<div class="p-body">
+<h3>Nairobi City Tour</h3>
+<p><b>Full-Day Guided Experience</b></p>
+<ul>
+<li>Elephant Orphanage</li>
+<li>Giraffe Centre</li>
+<li>Museum & City Drive</li>
+</ul>
+<input type="date">
+<a href="#" class="btn">Book Now</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FLOATING -->
+<div class="float">
+<a href="https://wa.me/254700000000">💬</a>
+<a href="mailto:info@example.com" class="email">✉️</a>
+</div>
 
 <script>
-/* DASHBOARD */
-function toggleNav(){
-document.getElementById("nav").classList.toggle("show");
-}
+const text = "Experience Kenya Like Never Before";
+const words = text.split(" ");
+const container = document.getElementById("animatedText");
 
-/* ENTER SITE */
-function enterSite(){
-document.querySelector(".hero").style.display="none";
-document.getElementById("content").style.display="block";
-window.scrollTo(0,0);
-}
-
-/* FILTER */
-function filterCards(type){
-document.querySelectorAll(".card").forEach(c=>{
-c.style.display=(type==="all"||c.classList.contains(type))?"block":"none";
+words.forEach((word, i) => {
+const span = document.createElement("span");
+span.textContent = word + " ";
+span.style.animationDelay = `${i * 0.4}s`;
+container.appendChild(span);
 });
-}
-
-/* BOOKING */
-function openBooking(name){
-document.getElementById("tourName").innerText=name;
-document.getElementById("bookingModal").style.display="flex";
-}
-function closeBooking(){
-document.getElementById("bookingModal").style.display="none";
-}
-
-/* LYRIC STYLE HERO TEXT */
-const words=[
-"Experience Kenya",
-"Explore Africa",
-"Discover Wildlife",
-"Create Lifetime Memories"
-];
-let i=0;
-setInterval(()=>{
-document.getElementById("animatedText").innerText=words[i];
-i=(i+1)%words.length;
-},2200);
+container.classList.add("word");
 </script>
 
 </body>
