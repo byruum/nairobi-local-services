@@ -3,183 +3,332 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kenya Adventures | Experience the Wild</title>
+<title>Juma Adventures | Experience Kenya</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{background:#f5f5f5;color:#222;line-height:1.6}
 
 /* ===== TOP BAR ===== */
-.topbar{position:fixed;top:15px;left:15px;z-index:1000}
-.topbar div{width:30px;height:3px;background:#fff;margin:6px 0}
+.topbar{
+position:fixed;top:15px;left:15px;z-index:1000;
+}
+.topbar div{
+width:30px;height:3px;background:#fff;margin:6px 0;
+}
 
-/* ===== HERO (UNCHANGED) ===== */
+/* ===== HERO ===== */
 .hero{
 height:100vh;
 background:
 linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.45)),
 url("images/file_00000000b8a0722f94b276953bf7dc5d.png") center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:#fff;position:relative;overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+position:relative;
+overflow:hidden;
 animation:bgFade 12s infinite alternate;
 }
-@keyframes bgFade{0%{filter:brightness(1)}100%{filter:brightness(1.25)}}
-.hero::after{
-content:"";position:absolute;inset:0;
-background:url("images/logo.png") center/300px no-repeat;opacity:.12;
+
+@keyframes bgFade{
+0%{filter:brightness(1)}
+100%{filter:brightness(1.25)}
 }
-.hero-content{position:relative;z-index:2;max-width:900px;padding:20px}
-.hero h1{font-size:3rem;margin-bottom:15px}
-.lyric span{opacity:0;animation:wordFade 6s infinite}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:url("images/logo.png") center/300px no-repeat;
+opacity:.12;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
+}
+
+.hero h1{
+font-size:3rem;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.lyric span{
+opacity:0;
+animation:wordFade 6s infinite;
+}
 .lyric span:nth-child(1){animation-delay:0s}
 .lyric span:nth-child(2){animation-delay:1.5s}
 .lyric span:nth-child(3){animation-delay:3s}
 .lyric span:nth-child(4){animation-delay:4.5s}
-@keyframes wordFade{0%{opacity:0}15%{opacity:1}35%{opacity:1}50%{opacity:0}}
-.hero p{font-size:1.1rem;margin-bottom:25px}
-.btn{display:inline-block;padding:14px 32px;background:#ff9800;color:#fff;
-text-decoration:none;border-radius:30px;font-weight:bold}
+
+@keyframes wordFade{
+0%{opacity:0}
+15%{opacity:1}
+35%{opacity:1}
+50%{opacity:0}
+}
+
+.hero p{
+font-size:1.1rem;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 32px;
+background:#ff9800;
+color:#fff;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
 .btn:hover{background:#e68900}
 
-/* ===== EXPLORE (UNCHANGED) ===== */
+/* ===== EXPLORE ===== */
 #explore{padding:80px 20px;background:#fff;text-align:center}
 #explore h2{font-size:2.2rem;margin-bottom:10px}
 
-/* ===== WHERE TO GO (ONLY CHANGES HERE) ===== */
-#where{
-padding:100px 20px;
-background:
-linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.95)),
-url("images/IMG-20260115-WA0013(1).jpg") center/cover no-repeat;
-}
-
-#where h2{
-text-align:center;
-font-size:2.2rem;
-margin-bottom:25px;
-cursor:pointer;
-color:#222;
-}
-
-.selector-box{
-max-width:420px;
-margin:0 auto 40px;
-text-align:center;
-}
-
-.selector-box select{
-width:100%;
-padding:14px;
-font-size:1rem;
-border-radius:30px;
-border:1px solid #ccc;
-cursor:pointer;
-}
-
-/* destination blocks */
-.where-grid{
+/* ===== PACKAGES ===== */
+.packages{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 max-width:1200px;
-margin:auto;
+margin:40px auto;
 }
 
-.where-card{
+.card{
 background:#fff;
-padding:25px;
 border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-scroll-margin-top:120px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,.1);
 }
 
-.where-card h3{margin-bottom:10px;color:#ff9800}
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+background:#ddd;
+}
+
+.card-body{padding:20px}
+.card-body h3{margin-bottom:10px}
+.price{color:#ff9800;font-weight:bold;margin:10px 0}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:6px;
+margin:15px 0;
+}
+.gallery div{
+height:60px;
+background:#ddd;
+border-radius:6px;
+}
+
+/* ===== DETAILS ===== */
+.details{
+max-width:1000px;
+margin:80px auto;
+background:#fafafa;
+padding:35px;
+border-radius:18px;
+}
+.details h3{color:#ff9800;margin-bottom:10px}
+
+/* ===== WHERE TO GO ===== */
+#where{
+padding:80px 20px;
+background:#fafafa;
+text-align:center;
+}
+
+#whereToggle{
+font-size:2.2rem;
+cursor:pointer;
+}
+
+.where-slide{
+max-height:0;
+overflow:hidden;
+background:#fff;
+margin:20px auto;
+max-width:420px;
+border-radius:15px;
+box-shadow:0 6px 18px rgba(0,0,0,.15);
+transition:max-height .5s ease;
+}
+
+.where-slide a{
+display:block;
+padding:14px 20px;
+text-decoration:none;
+color:#222;
+border-bottom:1px solid #eee;
+font-weight:bold;
+}
+.where-slide a:hover{
+background:#ff9800;
+color:#fff;
+}
 
 /* ===== FLOATING CONTACT ===== */
-.float{position:fixed;right:20px;z-index:999}
+.float{
+position:fixed;
+right:20px;
+z-index:999;
+}
 .whatsapp{bottom:90px}
 .email{bottom:30px}
+
 .float a{
-width:55px;height:55px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-color:#fff;font-size:22px;text-decoration:none;
+display:block;
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:22px;
+text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
 .whatsapp a{background:#25D366}
 .email a{background:#ff9800}
 
 /* ===== FOOTER ===== */
-footer{background:#111;color:#aaa;text-align:center;padding:25px;font-size:.9rem}
+footer{
+background:#111;
+color:#aaa;
+text-align:center;
+padding:25px;
+font-size:.9rem;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HERO (UNCHANGED) -->
+<!-- TOP BAR -->
+<div class="topbar"><div></div><div></div><div></div></div>
+
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1 class="lyric">
-<span>Explore</span><span>Discover</span><span>Adventure</span><span>Kenya</span>
+<span>Explore</span>
+<span>&</span>
+<span>Discover</span>
+<span>Kenya's Heritage</span>
 </h1>
-<p>Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures — crafted for unforgettable memories.</p>
+
+<p>
+<strong>Explore & discover Kenya's Heritage with Juma Adventures.</strong><br>
+Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures — crafted for unforgettable memories.
+</p>
+
 <a href="#explore" class="btn">Explore Tours</a>
+</div>
+</section>
+
+<!-- EXPLORE -->
+<section id="explore">
+<h2>Our Tour Packages</h2>
+
+<div class="packages">
+
+<div class="card">
+<img src="images/placeholder.jpg">
+<div class="card-body">
+<h3>Mount Kenya – Point Lenana</h3>
+<p class="price">$2350 | 4–5 Days</p>
+<p>High-altitude trekking with sunrise summit views.</p>
+<div class="gallery"><div></div><div></div><div></div><div></div></div>
+<a href="#mount-kenya" class="btn">View Details</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/placeholder.jpg">
+<div class="card-body">
+<h3>Nairobi City Tour</h3>
+<p class="price">$360 | Full Day</p>
+<p>Wildlife, museums, culture & city landmarks.</p>
+<div class="gallery"><div></div><div></div><div></div><div></div></div>
+<a href="#nairobi" class="btn">View Details</a>
+</div>
+</div>
+
 </div>
 </section>
 
 <!-- WHERE TO GO -->
 <section id="where">
+<h2 id="whereToggle">Where To Go ▾</h2>
 
-<h2 onclick="document.getElementById('selector').scrollIntoView({behavior:'smooth'})">
-Where To Go
-</h2>
-
-<div class="selector-box" id="selector">
-<select onchange="location.href=this.value">
-<option value="">Select a destination</option>
-<option value="#mara">Masai Mara</option>
-<option value="#nakuru">Lake Nakuru</option>
-<option value="#naivasha">Lake Naivasha</option>
-<option value="#nairobi">Nairobi City</option>
-</select>
+<div id="whereList" class="where-slide">
+<a href="#masai-mara">Masai Mara</a>
+<a href="#lake-nakuru">Lake Nakuru</a>
+<a href="#lake-naivasha">Lake Naivasha</a>
+<a href="#nairobi">Nairobi City</a>
 </div>
+</section>
 
-<div class="where-grid">
+<!-- DESTINATIONS -->
+<section class="details" id="masai-mara">
+<h3>Masai Mara National Reserve</h3>
+<p>World-famous safari destination and Great Migration home.</p>
+<div class="gallery"><div></div><div></div><div></div><div></div></div>
+</section>
 
-<div class="where-card" id="mara">
-<h3>Masai Mara</h3>
-<p>Home to the Great Wildebeest Migration and world-class Big Five safaris.</p>
-</div>
+<section class="details" id="lake-nakuru">
+<h3>Lake Nakuru National Park</h3>
+<p>Flamingos, rhinos, waterfalls and scenic viewpoints.</p>
+<div class="gallery"><div></div><div></div><div></div><div></div></div>
+</section>
 
-<div class="where-card" id="nakuru">
-<h3>Lake Nakuru</h3>
-<p>Flamingos, rhinos, waterfalls, and breathtaking viewpoints.</p>
-</div>
-
-<div class="where-card" id="naivasha">
+<section class="details" id="lake-naivasha">
 <h3>Lake Naivasha</h3>
-<p>Boat rides, walking safaris, and serene lakeside relaxation.</p>
-</div>
+<p>Boat rides, walking safaris and relaxation.</p>
+<div class="gallery"><div></div><div></div><div></div><div></div></div>
+</section>
 
-<div class="where-card" id="nairobi">
+<section class="details" id="nairobi">
 <h3>Nairobi City</h3>
-<p>The only capital city with a national park, culture, and history combined.</p>
-</div>
-
-</div>
+<p>Wildlife meets urban culture.</p>
+<div class="gallery"><div></div><div></div><div></div><div></div></div>
 </section>
 
 <!-- FLOATING CONTACT -->
 <div class="float whatsapp">
-<a href="https://wa.me/254746011254">W</a>
+<a href="https://wa.me/254746011254">💬</a>
 </div>
 
 <div class="float email">
-<a href="mailto:jumaadventuresandsafaris@gmail.com">@</a>
+<a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a>
 </div>
 
 <footer>
-© 2026 Kenya Adventures | Powered by Webtool
+© 2026 Juma Adventures | Powered by Webtool
 </footer>
+
+<script>
+const toggle=document.getElementById("whereToggle");
+const list=document.getElementById("whereList");
+toggle.onclick=()=>list.style.maxHeight?
+list.style.maxHeight=null:
+list.style.maxHeight=list.scrollHeight+"px";
+</script>
 
 </body>
 </html>
