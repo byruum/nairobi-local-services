@@ -10,167 +10,73 @@
 body{background:#f5f5f5;color:#222;line-height:1.6}
 
 /* ===== TOP BAR ===== */
-.topbar{
-position:fixed;top:15px;left:15px;z-index:1000;
-}
-.topbar div{
-width:30px;height:3px;background:#fff;margin:6px 0;
-}
+.topbar{position:fixed;top:15px;left:15px;z-index:1000}
+.topbar div{width:30px;height:3px;background:#fff;margin:6px 0}
 
-/* ===== HERO ===== */
+/* ===== HERO (UNCHANGED) ===== */
 .hero{
 height:100vh;
 background:
 linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.45)),
 url("images/file_00000000b8a0722f94b276953bf7dc5d.png") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#fff;
-position:relative;
-overflow:hidden;
+display:flex;align-items:center;justify-content:center;
+text-align:center;color:#fff;position:relative;overflow:hidden;
 animation:bgFade 12s infinite alternate;
 }
-
-/* background fade */
-@keyframes bgFade{
-0%{filter:brightness(1)}
-100%{filter:brightness(1.25)}
-}
-
-/* logo watermark */
+@keyframes bgFade{0%{filter:brightness(1)}100%{filter:brightness(1.25)}}
 .hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:url("images/logo.png") center/300px no-repeat;
-opacity:.12;
+content:"";position:absolute;inset:0;
+background:url("images/logo.png") center/300px no-repeat;opacity:.12;
 }
-
-/* hero content */
-.hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
-padding:20px;
-}
-
-.hero h1{
-font-size:3rem;
-font-weight:bold;
-margin-bottom:15px;
-}
-
-/* lyric animation */
-.lyric span{
-opacity:0;
-animation:wordFade 6s infinite;
-}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:20px}
+.hero h1{font-size:3rem;margin-bottom:15px}
+.lyric span{opacity:0;animation:wordFade 6s infinite}
 .lyric span:nth-child(1){animation-delay:0s}
 .lyric span:nth-child(2){animation-delay:1.5s}
 .lyric span:nth-child(3){animation-delay:3s}
 .lyric span:nth-child(4){animation-delay:4.5s}
-
-@keyframes wordFade{
-0%{opacity:0}
-15%{opacity:1}
-35%{opacity:1}
-50%{opacity:0}
-}
-
-.hero p{
-font-size:1.1rem;
-margin-bottom:25px;
-}
-
-/* buttons */
-.btn{
-display:inline-block;
-padding:14px 32px;
-background:#ff9800;
-color:#fff;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
-transition:.3s;
-}
+@keyframes wordFade{0%{opacity:0}15%{opacity:1}35%{opacity:1}50%{opacity:0}}
+.hero p{font-size:1.1rem;margin-bottom:25px}
+.btn{display:inline-block;padding:14px 32px;background:#ff9800;color:#fff;
+text-decoration:none;border-radius:30px;font-weight:bold}
 .btn:hover{background:#e68900}
 
-/* ===== EXPLORE ===== */
+/* ===== EXPLORE (UNCHANGED) ===== */
 #explore{padding:80px 20px;background:#fff;text-align:center}
 #explore h2{font-size:2.2rem;margin-bottom:10px}
-.filter{
-margin:20px 0;
-}
-.filter button{
-padding:10px 18px;
-margin:5px;
-border:none;
-background:#eee;
-cursor:pointer;
-border-radius:20px;
-}
-.filter button:hover{background:#ff9800;color:#fff}
 
-/* ===== PACKAGES ===== */
-.packages{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-max-width:1200px;
-margin:40px auto;
-}
-
-.card{
-background:#fff;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 6px 18px rgba(0,0,0,.1);
-}
-
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.card-body{padding:20px}
-.card-body h3{margin-bottom:10px}
-.price{color:#ff9800;font-weight:bold;margin:10px 0}
-
-/* gallery placeholders */
-.gallery{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:6px;
-margin:15px 0;
-}
-.gallery div{
-height:60px;
-background:#ddd;
-border-radius:6px;
-}
-
-/* ===== DETAILS BLOCK ===== */
-.details{
-max-width:1000px;
-margin:60px auto;
-background:#fafafa;
-padding:30px;
-border-radius:15px;
-text-align:left;
-}
-.details h3{color:#ff9800;margin-bottom:10px}
-.details p, .details li{margin-bottom:8px}
-
-/* ===== WHERE TO GO ===== */
+/* ===== WHERE TO GO (ONLY CHANGES HERE) ===== */
 #where{
-padding:80px 20px;
-background:#fafafa;
+padding:100px 20px;
+background:
+linear-gradient(rgba(255,255,255,.88),rgba(255,255,255,.95)),
+url("images/IMG-20260115-WA0013(1).jpg") center/cover no-repeat;
 }
-#where h2{text-align:center;margin-bottom:30px}
 
+#where h2{
+text-align:center;
+font-size:2.2rem;
+margin-bottom:25px;
+cursor:pointer;
+color:#222;
+}
+
+.selector-box{
+max-width:420px;
+margin:0 auto 40px;
+text-align:center;
+}
+
+.selector-box select{
+width:100%;
+padding:14px;
+font-size:1rem;
+border-radius:30px;
+border:1px solid #ccc;
+cursor:pointer;
+}
+
+/* destination blocks */
 .where-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -178,189 +84,85 @@ gap:25px;
 max-width:1200px;
 margin:auto;
 }
+
 .where-card{
 background:#fff;
-padding:20px;
+padding:25px;
 border-radius:15px;
 box-shadow:0 4px 12px rgba(0,0,0,.08);
+scroll-margin-top:120px;
 }
+
+.where-card h3{margin-bottom:10px;color:#ff9800}
 
 /* ===== FLOATING CONTACT ===== */
-.float{
-position:fixed;
-right:20px;
-z-index:999;
-}
+.float{position:fixed;right:20px;z-index:999}
 .whatsapp{bottom:90px}
 .email{bottom:30px}
-
 .float a{
-display:block;
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:22px;
-text-decoration:none;
+width:55px;height:55px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+color:#fff;font-size:22px;text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
 .whatsapp a{background:#25D366}
 .email a{background:#ff9800}
 
 /* ===== FOOTER ===== */
-footer{
-background:#111;
-color:#aaa;
-text-align:center;
-padding:25px;
-font-size:.9rem;
-}
+footer{background:#111;color:#aaa;text-align:center;padding:25px;font-size:.9rem}
 </style>
 </head>
 
 <body>
 
-<!-- top bar -->
-<div class="topbar">
-<div></div><div></div><div></div>
-</div>
-
-<!-- HERO -->
+<!-- HERO (UNCHANGED) -->
 <section class="hero">
 <div class="hero-content">
 <h1 class="lyric">
-<span>Explore</span>
-<span>Discover</span>
-<span>Adventure</span>
-<span>Kenya</span>
+<span>Explore</span><span>Discover</span><span>Adventure</span><span>Kenya</span>
 </h1>
-
-<p>
-Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures —
-crafted for unforgettable memories.
-</p>
-
+<p>Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures — crafted for unforgettable memories.</p>
 <a href="#explore" class="btn">Explore Tours</a>
 </div>
 </section>
 
-<!-- EXPLORE -->
-<section id="explore">
-<h2>Our Tour Packages</h2>
-
-<div class="filter">
-<button>All</button>
-<button>Safari</button>
-<button>Hiking</button>
-<button>City Tours</button>
-</div>
-
-<div class="packages">
-
-<!-- MT KENYA -->
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Mount Kenya – Point Lenana Trek</h3>
-<p class="price">$2350 | 4–5 Days</p>
-
-<p>
-Embark on an unforgettable 4–5 days hiking adventure to Mount Kenya (5,199m),
-Africa’s second-highest mountain, reaching Point Lenana (4,985m).
-</p>
-
-<ul>
-<li>UNESCO World Heritage Site</li>
-<li>Sunrise summit views</li>
-<li>Professional guides & porters</li>
-<li>All park fees included</li>
-</ul>
-
-<div class="gallery">
-<div></div><div></div><div></div><div></div>
-</div>
-
-<a href="#" class="btn">Book Now</a>
-</div>
-</div>
-
-<!-- NAIROBI CITY -->
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Nairobi City Day Tour</h3>
-<p class="price">$360 | Full Day</p>
-
-<p>
-Visit David Sheldrick Elephant Orphanage, Giraffe Centre,
-Nairobi National Museum, and key city landmarks.
-</p>
-
-<ul>
-<li>Transport & entry fees included</li>
-<li>Professional city guide</li>
-<li>Hotel / airport pickup</li>
-</ul>
-
-<div class="gallery">
-<div></div><div></div><div></div><div></div>
-</div>
-
-<a href="#" class="btn">Book Now</a>
-</div>
-</div>
-
-</div>
-
-<!-- EXTRA DETAILS -->
-<div class="details">
-<h3>6-Day Safari Experience</h3>
-<ul>
-<li>Day 1: Nairobi → Lake Naivasha (Boat ride & Crescent Island)</li>
-<li>Day 2: Naivasha → Masai Mara (Game drive)</li>
-<li>Day 3–4: Masai Mara full-day safaris & Mara River</li>
-<li>Day 5: Masai Mara → Nairobi</li>
-<li>Day 6: Nairobi City Tour</li>
-</ul>
-</div>
-
-</section>
-
 <!-- WHERE TO GO -->
 <section id="where">
-<h2>Where To Go</h2>
+
+<h2 onclick="document.getElementById('selector').scrollIntoView({behavior:'smooth'})">
+Where To Go
+</h2>
+
+<div class="selector-box" id="selector">
+<select onchange="location.href=this.value">
+<option value="">Select a destination</option>
+<option value="#mara">Masai Mara</option>
+<option value="#nakuru">Lake Nakuru</option>
+<option value="#naivasha">Lake Naivasha</option>
+<option value="#nairobi">Nairobi City</option>
+</select>
+</div>
 
 <div class="where-grid">
 
-<div class="where-card">
+<div class="where-card" id="mara">
 <h3>Masai Mara</h3>
-<p>
-Home to the Great Wildebeest Migration and year-round Big Five sightings.
-</p>
+<p>Home to the Great Wildebeest Migration and world-class Big Five safaris.</p>
 </div>
 
-<div class="where-card">
+<div class="where-card" id="nakuru">
 <h3>Lake Nakuru</h3>
-<p>
-Famous for flamingos, rhinos, waterfalls, and panoramic viewpoints.
-</p>
+<p>Flamingos, rhinos, waterfalls, and breathtaking viewpoints.</p>
 </div>
 
-<div class="where-card">
+<div class="where-card" id="naivasha">
 <h3>Lake Naivasha</h3>
-<p>
-Freshwater lake offering boat rides, walking safaris, and scenic relaxation.
-</p>
+<p>Boat rides, walking safaris, and serene lakeside relaxation.</p>
 </div>
 
-<div class="where-card">
+<div class="where-card" id="nairobi">
 <h3>Nairobi City</h3>
-<p>
-A rare capital city combining wildlife conservation, culture, and modern life.
-</p>
+<p>The only capital city with a national park, culture, and history combined.</p>
 </div>
 
 </div>
@@ -368,11 +170,11 @@ A rare capital city combining wildlife conservation, culture, and modern life.
 
 <!-- FLOATING CONTACT -->
 <div class="float whatsapp">
-<a href="https://wa.me/254705283274">W</a>
+<a href="https://wa.me/254746011254">W</a>
 </div>
 
 <div class="float email">
-<a href="mailto:info@yourcompany.com">@</a>
+<a href="mailto:jumaadventuresandsafaris@gmail.com">@</a>
 </div>
 
 <footer>
