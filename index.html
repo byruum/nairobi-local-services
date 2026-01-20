@@ -23,7 +23,7 @@ background:rgba(0,0,0,.35);
 backdrop-filter:blur(5px);
 }
 header img{height:45px}
-.menu{font-size:30px;color:#fff;cursor:pointer}
+.menu{font-size:30px;color:#fff}
 
 /* ===== HERO ===== */
 .hero{
@@ -37,28 +37,14 @@ justify-content:center;
 text-align:center;
 animation:bgfade 12s infinite alternate;
 }
-
 @keyframes bgfade{
 0%{filter:brightness(1.1)}
 100%{filter:brightness(1.35)}
 }
 
-.hero-content{
-max-width:900px;
-padding:20px;
-color:#fff;
-}
-
-.hero h1{
-font-size:3rem;
-margin-bottom:20px;
-min-height:90px;
-}
-
-.hero p{
-font-size:1.1rem;
-margin-bottom:30px;
-}
+.hero-content{max-width:900px;padding:20px;color:#fff}
+.hero h1{font-size:3rem;margin-bottom:20px;min-height:90px}
+.hero p{font-size:1.1rem;margin-bottom:30px}
 
 .btn{
 display:inline-block;
@@ -74,7 +60,33 @@ font-weight:bold;
 section{padding:90px 25px}
 h2{text-align:center;font-size:2.2rem;margin-bottom:10px}
 
-/* ===== WHERE TO GO ===== */
+/* ===== WHERE SELECTOR ===== */
+.where-box{
+max-width:500px;
+margin:30px auto;
+background:#fff;
+padding:20px;
+border-radius:14px;
+box-shadow:0 6px 15px rgba(0,0,0,.1);
+text-align:center;
+}
+.where-box h3{margin-bottom:12px}
+.where-box select{
+width:100%;
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+/* ===== EXPLORE BG ===== */
+#explore{
+background:
+linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+url("images/IMG-20260115-WA0013(1).jpg") center/cover no-repeat;
+}
+
+/* ===== LINKS ===== */
 .where-links{
 margin:25px auto 50px;
 display:flex;
@@ -83,16 +95,14 @@ justify-content:center;
 gap:15px;
 }
 .where-links a{
-font-size:1.1rem;
+font-size:1.05rem;
 font-weight:bold;
 color:#ff9800;
 text-decoration:none;
 padding:10px 24px;
 border:2px solid #ff9800;
 border-radius:30px;
-transition:.3s;
 }
-.where-links a:hover{background:#ff9800;color:#fff}
 
 /* ===== CARDS ===== */
 .grid{
@@ -115,27 +125,14 @@ object-fit:cover;
 background:#ddd;
 }
 .card .content{padding:18px}
-.card h3{margin-bottom:10px}
-.card p{font-size:.95rem}
 
 /* ===== BOOK ===== */
-.book{
-margin-top:15px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
+.book{margin-top:15px;display:flex;flex-direction:column;gap:10px}
 .book input,.book button{
-padding:10px;
-border-radius:6px;
-border:1px solid #ccc;
+padding:10px;border-radius:6px;border:1px solid #ccc
 }
 .book button{
-background:#ff9800;
-border:none;
-color:#fff;
-font-weight:bold;
-cursor:pointer;
+background:#ff9800;border:none;color:#fff;font-weight:bold;cursor:pointer
 }
 
 /* ===== FLOATING ===== */
@@ -148,30 +145,20 @@ flex-direction:column;
 gap:12px;
 z-index:999;
 }
-.float a{
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:22px;
-text-decoration:none;
+.float a, .currency{
+width:55px;height:55px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+color:#fff;font-size:16px;text-decoration:none;
 }
 .whatsapp{background:#25d366}
 .email{background:#ff9800}
+.currency{background:#111;font-size:13px;cursor:pointer}
 
 /* ===== FOOTER ===== */
 footer{
-background:#111;
-color:#bbb;
-padding:30px;
-text-align:center;
-font-size:.9rem;
+background:#111;color:#bbb;padding:30px;text-align:center;font-size:.9rem
 }
 
-/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
 .hero h1{font-size:2.2rem}
 }
@@ -181,7 +168,7 @@ font-size:.9rem;
 <body>
 
 <header>
-<img src="images/logo.png" alt="Logo">
+<img src="images/logo.png" alt="Juma Adventures">
 <div class="menu">&#9776;</div>
 </header>
 
@@ -189,75 +176,51 @@ font-size:.9rem;
 <div class="hero">
 <div class="hero-content">
 <h1 id="lyric"></h1>
-<p>Discover Kenya’s most breathtaking destinations with expertly guided safaris, city tours, and mountain adventures.</p>
+<p>Experience Kenya like never before with Juma Adventures</p>
 <a href="#explore" class="btn">Explore Tours</a>
 </div>
 </div>
 
 <!-- EXPLORE -->
 <section id="explore">
-<h2>Explore Tours</h2>
+<h2>Where to Go with Juma Adventures?</h2>
 
-<div class="where-links">
-<a href="#masai-mara">Masai Mara</a>
-<a href="#lake-nakuru">Lake Nakuru</a>
-<a href="#lake-naivasha">Lake Naivasha</a>
-<a href="#nairobi-city">Nairobi City</a>
-<a href="#mount-kenya">Mount Kenya</a>
+<div class="where-box">
+<h3>Select Destination</h3>
+<select onchange="goTo(this.value)">
+<option value="">Choose a place</option>
+<option value="#nairobi">Nairobi City</option>
+<option value="#mountkenya">Mount Kenya</option>
+<option value="#masaimara">Masai Mara</option>
+</select>
 </div>
 
 <div class="grid">
 
-<!-- NAIROBI -->
-<div class="card" id="nairobi-city">
-<img src="images/nairobi.jpg" alt="">
+<div class="card" id="nairobi">
+<img src="images/nairobi.jpg">
 <div class="content">
-<h3>Nairobi City Tour – Day Trip</h3>
-<p>
-Enjoy a full-day guided tour exploring the best of Nairobi including David Sheldrick Elephant Orphanage,
-Giraffe Centre, Nairobi National Museum, city landmarks and Maasai Market.
-<br><br>
-<strong>Cost:</strong> $360 (Max 2 Pax)<br>
-<strong>Includes:</strong> Transport, entry fees, guiding<br>
-<strong>Excludes:</strong> Lunch & personal expenses
-</p>
-<div class="book">
-<input type="date">
-<button>Book Now</button>
-</div>
+<h3>Nairobi City Tour</h3>
+<p class="price" data-usd="360">$360</p>
+<div class="book"><input type="date"><button>Book Now</button></div>
 </div>
 </div>
 
-<!-- MOUNT KENYA -->
-<div class="card" id="mount-kenya">
-<img src="images/mountkenya.jpg" alt="">
+<div class="card" id="mountkenya">
+<img src="images/mountkenya.jpg">
 <div class="content">
-<h3>Mount Kenya Trek – Point Lenana (4–5 Days)</h3>
-<p>
-An unforgettable hiking adventure through forests, alpine meadows and high-altitude terrain to Point Lenana.
-<br><br>
-<strong>Cost:</strong> $2350<br>
-<strong>Level:</strong> Moderate – Challenging
-</p>
-<div class="book">
-<input type="date">
-<button>Book Now</button>
-</div>
+<h3>Mount Kenya – Point Lenana</h3>
+<p class="price" data-usd="2350">$2350</p>
+<div class="book"><input type="date"><button>Book Now</button></div>
 </div>
 </div>
 
-<!-- MASAI MARA -->
-<div class="card" id="masai-mara">
-<img src="images/masaimara.jpg" alt="">
+<div class="card" id="masaimara">
+<img src="images/masaimara.jpg">
 <div class="content">
-<h3>6-Day Safari – Masai Mara, Naivasha & Nakuru</h3>
-<p>
-Experience Kenya’s top wildlife destinations including Big Five game drives, scenic lakes and cultural visits.
-</p>
-<div class="book">
-<input type="date">
-<button>Book Now</button>
-</div>
+<h3>Masai Mara Safari</h3>
+<p class="price" data-usd="2050">$2050</p>
+<div class="book"><input type="date"><button>Book Now</button></div>
 </div>
 </div>
 
@@ -266,26 +229,44 @@ Experience Kenya’s top wildlife destinations including Big Five game drives, s
 
 <!-- FLOATING -->
 <div class="float">
-<a href="https://wa.me/254746011254" class="whatsapp">🟢</a>
+<div class="currency" onclick="toggleCurrency()">USD</div>
+<a href="https://wa.me/254746011254" class="whatsapp">💬</a>
 <a href="mailto:info@jumaadventures.com" class="email">✉️</a>
 </div>
 
 <footer>
-© 2026 Juma Adventures | Privacy • Terms • Powered by Webtool
+© 2026 Juma Adventures | Powered by Webtool
 </footer>
 
 <script>
-/* WORD BY WORD HERO */
-const text = "Experience Kenya Like Never Before";
-let i = 0;
+/* HERO TEXT */
+const text="Experience Kenya Like Never Before with Juma Adventures";
+let i=0;
 function type(){
-if(i < text.length){
-document.getElementById("lyric").innerHTML += text.charAt(i);
-i++;
-setTimeout(type,120);
-}
+ if(i<text.length){
+  lyric.innerHTML+=text.charAt(i);
+  i++; setTimeout(type,80);
+ }
 }
 type();
+
+/* SCROLL */
+function goTo(id){
+ if(id) document.querySelector(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* CURRENCY */
+let curr="USD";
+function toggleCurrency(){
+ curr=curr==="USD"?"KES":curr==="KES"?"EUR":"USD";
+ document.querySelector(".currency").innerText=curr;
+ document.querySelectorAll(".price").forEach(p=>{
+  const usd=p.dataset.usd;
+  if(curr==="USD") p.innerText="$"+usd;
+  if(curr==="KES") p.innerText="KES "+(usd*130).toLocaleString();
+  if(curr==="EUR") p.innerText="€"+(usd*0.92).toFixed(0);
+ });
+}
 </script>
 
 </body>
