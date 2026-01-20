@@ -23,7 +23,7 @@ background:rgba(0,0,0,.35);
 backdrop-filter:blur(5px);
 }
 header img{height:45px}
-.menu{font-size:30px;color:#fff}
+.menu{font-size:30px;color:#fff;cursor:pointer}
 
 /* ===== HERO ===== */
 .hero{
@@ -37,14 +37,30 @@ justify-content:center;
 text-align:center;
 animation:bgfade 12s infinite alternate;
 }
+
 @keyframes bgfade{
 0%{filter:brightness(1.1)}
 100%{filter:brightness(1.35)}
 }
 
-.hero-content{max-width:900px;padding:20px;color:#fff}
-.hero h1{font-size:3rem;margin-bottom:20px;min-height:90px}
-.hero p{font-size:1.1rem;margin-bottom:30px}
+.hero-content{
+max-width:900px;
+padding:20px;
+color:#fff;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+min-height:90px;
+}
+
+.hero p{
+font-size:1.1rem;
+margin-bottom:30px;
+}
+
+.brand{color:#ffb703;font-weight:bold}
 
 .btn{
 display:inline-block;
@@ -58,50 +74,36 @@ font-weight:bold;
 
 /* ===== SECTION ===== */
 section{padding:90px 25px}
-h2{text-align:center;font-size:2.2rem;margin-bottom:10px}
+h2{text-align:center;font-size:2.2rem;margin-bottom:15px}
 
-/* ===== WHERE SELECTOR ===== */
-.where-box{
-max-width:500px;
-margin:30px auto;
-background:#fff;
-padding:20px;
-border-radius:14px;
-box-shadow:0 6px 15px rgba(0,0,0,.1);
-text-align:center;
-}
-.where-box h3{margin-bottom:12px}
-.where-box select{
-width:100%;
-padding:12px;
-font-size:16px;
-border-radius:8px;
-border:1px solid #ccc;
-}
-
-/* ===== EXPLORE BG ===== */
+/* ===== EXPLORE BACKGROUND (BRIGHTER IMAGE) ===== */
 #explore{
 background:
-linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+linear-gradient(rgba(255,255,255,.65),rgba(255,255,255,.65)),
 url("images/IMG-20260115-WA0013(1).jpg") center/cover no-repeat;
+filter:brightness(1.15) contrast(1.05);
 }
 
-/* ===== LINKS ===== */
-.where-links{
-margin:25px auto 50px;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+/* ===== WHERE TO SELECTOR ===== */
+.where-select{
+max-width:500px;
+margin:30px auto;
+text-align:center;
 }
-.where-links a{
-font-size:1.05rem;
-font-weight:bold;
+
+.where-select h3{
+font-size:1.5rem;
+margin-bottom:15px;
 color:#ff9800;
-text-decoration:none;
-padding:10px 24px;
-border:2px solid #ff9800;
+}
+
+.where-select select{
+width:100%;
+padding:14px;
+font-size:16px;
 border-radius:30px;
+border:2px solid #ff9800;
+outline:none;
 }
 
 /* ===== CARDS ===== */
@@ -125,14 +127,27 @@ object-fit:cover;
 background:#ddd;
 }
 .card .content{padding:18px}
+.card h3{margin-bottom:10px}
+.card p{font-size:.95rem}
 
 /* ===== BOOK ===== */
-.book{margin-top:15px;display:flex;flex-direction:column;gap:10px}
+.book{
+margin-top:15px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
 .book input,.book button{
-padding:10px;border-radius:6px;border:1px solid #ccc
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
 }
 .book button{
-background:#ff9800;border:none;color:#fff;font-weight:bold;cursor:pointer
+background:#ff9800;
+border:none;
+color:#fff;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* ===== FLOATING ===== */
@@ -145,20 +160,30 @@ flex-direction:column;
 gap:12px;
 z-index:999;
 }
-.float a, .currency{
-width:55px;height:55px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-color:#fff;font-size:16px;text-decoration:none;
+.float a{
+width:55px;
+height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:22px;
+text-decoration:none;
 }
 .whatsapp{background:#25d366}
 .email{background:#ff9800}
-.currency{background:#111;font-size:13px;cursor:pointer}
 
 /* ===== FOOTER ===== */
 footer{
-background:#111;color:#bbb;padding:30px;text-align:center;font-size:.9rem
+background:#111;
+color:#bbb;
+padding:30px;
+text-align:center;
+font-size:.9rem;
 }
 
+/* ===== RESPONSIVE ===== */
 @media(max-width:768px){
 .hero h1{font-size:2.2rem}
 }
@@ -168,7 +193,7 @@ background:#111;color:#bbb;padding:30px;text-align:center;font-size:.9rem
 <body>
 
 <header>
-<img src="images/logo.png" alt="Juma Adventures">
+<img src="images/logo.png" alt="Juma Adventures Logo">
 <div class="menu">&#9776;</div>
 </header>
 
@@ -176,51 +201,79 @@ background:#111;color:#bbb;padding:30px;text-align:center;font-size:.9rem
 <div class="hero">
 <div class="hero-content">
 <h1 id="lyric"></h1>
-<p>Experience Kenya like never before with Juma Adventures</p>
+<p>Experience Kenya like never before with <span class="brand">Juma Adventures</span>.</p>
 <a href="#explore" class="btn">Explore Tours</a>
 </div>
 </div>
 
 <!-- EXPLORE -->
 <section id="explore">
-<h2>Where to Go with Juma Adventures?</h2>
+<h2>Explore Tours</h2>
 
-<div class="where-box">
-<h3>Select Destination</h3>
-<select onchange="goTo(this.value)">
-<option value="">Choose a place</option>
-<option value="#nairobi">Nairobi City</option>
-<option value="#mountkenya">Mount Kenya</option>
-<option value="#masaimara">Masai Mara</option>
+<div class="where-select">
+<h3>Where to with Juma Adventures?</h3>
+<select onchange="goToPlace(this.value)">
+<option value="">Select a destination</option>
+<option value="#nairobi-city">Nairobi City</option>
+<option value="#masai-mara">Masai Mara</option>
+<option value="#lake-nakuru">Lake Nakuru</option>
+<option value="#lake-naivasha">Lake Naivasha</option>
+<option value="#mount-kenya">Mount Kenya</option>
 </select>
 </div>
 
 <div class="grid">
 
-<div class="card" id="nairobi">
+<!-- NAIROBI -->
+<div class="card" id="nairobi-city">
 <img src="images/nairobi.jpg">
 <div class="content">
-<h3>Nairobi City Tour</h3>
-<p class="price" data-usd="360">$360</p>
-<div class="book"><input type="date"><button>Book Now</button></div>
+<h3>Nairobi City Tour – Day Trip</h3>
+<p>
+Visit David Sheldrick Elephant Orphanage, Giraffe Centre, Nairobi National Museum,
+CBD landmarks & Maasai Market.
+<br><br>
+<strong>Cost:</strong> $360 (Max 2 Pax)<br>
+<strong>Includes:</strong> Transport, entry fees & guide<br>
+<strong>Excludes:</strong> Lunch & personal expenses
+</p>
+<div class="book">
+<input type="date">
+<button>Book Now</button>
+</div>
 </div>
 </div>
 
-<div class="card" id="mountkenya">
+<!-- MOUNT KENYA -->
+<div class="card" id="mount-kenya">
 <img src="images/mountkenya.jpg">
 <div class="content">
-<h3>Mount Kenya – Point Lenana</h3>
-<p class="price" data-usd="2350">$2350</p>
-<div class="book"><input type="date"><button>Book Now</button></div>
+<h3>Mount Kenya – Point Lenana Trek (4–5 Days)</h3>
+<p>
+Hike through forests, alpine meadows and rugged terrain to Point Lenana (4,985m).
+<br><br>
+<strong>Cost:</strong> $2350<br>
+<strong>Level:</strong> Moderate – Challenging
+</p>
+<div class="book">
+<input type="date">
+<button>Book Now</button>
+</div>
 </div>
 </div>
 
-<div class="card" id="masaimara">
+<!-- MASAI MARA -->
+<div class="card" id="masai-mara">
 <img src="images/masaimara.jpg">
 <div class="content">
-<h3>Masai Mara Safari</h3>
-<p class="price" data-usd="2050">$2050</p>
-<div class="book"><input type="date"><button>Book Now</button></div>
+<h3>6-Day Safari – Mara, Naivasha & Nakuru</h3>
+<p>
+Big Five game drives, scenic lakes, cultural visits & unforgettable landscapes.
+</p>
+<div class="book">
+<input type="date">
+<button>Book Now</button>
+</div>
 </div>
 </div>
 
@@ -229,7 +282,6 @@ background:#111;color:#bbb;padding:30px;text-align:center;font-size:.9rem
 
 <!-- FLOATING -->
 <div class="float">
-<div class="currency" onclick="toggleCurrency()">USD</div>
 <a href="https://wa.me/254746011254" class="whatsapp">💬</a>
 <a href="mailto:info@jumaadventures.com" class="email">✉️</a>
 </div>
@@ -239,33 +291,19 @@ background:#111;color:#bbb;padding:30px;text-align:center;font-size:.9rem
 </footer>
 
 <script>
-/* HERO TEXT */
-const text="Experience Kenya Like Never Before with Juma Adventures";
+/* WORD BY WORD HERO */
+const text="Experience Kenya Like Never Before";
 let i=0;
 function type(){
- if(i<text.length){
-  lyric.innerHTML+=text.charAt(i);
-  i++; setTimeout(type,80);
- }
-}
+if(i<text.length){
+document.getElementById("lyric").innerHTML+=text.charAt(i);
+i++;setTimeout(type,120);
+}}
 type();
 
-/* SCROLL */
-function goTo(id){
- if(id) document.querySelector(id).scrollIntoView({behavior:"smooth"});
-}
-
-/* CURRENCY */
-let curr="USD";
-function toggleCurrency(){
- curr=curr==="USD"?"KES":curr==="KES"?"EUR":"USD";
- document.querySelector(".currency").innerText=curr;
- document.querySelectorAll(".price").forEach(p=>{
-  const usd=p.dataset.usd;
-  if(curr==="USD") p.innerText="$"+usd;
-  if(curr==="KES") p.innerText="KES "+(usd*130).toLocaleString();
-  if(curr==="EUR") p.innerText="€"+(usd*0.92).toFixed(0);
- });
+/* WHERE TO REDIRECT */
+function goToPlace(id){
+if(id){location.href=id;}
 }
 </script>
 
