@@ -10,13 +10,9 @@
 body{background:#f5f5f5;color:#222;line-height:1.6}
 
 /* ===== TOP BAR ===== */
-.topbar{
-position:fixed;top:15px;left:15px;z-index:1000;
-}
-.topbar div{
-width:30px;height:3px;background:#fff;margin:6px 0;
-}
-  
+.topbar{position:fixed;top:15px;left:15px;z-index:1000}
+.topbar div{width:30px;height:3px;background:#fff;margin:6px 0}
+
 /* ===== HERO ===== */
 .hero{
 height:100vh;
@@ -46,23 +42,11 @@ background:url("images/logo.png") center/300px no-repeat;
 opacity:.12;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
-padding:20px;
-}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:20px}
 
-.hero h1{
-font-size:3rem;
-font-weight:bold;
-margin-bottom:15px;
-}
+.hero h1{font-size:3rem;margin-bottom:15px}
 
-.lyric span{
-opacity:0;
-animation:wordFade 6s infinite;
-}
+.lyric span{opacity:0;animation:wordFade 6s infinite}
 .lyric span:nth-child(1){animation-delay:0s}
 .lyric span:nth-child(2){animation-delay:1.5s}
 .lyric span:nth-child(3){animation-delay:3s}
@@ -75,10 +59,7 @@ animation:wordFade 6s infinite;
 50%{opacity:0}
 }
 
-.hero p{
-font-size:1.1rem;
-margin-bottom:25px;
-}
+.hero p{font-size:1.1rem;margin-bottom:25px}
 
 .btn{
 display:inline-block;
@@ -88,13 +69,7 @@ color:#fff;
 text-decoration:none;
 border-radius:30px;
 font-weight:bold;
-transition:.3s;
 }
-.btn:hover{background:#e68900}
-
-/* ===== EXPLORE ===== */
-#explore{padding:80px 20px;background:#fff;text-align:center}
-#explore h2{font-size:2.2rem;margin-bottom:10px}
 
 /* ===== PACKAGES ===== */
 .packages{
@@ -116,61 +91,24 @@ box-shadow:0 6px 18px rgba(0,0,0,.1);
 width:100%;
 height:220px;
 object-fit:cover;
-background:#ddd;
 }
 
 .card-body{padding:20px}
-.card-body h3{margin-bottom:10px}
-.price{color:#ff9800;font-weight:bold;margin:10px 0}
 
 /* ===== DETAILS ===== */
 .details{
-max-width:1000px;
+max-width:1100px;
 margin:80px auto;
 background:#fafafa;
 padding:35px;
 border-radius:18px;
 }
-.details h3{color:#ff9800;margin-bottom:15px}
 
-/* ===== BOOKING FORM ===== */
-.booking-form{
-margin-top:25px;
-display:grid;
-gap:15px;
-}
-.booking-form input,
-.booking-form select,
-.booking-form textarea{
-padding:12px;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:1rem;
-width:100%;
-}
-.booking-form textarea{resize:vertical}
-.booking-form button{
-background:#ff9800;
-color:#fff;
-border:none;
-padding:14px;
-border-radius:30px;
-font-weight:bold;
-cursor:pointer;
-}
-.booking-form button:hover{background:#e68900}
+.details h3{color:#ff9800;margin-bottom:10px}
 
 /* ===== WHERE TO GO ===== */
-#where{
-padding:80px 20px;
-background:#fafafa;
-text-align:center;
-}
-
-#whereToggle{
-font-size:2.2rem;
-cursor:pointer;
-}
+#where{padding:80px 20px;text-align:center}
+#whereToggle{font-size:2.2rem;cursor:pointer}
 
 .where-slide{
 max-height:0;
@@ -188,36 +126,61 @@ display:block;
 padding:14px 20px;
 text-decoration:none;
 color:#222;
-border-bottom:1px solid #eee;
 font-weight:bold;
+border-bottom:1px solid #eee;
 }
-.where-slide a:hover{
+
+.where-slide a:hover{background:#ff9800;color:#fff}
+
+/* ===== BOOKING FORM ===== */
+.booking{
+max-width:700px;
+margin:80px auto;
+background:#fff;
+padding:35px;
+border-radius:18px;
+box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+.booking h2{text-align:center;color:#ff9800;margin-bottom:20px}
+
+.booking input,.booking textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.booking button{
+width:100%;
+padding:14px;
 background:#ff9800;
 color:#fff;
+border:none;
+border-radius:30px;
+font-size:1rem;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* ===== FLOATING CONTACT ===== */
-.float{
-position:fixed;
-right:20px;
-z-index:999;
-}
+.float{position:fixed;right:20px;z-index:999}
 .whatsapp{bottom:90px}
 .email{bottom:30px}
 
 .float a{
-display:block;
+display:flex;
 width:55px;
 height:55px;
 border-radius:50%;
-display:flex;
 align-items:center;
 justify-content:center;
 color:#fff;
 font-size:22px;
 text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
+
 .whatsapp a{background:#25D366}
 .email a{background:#ff9800}
 
@@ -244,85 +207,109 @@ font-size:.9rem;
 <span>Discover</span>
 <span>Kenya's Heritage</span>
 </h1>
-<p>
-<strong>Discover the Heart of Kenya’s Heritage with Juma Adventures</strong><br>
-Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures.
-</p>
-<a href="#explore" class="btn">Explore Tours</a>
+<p><strong>Discover Kenya with Juma Adventures</strong></p>
+<a href="#where" class="btn">Explore Tours</a>
 </div>
 </section>
 
-<!-- ABOUT (CLIENT EXACT WORDS) -->
-<section class="details" id="about">
-<h3>About Juma Adventures</h3>
+<section id="where">
+<h2 id="whereToggle">Where To Go ▾</h2>
+<div id="whereList" class="where-slide">
+<a href="#masai-mara">Masai Mara</a>
+<a href="#lake-nakuru">Lake Nakuru</a>
+<a href="#lake-naivasha">Lake Naivasha</a>
+<a href="#nairobi">Nairobi City</a>
+</div>
+</section>
 
-<p>
-Juma Adventures is a passion-driven safari and adventure company founded by Dennis Juma, a professional tour guide with over 10 years of hands-on experience in the tourism industry across Kenya and Tanzania. Established from a deep love for nature, wildlife, and African landscapes, Juma Adventures was created to offer travelers authentic, safe, and unforgettable experiences in East Africa.
-</p>
+<!-- MASAI MARA -->
+<section class="details" id="masai-mara">
+<h3>Masai Mara National Reserve</h3>
+<p>World-famous safari destination.</p>
 
-<p>
-Dennis Juma began his journey in tourism in 2013, building extensive knowledge through years of guiding wildlife safaris, mountain hiking expeditions, and cultural tours. He is trained in Management by the Kenya Institute of Management, and professionally trained by the Kenya Wildlife Service (KWS) in wildlife conservation and conservation duties — giving him strong grounding in responsible tourism, environmental protection, and visitor safety.
-</p>
+<div class="packages">
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve.jpg">
+<div class="card-body"><h3>Classic Safari</h3></div>
+</div>
 
-<p>
-With this solid foundation, Juma Adventures has successfully guided guests through iconic destinations such as the Masai Mara, Amboseli, Tsavo, Lake Nakuru, Serengeti, Ngorongoro, and challenging mountain adventures including Mount Kenya and Mount Kilimanjaro. Every tour is designed with care, local knowledge, and respect for nature and communities.
-</p>
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve (1).jpg">
+<div class="card-body"><h3>Great Migration</h3></div>
+</div>
+
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve (2).jpg">
+<div class="card-body"><h3>Scenic Plains</h3></div>
+</div>
+
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve-3.jpg">
+<div class="card-body"><h3>Maasai Culture</h3></div>
+</div>
+</div>
+</section>
+
+<!-- LAKE NAKURU -->
+<section class="details" id="lake-nakuru">
+<h3>Lake Nakuru National Park</h3>
+<p>Famous for flamingos, rhinos, and lake scenery.</p>
+
+<div class="packages">
+<div class="card">
+<img src="images/lake-nakuru-national-park/lake-nakuru-national-park-1.jpg">
+<div class="card-body"><h3>Flamingos</h3></div>
+</div>
+
+<div class="card">
+<img src="images/lake-nakuru-national-park/lake-nakuru-national-park-2.jpg">
+<div class="card-body"><h3>Rhinos</h3></div>
+</div>
+
+<div class="card">
+<img src="images/lake-nakuru-national-park/lake-nakuru-national-park-3.jpg">
+<div class="card-body"><h3>Scenic Views</h3></div>
+</div>
+</div>
+</section>
+
+<section class="details" id="lake-naivasha">
+<h3>Lake Naivasha</h3>
+<p>Boat rides and relaxation.</p>
+</section>
+
+<section class="details" id="nairobi">
+<h3>Nairobi City</h3>
+<p>Wildlife meets urban culture.</p>
+</section>
 
 <!-- BOOKING FORM -->
-<h3>Book This Tour</h3>
-<form class="booking-form"
-action="mailto:jumaadventuresandsafaris@gmail.com"
-method="post"
-enctype="text/plain">
-
-<input type="text" name="Full Name" placeholder="Your Full Name" required>
-<input type="email" name="Email" placeholder="Your Email Address" required>
-<input type="tel" name="Phone" placeholder="Phone / WhatsApp Number" required>
-
-<select name="Tour Interested In" required>
-<option value="">Select Tour</option>
-<option>Masai Mara Safari</option>
-<option>Lake Nakuru</option>
-<option>Lake Naivasha</option>
-<option>Mount Kenya</option>
-<option>Nairobi City Tour</option>
-</select>
-
-<input type="date" name="Preferred Date" required>
-<textarea name="Message" rows="4" placeholder="Additional details or questions"></textarea>
-
+<section class="booking" id="booking">
+<h2>Book Your Adventure</h2>
+<form action="mailto:jumaadventuresandsafaris@gmail.com" method="post" enctype="text/plain">
+<input type="text" name="Name" placeholder="Your Name" required>
+<input type="email" name="Email" placeholder="Your Email" required>
+<input type="text" name="Destination" placeholder="Preferred Destination">
+<textarea name="Message" rows="5" placeholder="Your Message"></textarea>
 <button type="submit">Send Booking Request</button>
 </form>
-</section>
-
-<div class="float whatsapp">
-<a href="https://wa.me/254746011254">💬</a>
-</div>
-
-<div class="float email">
-<a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a>
-</div>
-
-<footer>
-<p>
-<a href="https://www.facebook.com/groups/823417437291475/permalink/823417507291468/"
-target="_blank"
-style="color:#ff9800;text-decoration:none;font-weight:bold;">
-View Real Trips on Facebook
+<p style="text-align:center;margin-top:15px;">
+<a href="https://www.facebook.com/groups/823417437291475/permalink/823417507291468/?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+Visit us on Facebook
 </a>
 </p>
-<p>© 2026 Juma Adventures | Powered by Webtool</p>
-</footer>
+</section>
+
+<div class="float whatsapp"><a href="https://wa.me/254746011254">💬</a></div>
+<div class="float email"><a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a></div>
+
+<footer>© 2026 Juma Adventures | Powered by Webtool</footer>
 
 <script>
-const toggle=document.getElementById("whereToggle");
-const list=document.getElementById("whereList");
-if(toggle){
-toggle.onclick=()=>list.style.maxHeight?
-list.style.maxHeight=null:
-list.style.maxHeight=list.scrollHeight+"px";
-}
+const t=document.getElementById("whereToggle");
+const l=document.getElementById("whereList");
+t.onclick=()=>l.style.maxHeight?l.style.maxHeight=null:l.style.maxHeight=l.scrollHeight+"px";
 </script>
 
 </body>
-</html>
+     </html>
