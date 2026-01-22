@@ -10,12 +10,8 @@
 body{background:#f5f5f5;color:#222;line-height:1.6}
 
 /* ===== TOP BAR ===== */
-.topbar{
-position:fixed;top:15px;left:15px;z-index:1000;
-}
-.topbar div{
-width:30px;height:3px;background:#fff;margin:6px 0;
-}
+.topbar{position:fixed;top:15px;left:15px;z-index:1000}
+.topbar div{width:30px;height:3px;background:#fff;margin:6px 0}
 
 /* ===== HERO ===== */
 .hero{
@@ -46,23 +42,11 @@ background:url("images/logo.png") center/300px no-repeat;
 opacity:.12;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
-padding:20px;
-}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:20px}
 
-.hero h1{
-font-size:3rem;
-font-weight:bold;
-margin-bottom:15px;
-}
+.hero h1{font-size:3rem;margin-bottom:15px}
 
-.lyric span{
-opacity:0;
-animation:wordFade 6s infinite;
-}
+.lyric span{opacity:0;animation:wordFade 6s infinite}
 .lyric span:nth-child(1){animation-delay:0s}
 .lyric span:nth-child(2){animation-delay:1.5s}
 .lyric span:nth-child(3){animation-delay:3s}
@@ -75,10 +59,7 @@ animation:wordFade 6s infinite;
 50%{opacity:0}
 }
 
-.hero p{
-font-size:1.1rem;
-margin-bottom:25px;
-}
+.hero p{font-size:1.1rem;margin-bottom:25px}
 
 .btn{
 display:inline-block;
@@ -88,15 +69,13 @@ color:#fff;
 text-decoration:none;
 border-radius:30px;
 font-weight:bold;
-transition:.3s;
 }
-.btn:hover{background:#e68900}
 
 /* ===== EXPLORE ===== */
 #explore{padding:80px 20px;background:#fff;text-align:center}
-#explore h2{font-size:2.2rem;margin-bottom:10px}
+#explore h2{font-size:2.2rem}
 
-/* ===== PACKAGES ===== */
+/* ===== PACKAGES (USED EVERYWHERE) ===== */
 .packages{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -116,46 +95,24 @@ box-shadow:0 6px 18px rgba(0,0,0,.1);
 width:100%;
 height:220px;
 object-fit:cover;
-background:#ddd;
 }
 
 .card-body{padding:20px}
-.card-body h3{margin-bottom:10px}
-.price{color:#ff9800;font-weight:bold;margin:10px 0}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:6px;
-margin:15px 0;
-}
-.gallery div{
-height:60px;
-background:#ddd;
-border-radius:6px;
-}
 
 /* ===== DETAILS ===== */
 .details{
-max-width:1000px;
+max-width:1100px;
 margin:80px auto;
 background:#fafafa;
 padding:35px;
 border-radius:18px;
 }
+
 .details h3{color:#ff9800;margin-bottom:10px}
 
 /* ===== WHERE TO GO ===== */
-#where{
-padding:80px 20px;
-background:#fafafa;
-text-align:center;
-}
-
-#whereToggle{
-font-size:2.2rem;
-cursor:pointer;
-}
+#where{padding:80px 20px;text-align:center}
+#whereToggle{font-size:2.2rem;cursor:pointer}
 
 .where-slide{
 max-height:0;
@@ -173,39 +130,32 @@ display:block;
 padding:14px 20px;
 text-decoration:none;
 color:#222;
-border-bottom:1px solid #eee;
 font-weight:bold;
-}
-.where-slide a:hover{
-background:#ff9800;
-color:#fff;
+border-bottom:1px solid #eee;
 }
 
+.where-slide a:hover{background:#ff9800;color:#fff}
+
 /* ===== FLOATING CONTACT ===== */
-.float{
-position:fixed;
-right:20px;
-z-index:999;
-}
+.float{position:fixed;right:20px;z-index:999}
 .whatsapp{bottom:90px}
 .email{bottom:30px}
 
 .float a{
-display:block;
+display:flex;
 width:55px;
 height:55px;
 border-radius:50%;
-display:flex;
 align-items:center;
 justify-content:center;
 color:#fff;
 font-size:22px;
 text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,.3);
 }
+
 .whatsapp a{background:#25D366}
 .email a{background:#ff9800}
-  
+
 /* ===== FOOTER ===== */
 footer{
 background:#111;
@@ -214,15 +164,16 @@ text-align:center;
 padding:25px;
 font-size:.9rem;
 }
+
+/* ===== ENSURE NAKURU NO ANIMATION ===== */
+#lake-nakuru img{transition:none}
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar"><div></div><div></div><div></div></div>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 <h1 class="lyric">
@@ -231,143 +182,89 @@ font-size:.9rem;
 <span>Discover</span>
 <span>Kenya's Heritage</span>
 </h1>
-
-<p>
-<strong>Discover the Heart of Kenya’s Heritage with Juma Adventures</strong><br>
-Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures — crafted for unforgettable memories.
-</p>
-
+<p><strong>Discover Kenya with Juma Adventures</strong></p>
 <a href="#explore" class="btn">Explore Tours</a>
 </div>
 </section>
 
-<!-- EXPLORE -->
-<section id="explore">
-<h2>Our Tour Packages</h2>
-
-<div class="packages">
-
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Mount Kenya – Point Lenana</h3>
-<p class="price">$2350 | 4–5 Days</p>
-<p>High-altitude trekking with sunrise summit views.</p>
-<div class="gallery"><div></div><div></div><div></div><div></div></div>
-<a href="#mount-kenya" class="btn">View Details</a>
-</div>
-</div>
-
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Nairobi City Tour</h3>
-<p class="price">$360 | Full Day</p>
-<p>Wildlife, museums, culture & city landmarks.</p>
-<div class="gallery"><div></div><div></div><div></div><div></div></div>
-<a href="#nairobi" class="btn">View Details</a>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- WHERE TO GO -->
 <section id="where">
 <h2 id="whereToggle">Where To Go ▾</h2>
-
 <div id="whereList" class="where-slide">
-  <a href="#masai-mara">Masai Mara</a>
-  <a href="#lake-nakuru">Lake Nakuru</a>
-  <a href="#lake-naivasha">Lake Naivasha</a>
-  <a href="#nairobi">Nairobi City</a>
+<a href="#masai-mara">Masai Mara</a>
+<a href="#lake-nakuru">Lake Nakuru</a>
+<a href="#lake-naivasha">Lake Naivasha</a>
+<a href="#nairobi">Nairobi City</a>
 </div>
 </section>
+
 <section class="details" id="masai-mara">
-  <h3>Masai Mara National Reserve</h3>
-  <p>World-famous safari destination and Great Migration home.</p>
+<h3>Masai Mara National Reserve</h3>
+<p>World-famous safari destination.</p>
 
-  <div class="packages">
+<div class="packages">
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve.jpg">
+<div class="card-body"><h3>Classic Safari</h3></div>
+</div>
 
-    <div class="card">
-      <img src="images/masai-mara/masai-mara-national-reserve.jpg" alt="Masai Mara Safari">
-      <div class="card-body">
-        <h3>Classic Safari</h3>
-        <p>Big Five game drives across endless savannahs.</p>
-      </div>
-    </div>
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve (1).jpg">
+<div class="card-body"><h3>Great Migration</h3></div>
+</div>
 
-    <div class="card">
-      <img src="images/masai-mara/masai-mara-national-reserve (1).jpg" alt="Great Migration">
-      <div class="card-body">
-        <h3>Great Migration</h3>
-        <p>Witness the world’s greatest wildlife movement.</p>
-      </div>
-    </div>
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve (2).jpg">
+<div class="card-body"><h3>Scenic Plains</h3></div>
+</div>
 
-    <div class="card">
-      <img src="images/masai-mara/masai-mara-national-reserve (2).jpg" alt="Masai Mara Landscape">
-      <div class="card-body">
-        <h3>Scenic Plains</h3>
-        <p>Breathtaking landscapes and golden sunsets.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/masai-mara/masai-mara-national-reserve-3.jpg" alt="Maasai Culture">
-      <div class="card-body">
-        <h3>Maasai Culture</h3>
-        <p>Authentic cultural experiences with the Maasai.</p>
-      </div>
-    </div>
-
-  </div>
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve-3.jpg">
+<div class="card-body"><h3>Maasai Culture</h3></div>
+</div>
+</div>
 </section>
 
+<section class="details" id="lake-nakuru">
+<h3>Lake Nakuru National Park</h3>
+<p>Famous for flamingos, rhinos, and lake scenery.</p>
 
+<div class="packages">
+<div class="card">
+<img src="images/lake-nakuru-national-park/lake-nakuru-national-park-1.jpg">
+<div class="card-body"><h3>Flamingos</h3></div>
+</div>
 
-<section class="details" id="lake-nakuru"> 
-  <h3>Lake Nakuru National Park</h3>
-<p>Famous for flamingos, rhinos, and breathtaking lake scenery.</p>
+<div class="card">
+<img src="images/lake-nakuru-national-park/lake-nakuru-national-park-2.jpg">
+<div class="card-body"><h3>Rhinos</h3></div>
+</div>
 
-<div class="nakuru-gallery">
-  <img src="images/lake-nakuru-national-park/lake-nakuru-national-park-1.jpg" alt="Lake Nakuru Flamingos">
-  <img src="images/lake-nakuru-national-park/lake-nakuru-national-park-2.jpg" alt="Lake Nakuru Rhinos">
-  <img src="images/lake-nakuru-national-park/lake-nakuru-national-park-3.jpg" alt="Lake Nakuru Landscape">
+<div class="card">
+<img src="images/lake-nakuru-national-park/lake-nakuru-national-park-3.jpg">
+<div class="card-body"><h3>Scenic Views</h3></div>
+</div>
 </div>
 </section>
 
 <section class="details" id="lake-naivasha">
 <h3>Lake Naivasha</h3>
-<p>Boat rides, walking safaris and relaxation.</p>
-<div class="gallery"><div></div><div></div><div></div><div></div></div>
+<p>Boat rides and relaxation.</p>
 </section>
 
 <section class="details" id="nairobi">
 <h3>Nairobi City</h3>
 <p>Wildlife meets urban culture.</p>
-<div class="gallery"><div></div><div></div><div></div><div></div></div>
 </section>
 
-<!-- FLOATING CONTACT -->
-<div class="float whatsapp">
-<a href="https://wa.me/254746011254">💬</a>
-</div>
+<div class="float whatsapp"><a href="https://wa.me/254746011254">💬</a></div>
+<div class="float email"><a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a></div>
 
-<div class="float email">
-<a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a>
-</div>
-
-<footer>
-© 2026 Juma Adventures | Powered by Webtool
-</footer>
+<footer>© 2026 Juma Adventures | Powered by Webtool</footer>
 
 <script>
-const toggle=document.getElementById("whereToggle");
-const list=document.getElementById("whereList");
-toggle.onclick=()=>list.style.maxHeight?
-list.style.maxHeight=null:
-list.style.maxHeight=list.scrollHeight+"px";
+const t=document.getElementById("whereToggle");
+const l=document.getElementById("whereList");
+t.onclick=()=>l.style.maxHeight?l.style.maxHeight=null:l.style.maxHeight=l.scrollHeight+"px";
 </script>
 
 </body>
