@@ -131,45 +131,34 @@ background:#fafafa;
 padding:35px;
 border-radius:18px;
 }
-.details h3{color:#ff9800;margin-bottom:10px}
+.details h3{color:#ff9800;margin-bottom:15px}
 
 /* ===== BOOKING FORM ===== */
-#booking{
-max-width:800px;
-margin:80px auto;
-background:#fff;
-padding:40px;
-border-radius:18px;
-box-shadow:0 6px 18px rgba(0,0,0,.1);
-}
-#booking h2{
-text-align:center;
-color:#ff9800;
-margin-bottom:10px;
-}
-#booking p{text-align:center;margin-bottom:25px}
-
-#booking form{
+.booking-form{
+margin-top:25px;
 display:grid;
 gap:15px;
 }
-#booking input,#booking textarea,#booking select{
-padding:14px;
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+padding:12px;
 border-radius:8px;
 border:1px solid #ccc;
 font-size:1rem;
+width:100%;
 }
-#booking button{
+.booking-form textarea{resize:vertical}
+.booking-form button{
 background:#ff9800;
 color:#fff;
 border:none;
 padding:14px;
 border-radius:30px;
-font-size:1rem;
 font-weight:bold;
 cursor:pointer;
 }
-#booking button:hover{background:#e68900}
+.booking-form button:hover{background:#e68900}
 
 /* ===== WHERE TO GO ===== */
 #where{
@@ -257,67 +246,69 @@ font-size:.9rem;
 </h1>
 <p>
 <strong>Discover the Heart of Kenya’s Heritage with Juma Adventures</strong><br>
-Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures — crafted for unforgettable memories.
+Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures.
 </p>
 <a href="#explore" class="btn">Explore Tours</a>
 </div>
 </section>
 
-<section id="explore">
-<h2>Our Tour Packages</h2>
-<div class="packages">
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Mount Kenya – Point Lenana</h3>
-<p class="price">$2350 | 4–5 Days</p>
-<p>High-altitude trekking with sunrise summit views.</p>
-<a href="#booking" class="btn">Book Now</a>
-</div>
-</div>
+<!-- ABOUT (CLIENT EXACT WORDS) -->
+<section class="details" id="about">
+<h3>About Juma Adventures</h3>
 
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Nairobi City Tour</h3>
-<p class="price">$360 | Full Day</p>
-<p>Wildlife, museums, culture & city landmarks.</p>
-<a href="#booking" class="btn">Book Now</a>
-</div>
-</div>
-</div>
-</section>
+<p>
+Juma Adventures is a passion-driven safari and adventure company founded by Dennis Juma, a professional tour guide with over 10 years of hands-on experience in the tourism industry across Kenya and Tanzania. Established from a deep love for nature, wildlife, and African landscapes, Juma Adventures was created to offer travelers authentic, safe, and unforgettable experiences in East Africa.
+</p>
 
-<section id="booking">
-<h2>Book Your Adventure</h2>
-<p>Fill in the form below and we’ll get back to you promptly.</p>
+<p>
+Dennis Juma began his journey in tourism in 2013, building extensive knowledge through years of guiding wildlife safaris, mountain hiking expeditions, and cultural tours. He is trained in Management by the Kenya Institute of Management, and professionally trained by the Kenya Wildlife Service (KWS) in wildlife conservation and conservation duties — giving him strong grounding in responsible tourism, environmental protection, and visitor safety.
+</p>
 
-<form action="mailto:jumaadventuresandsafaris@gmail.com" method="post" enctype="text/plain">
-<input type="text" name="Name" placeholder="Your Full Name" required>
+<p>
+With this solid foundation, Juma Adventures has successfully guided guests through iconic destinations such as the Masai Mara, Amboseli, Tsavo, Lake Nakuru, Serengeti, Ngorongoro, and challenging mountain adventures including Mount Kenya and Mount Kilimanjaro. Every tour is designed with care, local knowledge, and respect for nature and communities.
+</p>
+
+<!-- BOOKING FORM -->
+<h3>Book This Tour</h3>
+<form class="booking-form"
+action="mailto:jumaadventuresandsafaris@gmail.com"
+method="post"
+enctype="text/plain">
+
+<input type="text" name="Full Name" placeholder="Your Full Name" required>
 <input type="email" name="Email" placeholder="Your Email Address" required>
-<input type="tel" name="Phone" placeholder="Your Phone Number" required>
+<input type="tel" name="Phone" placeholder="Phone / WhatsApp Number" required>
 
-<select name="Tour">
-<option selected disabled>Select Tour Package</option>
-<option>Mount Kenya – Point Lenana</option>
-<option>Nairobi City Tour</option>
+<select name="Tour Interested In" required>
+<option value="">Select Tour</option>
 <option>Masai Mara Safari</option>
-<option>Custom Tour</option>
+<option>Lake Nakuru</option>
+<option>Lake Naivasha</option>
+<option>Mount Kenya</option>
+<option>Nairobi City Tour</option>
 </select>
 
-<textarea name="Message" rows="5" placeholder="Preferred dates, number of people, or any special request"></textarea>
+<input type="date" name="Preferred Date" required>
+<textarea name="Message" rows="4" placeholder="Additional details or questions"></textarea>
 
 <button type="submit">Send Booking Request</button>
 </form>
 </section>
 
+<div class="float whatsapp">
+<a href="https://wa.me/254746011254">💬</a>
+</div>
+
+<div class="float email">
+<a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a>
+</div>
+
 <footer>
 <p>
-Follow our real safari trips and client experiences on Facebook:<br>
-<a href="https://www.facebook.com/groups/823417437291475/permalink/823417507291468/?mibextid=rS40aB7S9Ucbxw6v"
+<a href="https://www.facebook.com/groups/823417437291475/permalink/823417507291468/"
 target="_blank"
 style="color:#ff9800;text-decoration:none;font-weight:bold;">
-View Juma Adventures on Facebook
+View Real Trips on Facebook
 </a>
 </p>
 <p>© 2026 Juma Adventures | Powered by Webtool</p>
