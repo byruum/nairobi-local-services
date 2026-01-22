@@ -7,17 +7,9 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#f5f5f5;color:#222;line-height:1.6}
+body{background:#f5f5f5;color:#222;line-height:1.7}
 
-/* ===== TOP BAR ===== */
-.topbar{
-position:fixed;top:15px;left:15px;z-index:1000;
-}
-.topbar div{
-width:30px;height:3px;background:#fff;margin:6px 0;
-}
-
-/* ===== HERO ===== */
+/* ===== HERO (UNCHANGED) ===== */
 .hero{
 height:100vh;
 background:
@@ -28,308 +20,180 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:#fff;
-position:relative;
-overflow:hidden;
-animation:bgFade 12s infinite alternate;
 }
 
-@keyframes bgFade{
-0%{filter:brightness(1)}
-100%{filter:brightness(1.25)}
+.hero h1{font-size:3rem;margin-bottom:15px}
+.hero p{max-width:750px;margin:auto;font-size:1.1rem}
+
+/* ===== SECTION ===== */
+.section{
+max-width:1100px;
+margin:80px auto;
+background:#fff;
+padding:45px;
+border-radius:14px;
+box-shadow:0 6px 20px rgba(0,0,0,.08);
 }
 
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:url("images/logo.png") center/300px no-repeat;
-opacity:.12;
+.section h2{
+font-size:28px;
+color:#ff9800;
+margin-bottom:20px;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
-padding:20px;
-}
-
-.hero h1{
-font-size:3rem;
-font-weight:bold;
-margin-bottom:15px;
-}
-
-.lyric span{
-opacity:0;
-animation:wordFade 6s infinite;
-}
-.lyric span:nth-child(1){animation-delay:0s}
-.lyric span:nth-child(2){animation-delay:1.5s}
-.lyric span:nth-child(3){animation-delay:3s}
-.lyric span:nth-child(4){animation-delay:4.5s}
-
-@keyframes wordFade{
-0%{opacity:0}
-15%{opacity:1}
-35%{opacity:1}
-50%{opacity:0}
-}
-
-.hero p{
-font-size:1.1rem;
-margin-bottom:25px;
-}
-
-.btn{
+/* ===== ABOUT ===== */
+.social-link{margin-top:25px}
+.social-link a{
 display:inline-block;
-padding:14px 32px;
-background:#ff9800;
+padding:12px 24px;
+background:#1877f2;
 color:#fff;
 text-decoration:none;
-border-radius:30px;
+border-radius:25px;
 font-weight:bold;
-transition:.3s;
 }
-.btn:hover{background:#e68900}
 
-/* ===== EXPLORE ===== */
-#explore{padding:80px 20px;background:#fff;text-align:center}
-#explore h2{font-size:2.2rem;margin-bottom:10px}
-
-/* ===== PACKAGES ===== */
-.packages{
+/* ===== BOOKING FORM ===== */
+.booking-form{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-max-width:1200px;
-margin:40px auto;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-top:30px;
 }
 
-.card{
-background:#fff;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 6px 18px rgba(0,0,0,.1);
-}
-
-.card img{
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
 width:100%;
-height:220px;
-object-fit:cover;
-background:#ddd;
+padding:14px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:15px;
 }
 
-.card-body{padding:20px}
-.card-body h3{margin-bottom:10px}
-.price{color:#ff9800;font-weight:bold;margin:10px 0}
+.booking-form textarea{grid-column:1/-1;resize:none}
 
-/* ===== DETAILS ===== */
-.details{
-max-width:1000px;
-margin:80px auto;
-background:#fafafa;
-padding:35px;
-border-radius:18px;
-}
-.details h3{color:#ff9800;margin-bottom:10px}
-
-/* ===== WHERE TO GO ===== */
-#where{
-padding:80px 20px;
-background:#fafafa;
-text-align:center;
-}
-
-#whereToggle{
-font-size:2.2rem;
+.booking-form button{
+grid-column:1/-1;
+padding:15px;
+background:#ff9800;
+border:none;
+color:#fff;
+font-size:16px;
+font-weight:bold;
+border-radius:30px;
 cursor:pointer;
 }
 
-.where-slide{
-max-height:0;
-overflow:hidden;
-background:#fff;
-margin:20px auto;
-max-width:420px;
-border-radius:15px;
-box-shadow:0 6px 18px rgba(0,0,0,.15);
-transition:max-height .5s ease;
-}
+.booking-form button:hover{background:#e68900}
 
-.where-slide a{
-display:block;
-padding:14px 20px;
-text-decoration:none;
-color:#222;
-border-bottom:1px solid #eee;
-font-weight:bold;
+.note{
+font-size:14px;
+color:#666;
+margin-top:10px;
 }
-.where-slide a:hover{
-background:#ff9800;
-color:#fff;
-}
-
-/* ===== FLOATING CONTACT ===== */
-.float{
-position:fixed;
-right:20px;
-z-index:999;
-}
-.whatsapp{bottom:90px}
-.email{bottom:30px}
-
-.float a{
-display:block;
-width:55px;
-height:55px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,.3);
-}
-.whatsapp a{background:#25D366}
-.email a{background:#ff9800}
 
 /* ===== FOOTER ===== */
 footer{
 background:#111;
 color:#aaa;
 text-align:center;
-padding:25px;
+padding:28px;
 font-size:.9rem;
+margin-top:80px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar"><div></div><div></div><div></div></div>
-
 <!-- HERO -->
 <section class="hero">
-<div class="hero-content">
-<h1 class="lyric">
-<span>Explore</span>
-<span>&</span>
-<span>Discover</span>
-<span>Kenya's Heritage</span>
-</h1>
-
-<p>
-<strong>Discover the Heart of Kenya’s Heritage with Juma Adventures</strong><br>
-Experience Kenya’s most breathtaking safaris, mountain treks, and city adventures — crafted for unforgettable memories.
-</p>
-
-<a href="#explore" class="btn">Explore Tours</a>
-</div>
+  <div>
+    <h1>Explore & Discover Kenya’s Heritage</h1>
+    <p>
+      Discover the heart of Kenya’s heritage with unforgettable safaris,
+      mountain treks, and city adventures — guided by local experts.
+    </p>
+  </div>
 </section>
 
-<!-- EXPLORE -->
-<section id="explore">
-<h2>Our Tour Packages</h2>
+<!-- ABOUT -->
+<section class="section" id="about">
+  <h2>About Juma Adventures</h2>
 
-<div class="packages">
-
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Mount Kenya – Point Lenana</h3>
-<p class="price">$2350 | 4–5 Days</p>
-<p>High-altitude trekking with sunrise summit views.</p>
-<a href="#mount-kenya" class="btn">View Details</a>
-</div>
-</div>
-
-<div class="card">
-<img src="images/placeholder.jpg">
-<div class="card-body">
-<h3>Nairobi City Tour</h3>
-<p class="price">$360 | Full Day</p>
-<p>Wildlife, museums, culture & city landmarks.</p>
-<a href="#nairobi" class="btn">View Details</a>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- WHERE TO GO -->
-<section id="where">
-<h2 id="whereToggle">Where To Go ▾</h2>
-
-<div id="whereList" class="where-slide">
-<a href="#masai-mara">Masai Mara</a>
-<a href="#lake-nakuru">Lake Nakuru</a>
-<a href="#lake-naivasha">Lake Naivasha</a>
-<a href="#nairobi">Nairobi City</a>
-</div>
-</section>
-
-<!-- ABOUT JUMA -->
-<section class="details" id="about">
-<h3>About Juma Adventures</h3>
-
-<p>
-Juma Adventures is a locally guided tour experience led by a passionate and experienced safari guide
-with over a decade of hands-on experience in Kenya’s wilderness.
-</p>
-
-<p>
-Founded by a professional ranger and tour guide who has been actively guiding since <strong>2013</strong>,
-Juma Adventures has successfully organized and led over <strong>65 safari tours and travel experiences</strong>
-across Kenya.
-</p>
-
-<p>
-All photos featured on this website are from real trips guided and managed by Juma,
-showcasing authentic safari moments and unforgettable adventures.
-</p>
-
-<p>
-Juma Adventures is committed to delivering safe, memorable, and genuine African safari experiences.
-</p>
-</section>
-
-<!-- MASAI MARA -->
-<section class="details" id="masai-mara">
-<h3>Masai Mara National Reserve</h3>
-<p>World-famous safari destination and Great Migration home.</p>
-</section>
-
-<!-- FLOATING CONTACT -->
-<div class="float whatsapp">
-<a href="https://wa.me/254746011254">💬</a>
-</div>
-
-<div class="float email">
-<a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a>
-</div>
-
-
-<footer>
   <p>
-    Follow our real safari trips and client experiences on Facebook:<br>
-    <a href="https://www.facebook.com/groups/823417437291475"
-       target="_blank"
-       style="color:#ff9800;text-decoration:none;font-weight:bold;">
-      Visit Juma Adventures on Facebook
-    </a>
+    Juma Adventures is a passion-driven safari and adventure company founded by Dennis Juma,
+    a professional tour guide with over 10 years of hands-on experience in the tourism industry
+    across Kenya and Tanzania. Established from a deep love for nature, wildlife, and African
+    landscapes, Juma Adventures was created to offer travelers authentic, safe, and unforgettable
+    experiences in East Africa.
+  </p><br>
+
+  <p>
+    Dennis Juma began his journey in tourism in 2013, building extensive knowledge through years
+    of guiding wildlife safaris, mountain hiking expeditions, and cultural tours. He is trained
+    in Management by the Kenya Institute of Management, and professionally trained by the Kenya
+    Wildlife Service (KWS) in wildlife conservation and conservation duties — giving him strong
+    grounding in responsible tourism, environmental protection, and visitor safety.
+  </p><br>
+
+  <p>
+    With this solid foundation, Juma Adventures has successfully guided guests through iconic
+    destinations such as the Masai Mara, Amboseli, Tsavo, Lake Nakuru, Serengeti, Ngorongoro, and
+    challenging mountain adventures including Mount Kenya and Mount Kilimanjaro. Every tour is
+    designed with care, local knowledge, and respect for nature and communities.
   </p>
 
-  <p>© 2026 Juma Adventures | Powered by Webtool</p>
+  <div class="social-link">
+    <a href="https://www.facebook.com/groups/823417437291475/permalink/823417507291468/?mibextid=rS40aB7S9Ucbxw6v"
+       target="_blank">Join Our Facebook Community</a>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="section" id="booking">
+  <h2>Book Your Safari / Enquire Now</h2>
+
+  <form class="booking-form"
+    action="mailto:jumaadventuresandsafaris@gmail.com"
+    method="post"
+    enctype="text/plain">
+
+    <input type="text" name="Name" placeholder="Full Name" required>
+    <input type="email" name="Email" placeholder="Email Address" required>
+    <input type="tel" name="Phone" placeholder="Phone / WhatsApp" required>
+
+    <select name="Tour">
+      <option selected disabled>Select Tour</option>
+      <option>Masai Mara</option>
+      <option>Lake Nakuru</option>
+      <option>Lake Naivasha</option>
+      <option>Mount Kenya</option>
+      <option>Nairobi City Tour</option>
+      <option>Custom Safari</option>
+    </select>
+
+    <input type="date" name="Preferred Date">
+    <input type="number" name="Guests" placeholder="Number of Guests">
+
+    <textarea name="Message" rows="4"
+      placeholder="Tell us more about your trip..."></textarea>
+
+    <button type="submit">Send Enquiry</button>
+  </form>
+
+  <p class="note">
+    Prefer instant response?  
+    <a href="https://wa.me/254746011254" style="color:#25D366;font-weight:bold;">
+      Chat with us on WhatsApp
+    </a>
+  </p>
+</section>
+
+<footer>
+© 2026 Juma Adventures | Powered by Webtool
 </footer>
-<script>
-const toggle=document.getElementById("whereToggle");
-const list=document.getElementById("whereList");
-toggle.onclick=()=>list.style.maxHeight?
-list.style.maxHeight=null:
-list.style.maxHeight=list.scrollHeight+"px";
-</script>
 
 </body>
 </html>
