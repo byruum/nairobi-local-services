@@ -9,202 +9,294 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{background:#f5f5f5;color:#222;line-height:1.6}
 
-/* TOP BAR FIX */
-.topbar{
-position:fixed;
-top:15px;
-left:15px;
-z-index:1200;
-cursor:pointer;
-pointer-events:none;
-}
-.topbar div{
-width:30px;height:3px;background:#fff;margin:6px 0;
-pointer-events:auto;
-}
+/* ===== TOP BAR ===== */
+.topbar{position:fixed;top:15px;left:15px;z-index:1000}
+.topbar div{width:30px;height:3px;background:#fff;margin:6px 0}
 
-/* DASHBOARD */
-.dashboard{
-position:fixed;top:0;left:0;width:100%;
-background:#111;color:#fff;
-z-index:1100;
-transform:translateY(-100%);
-transition:.4s ease;
-padding:80px 20px 30px;
-}
-.dashboard.active{transform:translateY(0)}
-.dashboard a{
-display:block;color:#fff;text-decoration:none;
-padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);
-font-weight:bold
-}
-.dashboard select{
-width:100%;padding:10px;margin:10px 0 20px;
-border-radius:6px;border:none
-}
-
-/* HERO */
+/* ===== HERO ===== */
 .hero{
 height:100vh;
 background:
 linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.45)),
 url("images/file_00000000b8a0722f94b276953bf7dc5d.png") center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
 position:relative;
-}
-.hero-content{z-index:2;max-width:900px;padding:20px}
-.hero h1{font-size:3rem;margin-bottom:15px}
-.btn{
-display:inline-block;padding:14px 32px;
-background:#ff9800;color:#fff;
-border-radius:30px;font-weight:bold;text-decoration:none
+overflow:hidden;
+animation:bgFade 12s infinite alternate;
 }
 
-/* PACKAGES */
+@keyframes bgFade{
+0%{filter:brightness(1)}
+100%{filter:brightness(1.25)}
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:url("images/logo.png") center/300px no-repeat;
+opacity:.12;
+}
+
+.hero-content{position:relative;z-index:2;max-width:900px;padding:20px}
+.hero h1{font-size:3rem;margin-bottom:15px}
+
+.lyric span{opacity:0;animation:wordFade 6s infinite}
+.lyric span:nth-child(1){animation-delay:0s}
+.lyric span:nth-child(2){animation-delay:1.5s}
+.lyric span:nth-child(3){animation-delay:3s}
+.lyric span:nth-child(4){animation-delay:4.5s}
+
+@keyframes wordFade{
+0%{opacity:0}
+15%{opacity:1}
+35%{opacity:1}
+50%{opacity:0}
+}
+
+.hero p{font-size:1.1rem;margin-bottom:25px}
+
+.btn{
+display:inline-block;
+padding:14px 32px;
+background:#ff9800;
+color:#fff;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+/* ===== PACKAGES ===== */
 .packages{
-max-width:1200px;margin:80px auto;padding:0 20px;
-display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+max-width:1200px;
+margin:40px auto;
 }
+
 .card{
-background:#fff;border-radius:15px;overflow:hidden;
-box-shadow:0 6px 18px rgba(0,0,0,.1)
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,.1);
 }
-.card img{width:100%;height:220px;object-fit:cover}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
 .card-body{padding:20px}
 
-/* TOUR DETAILS (TourHQ style) */
-.tour-details{
+/* ===== DETAILS ===== */
+.details{
 max-width:1100px;
 margin:80px auto;
-background:#fff;
-padding:40px;
+background:#fafafa;
+padding:35px;
 border-radius:18px;
-box-shadow:0 6px 18px rgba(0,0,0,.12)
 }
-.tour-details h2{color:#ff9800;margin-bottom:15px}
-.tour-details h3{margin-top:25px;color:#333}
-.tour-details ul{margin-left:20px;margin-top:10px}
-.tour-details li{margin-bottom:8px}
 
-/* WHERE */
-#where{text-align:center;padding:80px 20px}
+.details h3{color:#ff9800;margin-bottom:10px}
+
+/* ===== WHERE TO GO ===== */
+#where{padding:80px 20px;text-align:center}
 #whereToggle{font-size:2.2rem;cursor:pointer}
+
 .where-slide{
-max-height:0;overflow:hidden;background:#fff;
-margin:20px auto;max-width:420px;
+max-height:0;
+overflow:hidden;
+background:#fff;
+margin:20px auto;
+max-width:420px;
 border-radius:15px;
 box-shadow:0 6px 18px rgba(0,0,0,.15);
-transition:max-height .5s ease
-}
-.where-slide a{
-display:block;padding:14px 20px;
-text-decoration:none;color:#222;font-weight:bold
+transition:max-height .5s ease;
 }
 
-/* FLOATING */
+.where-slide a{
+display:block;
+padding:14px 20px;
+text-decoration:none;
+color:#222;
+font-weight:bold;
+border-bottom:1px solid #eee;
+}
+
+.where-slide a:hover{background:#ff9800;color:#fff}
+
+/* ===== BOOKING FORM ===== */
+.booking{
+max-width:700px;
+margin:80px auto;
+background:#fff;
+padding:35px;
+border-radius:18px;
+box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+.booking h2{text-align:center;color:#ff9800;margin-bottom:20px}
+
+.booking input,.booking textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.booking button{
+width:100%;
+padding:14px;
+background:#ff9800;
+color:#fff;
+border:none;
+border-radius:30px;
+font-size:1rem;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* ===== FLOATING CONTACT ===== */
 .float{position:fixed;right:20px;z-index:999}
 .whatsapp{bottom:90px}
 .email{bottom:30px}
+
 .float a{
-display:flex;width:55px;height:55px;
-border-radius:50%;align-items:center;justify-content:center;
-color:#fff;font-size:22px;text-decoration:none
+display:flex;
+width:55px;
+height:55px;
+border-radius:50%;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:22px;
+text-decoration:none;
 }
+
 .whatsapp a{background:#25D366}
 .email a{background:#ff9800}
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
-background:#111;color:#aaa;text-align:center;
-padding:25px;font-size:.9rem
+background:#111;
+color:#aaa;
+text-align:center;
+padding:25px;
+font-size:.9rem;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar" id="menuBtn"><div></div><div></div><div></div></div>
-
-<div class="dashboard" id="dashboard">
-<label>Currency</label>
-<select>
-<option>KES – Kenyan Shilling</option>
-<option>USD – US Dollar</option>
-<option>EUR – Euro</option>
-</select>
-<a href="#">Currency Exchange</a>
-<a href="#">Sign up as Tour Guide</a>
-<a href="#">Privacy Policy</a>
-<a href="#">Terms & Conditions</a>
-<a href="https://www.facebook.com/groups/823417437291475/permalink/823417507291468/" target="_blank">Facebook Page</a>
-</div>
+<div class="topbar"><div></div><div></div><div></div></div>
 
 <section class="hero">
 <div class="hero-content">
-<h1>Explore & Discover Kenya</h1>
+<h1 class="lyric">
+<span>Explore</span>
+<span>&</span>
+<span>Discover</span>
+<span>Kenya's Heritage</span>
+</h1>
 <p><strong>Discover Kenya with Juma Adventures</strong></p>
 <a href="#where" class="btn">Explore Tours</a>
 </div>
 </section>
 
-<!-- PACKAGES -->
-<section class="packages">
-<div class="card">
-<img src="images/nairobi.jpg">
-<div class="card-body">
-<h3>Nairobi City Tour</h3>
-<p>Full-day guided experience exploring the best of Nairobi.</p>
-</div>
-</div>
-</section>
-
-<!-- TOURHQ STYLE DETAILS -->
-<section class="tour-details">
-<h2>Nairobi City Tour – Summary Overview</h2>
-<p>
-Enjoy a full-day guided tour exploring the best of Nairobi. Visit the David Sheldrick Elephant Orphanage to learn about wildlife conservation, then head to the Giraffe Centre for a close encounter with endangered Rothschild giraffes. After lunch at a popular local restaurant, explore Kenya’s history and culture at the Nairobi National Museum. End the day with a scenic city drive through Nairobi’s CBD, key landmarks, and a visit to the Maasai Market for souvenirs, before drop-off at your hotel or the airport.
-</p>
-
-<h3>Nairobi City Day Tour Itinerary</h3>
-<ul>
-<li><strong>08:00 – Pick Up from Hotel / Airport:</strong> Meet your professional guide and begin your city exploration with a short briefing.</li>
-<li><strong>08:30 – David Sheldrick Elephant Orphanage:</strong> Watch baby elephants during feeding time and learn about wildlife conservation.</li>
-<li><strong>10:30 – Giraffe Centre:</strong> Hand-feed endangered Rothschild giraffes and enjoy nature trails.</li>
-<li><strong>12:30 – Lunch Break:</strong> Lunch at Carnivore or a local cultural restaurant.</li>
-<li><strong>14:00 – Nairobi National Museum & Snake Park:</strong> Discover Kenya’s rich history and culture.</li>
-<li><strong>16:00 – Nairobi City Drive:</strong> View KICC, Parliament Buildings, Uhuru Park and key landmarks.</li>
-<li><strong>17:30 – Maasai Market / Curio Shopping:</strong> Shop for souvenirs and handmade crafts.</li>
-<li><strong>18:00 – Drop Off:</strong> Hotel or airport.</li>
-</ul>
-</section>
-
 <section id="where">
-<h2 id="whereToggle">Where To Go ▼</h2>
-<div class="where-slide" id="whereList">
-<a href="#">Nairobi</a>
-<a href="#">Maasai Mara</a>
-<a href="#">Amboseli</a>
-<a href="#">Mount Kenya</a>
+<h2 id="whereToggle">Where To Go ▾</h2>
+<div id="whereList" class="where-slide">
+<a href="#masai-mara">Masai Mara</a>
+<a href="#lake-nakuru">Lake Nakuru</a>
+<a href="#lake-naivasha">Lake Naivasha</a>
+<a href="#nairobi">Nairobi City</a>
 </div>
 </section>
 
-<div class="float whatsapp">
-<a href="https://wa.me/254705283274">💬</a>
+<section class="details">
+<h3>About Juma Adventures</h3>
+<p>
+Juma Adventures is a passion-driven safari and adventure company founded by Dennis Juma, a professional tour guide with over 10 years of hands-on experience in the tourism industry across Kenya and Tanzania. Established from a deep love for nature, wildlife, and African landscapes, Juma Adventures was created to offer travelers authentic, safe, and unforgettable experiences in East Africa.
+</p>
+<p>
+Dennis Juma began his journey in tourism in 2013, building extensive knowledge through years of guiding wildlife safaris, mountain hiking expeditions, and cultural tours. He is trained in Management by the Kenya Institute of Management, and professionally trained by the Kenya Wildlife Service (KWS) in wildlife conservation and conservation duties — giving him strong grounding in responsible tourism, environmental protection, and visitor safety.
+</p>
+<p>
+With this solid foundation, Juma Adventures has successfully guided guests through iconic destinations such as the Masai Mara, Amboseli, Tsavo, Lake Nakuru, Serengeti, Ngorongoro, and challenging mountain adventures including Mount Kenya and Mount Kilimanjaro. Every tour is designed with care, local knowledge, and respect for nature and communities.
+</p>
+</section>
+
+<section class="details">
+<h3>Popular Tour Packages</h3>
+<div class="packages">
+<div class="card">
+<img src="images/masai-mara/masai-mara-national-reserve.jpg">
+<div class="card-body">
+<h3>Masai Mara Safari</h3>
+<p>Duration: 3–5 Days</p>
+<p>Rating: ⭐⭐⭐⭐⭐</p>
 </div>
-<div class="float email">
-<a href="mailto:info@jumaadventures.co.ke">✉️</a>
 </div>
 
-<footer>
-© Juma Adventures | Experience Kenya
-</footer>
+<div class="card">
+<img src="images/lake-nakuru-national-park/lake-nakuru-national-park-1.jpg">
+<div class="card-body">
+<h3>Lake Nakuru Safari</h3>
+<p>Duration: 1–2 Days</p>
+<p>Rating: ⭐⭐⭐⭐⭐</p>
+</div>
+</div>
+
+<div class="card">
+<img src="images/file_00000000b8a0722f94b276953bf7dc5d.png">
+<div class="card-body">
+<h3>Mount Kenya Trek</h3>
+<p>Duration: 4–6 Days</p>
+<p>Rating: ⭐⭐⭐⭐⭐</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="details">
+<h3>Guest Reviews</h3>
+<div class="packages">
+<div class="card"><div class="card-body">⭐⭐⭐⭐⭐<p>Amazing safari and very professional guide.</p><strong>— Sarah M.</strong></div></div>
+<div class="card"><div class="card-body">⭐⭐⭐⭐⭐<p>Highly recommend Juma Adventures.</p><strong>— James K.</strong></div></div>
+<div class="card"><div class="card-body">⭐⭐⭐⭐⭐<p>Best experience in Kenya.</p><strong>— Daniel R.</strong></div></div>
+</div>
+</section>
+
+<section class="booking" id="booking">
+<h2>Book Your Adventure</h2>
+<form action="mailto:jumaadventuresandsafaris@gmail.com" method="post">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="text" placeholder="Preferred Destination">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Booking Request</button>
+</form>
+<p style="text-align:center;margin-top:15px;">
+<a href="https://www.facebook.com/groups/823417437291475/permalink/823417507291468/" target="_blank">
+Visit us on Facebook
+</a>
+</p>
+</section>
+
+<div class="float whatsapp"><a href="https://wa.me/254746011254">💬</a></div>
+<div class="float email"><a href="mailto:jumaadventuresandsafaris@gmail.com">✉</a></div>
+
+<footer>© 2026 Juma Adventures | Powered by Webtool</footer>
 
 <script>
-const menuBtn=document.getElementById("menuBtn");
-const dash=document.getElementById("dashboard");
-menuBtn.onclick=()=>dash.classList.toggle("active");
-
 const t=document.getElementById("whereToggle");
 const l=document.getElementById("whereList");
 t.onclick=()=>l.style.maxHeight?l.style.maxHeight=null:l.style.maxHeight=l.scrollHeight+"px";
