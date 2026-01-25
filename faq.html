@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ | Juma Adventures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#f4f4f4;
+      margin:0;
+      color:#222;
+    }
+
+    .container{
+      max-width:900px;
+      margin:80px auto;
+      background:#fff;
+      padding:40px;
+      border-radius:18px;
+      box-shadow:0 6px 18px rgba(0,0,0,.12);
+    }
+
+    h1{
+      text-align:center;
+      color:#ff9800;
+      margin-bottom:30px;
+    }
+
+    .faq-item{
+      margin-bottom:20px;
+      border-bottom:1px solid #eee;
+      padding-bottom:15px;
+    }
+
+    .faq-item h3{
+      cursor:pointer;
+      margin:0;
+      color:#222;
+    }
+
+    .faq-item p{
+      margin-top:10px;
+      display:none;
+      color:#444;
+    }
+
+    footer{
+      background:#111;
+      color:#fff;
+      text-align:center;
+      padding:25px;
+      margin-top:60px;
+    }
+
+    a{
+      color:#ff9800;
+      text-decoration:none;
+      font-weight:bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Frequently Asked Questions</h1>
+
+  <div class="faq-item">
+    <h3>How do I book a tour?</h3>
+    <p>You can book directly through our booking form on the website or contact us via email or WhatsApp.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Do you offer private tours?</h3>
+    <p>Yes. All our tours can be customized and arranged as private experiences.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What is included in the tour price?</h3>
+    <p>Transportation, professional guide services, and listed park or attraction fees unless stated otherwise.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I cancel or reschedule?</h3>
+    <p>Yes. Please notify us in advance for rescheduling or cancellation arrangements.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Which payment methods do you accept?</h3>
+    <p>We accept mobile money and bank transfer. Payment details are shared after booking confirmation.</p>
+  </div>
+
+  <p style="text-align:center;margin-top:30px;">
+    <a href="index.html">← Back to Home</a>
+  </p>
+</div>
+
+<footer>
+  <p>© 2026 Juma Adventures | Powered by Webtool</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item h3').forEach(item => {
+    item.onclick = () => {
+      const p = item.nextElementSibling;
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
