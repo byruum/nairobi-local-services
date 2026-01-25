@@ -257,7 +257,17 @@ Dennis Juma began his journey in tourism in 2013, building extensive knowledge t
 With this solid foundation, Juma Adventures has successfully guided guests through iconic destinations such as the Masai Mara, Amboseli, Tsavo, Lake Nakuru, Serengeti, Ngorongoro, and challenging mountain adventures including Mount Kenya and Mount Kilimanjaro. Every tour is designed with care, local knowledge, and respect for nature and communities.
 </p>
 </section>
-
+  
+<!-- Currency Switcher -->
+<div style="text-align:center; margin:25px 0;">
+  <label for="currency"><strong>Select Currency:</strong></label>
+  <select id="currency">
+    <option value="USD">USD</option>
+    <option value="KES">KES</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+  </select>
+</div>
   <section class="details" id="nairobi">
   <h3>Nairobi City Day Tour</h3>
 
@@ -267,8 +277,10 @@ With this solid foundation, Juma Adventures has successfully guided guests throu
   </p>
 
   <p><strong>Duration:</strong> Full Day (8–10 Hours)</p>
-  <p><strong>Cost:</strong> <strong>$360 per person</strong></p>
-
+ <p>
+  <strong>Cost:</strong>
+  <strong data-price="360">USD 360</strong> <span>per person</span>
+ </p>
   <h4>Itinerary</h4>
   <ul>
     <li>Hotel / Airport pick-up</li>
@@ -532,16 +544,17 @@ Visit us on Facebook
   </footer>
 
 <script>
-
+<script>
 /* ===== Where To Toggle ===== */
 const t = document.getElementById('whereToggle');
 const l = document.getElementById('whereList');
 
 if (t && l) {
-  t.onclick = () =>
+  t.onclick = () => {
     l.style.maxHeight
       ? l.style.maxHeight = null
       : l.style.maxHeight = l.scrollHeight + "px";
+  };
 }
 
 /* ===== Currency Switcher ===== */
@@ -554,16 +567,43 @@ const rates = {
   GBP: 0.79
 };
 
-if (currencySelect) {
-  currencySelect.addEventListener("change", () => {
-    const selected = currencySelect.value;
+/* ===== Auto Detect Currency ===== */
+function detectCurrency() {
+  const locale = Intl.DateTimeFormat().resolvedOptions().locale;
 
-    document.querySelectorAll("[data-price]").forEach(el => {
-      const basePrice = parseFloat(el.getAttribute("data-price"));
-      const converted = (basePrice * rates[selected]).toFixed(0);
-      el.innerText = selected + " " + converted;
-    });
+  if (locale.includes("KE")) return "KES";
+  if (locale.includes("GB")) return "GBP";
+
+  if (
+    locale.includes("FR") ||
+    locale.includes("DE") ||
+    locale.includes("ES") ||
+    locale.includes("IT")
+  ) return "EUR";
+
+  return "USD";
+}
+
+/* ===== Apply Default Currency ===== */
+if (currencySelect) {
+  currencySelect.value = detectCurrency();
+  updatePrices();
+}
+
+/* ===== Update Prices ===== */
+function updatePrices() {
+  const selected = currencySelect.value;
+
+  document.querySelectorAll("[data-price]").forEach(el => {
+    const basePrice = parseFloat(el.getAttribute("data-price"));
+    const converted = (basePrice * rates[selected]).toFixed(0);
+    el.innerText = selected + " " + converted;
   });
+}
+
+/* ===== Listen for Change ===== */
+if (currencySelect) {
+  currencySelect.addEventListener("change", updatePrices);
 }
 </script>
 
