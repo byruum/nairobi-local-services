@@ -105,28 +105,43 @@ border-radius:18px;
 
 .details h3{color:#ff9800;margin-bottom:10px}
 
-/* ===== Choose Your Next Destination===== */
-#where{padding:80px 20px;text-align:center}
-#whereToggle{font-size:2.2rem;cursor:pointer}
-
-.where-slide{
-max-height:0;
-overflow:hidden;
-background:#fff;
-margin:20px auto;
-max-width:420px;
-border-radius:15px;
-box-shadow:0 6px 18px rgba(0,0,0,.15);
-transition:max-height .5s ease;
+/* === CHOOSE YOUR NEXT DESTINATION === */
+#where {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
 }
 
-.where-slide a{
-display:block;
-padding:14px 20px;
-text-decoration:none;
-color:#222;
-font-weight:bold;
-border-bottom:1px solid #eee;
+#whereToggle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ff9800;
+  margin-bottom: 30px;
+}
+
+.where-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.where-slide a {
+  padding: 14px 30px;
+  background: #ff9800;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+}
+
+.where-slide a:hover {
+  background: #e67e00;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
 }
 
 .where-slide a:hover{background:#ff9800;color:#fff}
