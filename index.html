@@ -211,7 +211,16 @@ font-size:.9rem;
 
 <body>
 
-<div class="topbar"><div></div><div></div><div></div></div>
+<div class="topbar">
+  <div class="currency-switcher">
+    <select id="currency">
+      <option value="USD">$ USD</option>
+      <option value="KES">KES</option>
+      <option value="EUR">€ EUR</option>
+      <option value="GBP">£ GBP</option>
+    </select>
+  </div>
+</div>
 
 <section class="hero">
 <div class="hero-content">
@@ -523,9 +532,39 @@ Visit us on Facebook
   </footer>
 
 <script>
-const t=document.getElementById("whereToggle");
-const l=document.getElementById("whereList");
-t.onclick=()=>l.style.maxHeight?l.style.maxHeight=null:l.style.maxHeight=l.scrollHeight+"px";
+
+/* ===== Where To Toggle ===== */
+const t = document.getElementById('whereToggle');
+const l = document.getElementById('whereList');
+
+if (t && l) {
+  t.onclick = () =>
+    l.style.maxHeight
+      ? l.style.maxHeight = null
+      : l.style.maxHeight = l.scrollHeight + "px";
+}
+
+/* ===== Currency Switcher ===== */
+const currencySelect = document.getElementById("currency");
+
+const rates = {
+  USD: 1,
+  KES: 155,
+  EUR: 0.92,
+  GBP: 0.79
+};
+
+if (currencySelect) {
+  currencySelect.addEventListener("change", () => {
+    const selected = currencySelect.value;
+
+    document.querySelectorAll("[data-price]").forEach(el => {
+      const basePrice = parseFloat(el.getAttribute("data-price"));
+      const converted = (basePrice * rates[selected]).toFixed(0);
+      el.innerText = selected + " " + converted;
+    });
+  });
+}
 </script>
 
 </body>
