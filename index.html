@@ -120,8 +120,8 @@ opacity:.12;
 }
 
 .hero-content{position:relative;z-index:2;max-width:900px;padding:20px}
-.hero h1{font-size:3rem;margin-bottom:15px}
 
+.hero h1{font-size:3rem;margin-bottom:15px}
 .lyric span{opacity:0;animation:wordFade 6s infinite}
 .lyric span:nth-child(1){animation-delay:0s}
 .lyric span:nth-child(2){animation-delay:1.5s}
@@ -146,7 +146,23 @@ text-decoration:none;
 border-radius:30px;
 font-weight:bold;
 }
+.secondary-btn{
+display:inline-block;
+padding:14px 32px;
+margin-left:15px;
+background:transparent;
+color:#fff;
+text-decoration:none;
+border:2px solid #fff;
+border-radius:30px;
+font-weight:bold;
+transition:.3s;
+}
 
+.secondary-btn:hover{
+background:#fff;
+color:#111;
+}
 /* ===== PACKAGES ===== */
 .packages{
 display:grid;
@@ -283,7 +299,37 @@ text-align:center;
 padding:25px;
 font-size:.9rem;
 }
-</style>
+  @media (max-width:768px){
+.hero{
+padding:0 15px;
+}
+
+.hero h1{
+font-size:2rem;
+line-height:1.2;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.hero .btn,
+.hero .secondary-btn{
+display:block;
+width:220px;
+margin:12px auto 0;
+}
+
+.nav-links{
+gap:10px;
+flex-wrap:wrap;
+justify-content:flex-end;
+}
+
+.logo{
+font-size:1.2rem;
+}
+</style>  
 </head>
 
 <body>
