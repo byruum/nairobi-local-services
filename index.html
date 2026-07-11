@@ -136,9 +136,11 @@ transform:translateY(-3px);
     margin-bottom:80px;
 }
 
+
 .hero-search{
-    width:90%;
-    max-width:950px;
+    width:100%;
+    max-width:900px;
+    margin:40px auto 0;
     background:#fff;
     border-radius:18px;
     padding:16px;
@@ -147,21 +149,21 @@ transform:translateY(-3px);
     align-items:center;
     box-shadow:0 15px 35px rgba(0,0,0,.18);
 }
-
 .hero-search input{
     flex:1;
     border:none;
     outline:none;
     font-size:16px;
     padding:16px;
+    min-width:0;
 }
 
 .hero-search button{
-    background:#ff8c00;
+    background:#ff9800;
     color:#fff;
     border:none;
     border-radius:12px;
-    padding:18px 45px;
+    padding:18px 40px;
     font-weight:bold;
     cursor:pointer;
 }
@@ -384,6 +386,47 @@ justify-content:flex-end;
 .logo{
 font-size:1.2rem;
 }
+   @media (max-width:768px){
+
+.hero{
+    min-height:100vh;
+    background-position:center center;
+    background-size:cover;
+}
+
+.topbar{
+    padding:15px 20px;
+}
+
+.nav-links a{
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+}
+
+.hero-content{
+    max-width:100%;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:3rem;
+}
+
+.hero-content p{
+    font-size:1rem;
+}
+
+.hero-search{
+    width:100%;
+    flex-direction:column;
+    gap:12px;
+}
+
+.hero-search input,
+.hero-search button{
+    width:100%;
+}  
 </style>  
 </head>
 
