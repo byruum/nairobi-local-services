@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience Kenya | Juma Adventures</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+color:#333;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("images/hero.png") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.3rem;
+max-width:800px;
+margin:auto;
+margin-bottom:35px;
+}
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.btn{
+padding:16px 35px;
+text-decoration:none;
+border-radius:40px;
+font-weight:bold;
+transition:.3s;
+}
+
+.orange{
+background:#ff9800;
+color:white;
+}
+
+.orange:hover{
+background:#e67e00;
+}
+
+.green{
+background:#25D366;
+color:white;
+}
+
+.green:hover{
+background:#1ebd57;
+}
+
+.blue{
+background:#1877F2;
+color:white;
+}
+
+.blue:hover{
+background:#1665cc;
+}
+
+.white{
+background:white;
+color:#333;
+}
+
+.white:hover{
+background:#eee;
+}
+
+.destinations{
+padding:70px 20px;
+text-align:center;
+}
+
+.destinations h2{
+margin-bottom:40px;
+font-size:2.5rem;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+}
+
+.card a{
+display:block;
+background:#ff9800;
+color:white;
+padding:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.card a:hover{
+background:#e67e00;
+}
+
+footer{
+background:#111;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:60px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+width:260px;
+margin:auto;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Experience the Magic of Kenya</h1>
+
+<p>
+Professional safaris, mountain adventures,
+beach holidays and unforgettable wildlife experiences
+with Dennis Juma.
+</p>
+
+<div class="buttons">
+
+<a class="btn green"
+href="https://wa.me/254746011254">
+💬 WhatsApp Now
+</a>
+
+<a class="btn orange"
+href="book.html">
+📅 Book Your Adventure
+</a>
+
+<a class="btn blue"
+href="https://www.facebook.com/">
+📘 Facebook
+</a>
+
+<a class="btn white"
+href="index.html">
+🌍 Visit Website
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="destinations">
+
+<h2>Popular Adventures</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="images/masai.png">
+
+<h3>Masai Mara Safari</h3>
+
+<a href="masai-mara-safari.html">
+Explore Safari
+</a>
+
+</div>
+
+<div class="card">
+
+<img src="images/diani.png">
+
+<h3>Diani Beach</h3>
+
+<a href="diani.html">
+Explore Beach
+</a>
+
+</div>
+
+<div class="card">
+
+<img src="images/mt.kenya.png">
+
+<h3>Mount Kenya Trek</h3>
+
+<a href="mount-kenya-trek.html">
+Explore Trek
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>Ready for your next adventure?</h2>
+
+<br>
+
+<a class="btn green"
+href="https://wa.me/254746011254">
+Book via WhatsApp
+</a>
+
+</footer>
+
+</body>
+</html>
